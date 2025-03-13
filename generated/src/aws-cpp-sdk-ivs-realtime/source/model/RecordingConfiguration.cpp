@@ -19,6 +19,7 @@ namespace Model
 {
 
 RecordingConfiguration::RecordingConfiguration() : 
+    m_hlsConfigurationHasBeenSet(false),
     m_format(RecordingConfigurationFormat::NOT_SET),
     m_formatHasBeenSet(false)
 {
@@ -32,6 +33,13 @@ RecordingConfiguration::RecordingConfiguration(JsonView jsonValue)
 
 RecordingConfiguration& RecordingConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("hlsConfiguration"))
+  {
+    m_hlsConfiguration = jsonValue.GetObject("hlsConfiguration");
+
+    m_hlsConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("format"))
   {
     m_format = RecordingConfigurationFormatMapper::GetRecordingConfigurationFormatForName(jsonValue.GetString("format"));
@@ -45,6 +53,12 @@ RecordingConfiguration& RecordingConfiguration::operator =(JsonView jsonValue)
 JsonValue RecordingConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_hlsConfigurationHasBeenSet)
+  {
+   payload.WithObject("hlsConfiguration", m_hlsConfiguration.Jsonize());
+
+  }
 
   if(m_formatHasBeenSet)
   {

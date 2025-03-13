@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -56,7 +57,8 @@ namespace Model
     ///@{
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * the request. If a client token isn't specified, a randomly generated token is
+     * used in the request to ensure idempotency.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
      */

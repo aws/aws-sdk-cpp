@@ -28,7 +28,9 @@ GetHlsManifestConfiguration::GetHlsManifestConfiguration() :
     m_programDateTimeIntervalSecondsHasBeenSet(false),
     m_scteHlsHasBeenSet(false),
     m_filterConfigurationHasBeenSet(false),
-    m_startTagHasBeenSet(false)
+    m_startTagHasBeenSet(false),
+    m_urlEncodeChildManifest(false),
+    m_urlEncodeChildManifestHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,13 @@ GetHlsManifestConfiguration& GetHlsManifestConfiguration::operator =(JsonView js
     m_startTagHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UrlEncodeChildManifest"))
+  {
+    m_urlEncodeChildManifest = jsonValue.GetBool("UrlEncodeChildManifest");
+
+    m_urlEncodeChildManifestHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +157,12 @@ JsonValue GetHlsManifestConfiguration::Jsonize() const
   if(m_startTagHasBeenSet)
   {
    payload.WithObject("StartTag", m_startTag.Jsonize());
+
+  }
+
+  if(m_urlEncodeChildManifestHasBeenSet)
+  {
+   payload.WithBool("UrlEncodeChildManifest", m_urlEncodeChildManifest);
 
   }
 

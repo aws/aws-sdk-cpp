@@ -13,7 +13,8 @@ using namespace Aws::Utils;
 CreateLaunchTemplateRequest::CreateLaunchTemplateRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_launchTemplateNameHasBeenSet(false),
     m_versionDescriptionHasBeenSet(false),
     m_launchTemplateDataHasBeenSet(false),

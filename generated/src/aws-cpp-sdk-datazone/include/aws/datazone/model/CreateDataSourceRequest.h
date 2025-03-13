@@ -218,7 +218,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source. In Amazon DataZone, you can use data sources to
+     * import technical metadata of assets (data) from the source databases or data
+     * warehouses into Amazon DataZone. In the current release of Amazon DataZone, you
+     * can create and run data sources for Amazon Web Services Glue and Amazon
+     * Redshift.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

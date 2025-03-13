@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivs-realtime/model/ParticipantThumbnailConfiguration.h>
+#include <aws/ivs-realtime/model/ParticipantRecordingHlsConfiguration.h>
 #include <aws/ivs-realtime/model/ParticipantRecordingMediaType.h>
 #include <utility>
 
@@ -100,6 +101,18 @@ namespace Model
     inline void SetRecordingReconnectWindowSeconds(int value) { m_recordingReconnectWindowSecondsHasBeenSet = true; m_recordingReconnectWindowSeconds = value; }
     inline AutoParticipantRecordingConfiguration& WithRecordingReconnectWindowSeconds(int value) { SetRecordingReconnectWindowSeconds(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>HLS configuration object for individual participant recording.</p>
+     */
+    inline const ParticipantRecordingHlsConfiguration& GetHlsConfiguration() const{ return m_hlsConfiguration; }
+    inline bool HlsConfigurationHasBeenSet() const { return m_hlsConfigurationHasBeenSet; }
+    inline void SetHlsConfiguration(const ParticipantRecordingHlsConfiguration& value) { m_hlsConfigurationHasBeenSet = true; m_hlsConfiguration = value; }
+    inline void SetHlsConfiguration(ParticipantRecordingHlsConfiguration&& value) { m_hlsConfigurationHasBeenSet = true; m_hlsConfiguration = std::move(value); }
+    inline AutoParticipantRecordingConfiguration& WithHlsConfiguration(const ParticipantRecordingHlsConfiguration& value) { SetHlsConfiguration(value); return *this;}
+    inline AutoParticipantRecordingConfiguration& WithHlsConfiguration(ParticipantRecordingHlsConfiguration&& value) { SetHlsConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_storageConfigurationArn;
@@ -113,6 +126,9 @@ namespace Model
 
     int m_recordingReconnectWindowSeconds;
     bool m_recordingReconnectWindowSecondsHasBeenSet = false;
+
+    ParticipantRecordingHlsConfiguration m_hlsConfiguration;
+    bool m_hlsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

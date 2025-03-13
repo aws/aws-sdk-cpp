@@ -20,6 +20,7 @@ namespace Model
 
 EnvironmentConfigurationUserParameter::EnvironmentConfigurationUserParameter() : 
     m_environmentConfigurationNameHasBeenSet(false),
+    m_environmentIdHasBeenSet(false),
     m_environmentParametersHasBeenSet(false)
 {
 }
@@ -37,6 +38,13 @@ EnvironmentConfigurationUserParameter& EnvironmentConfigurationUserParameter::op
     m_environmentConfigurationName = jsonValue.GetString("environmentConfigurationName");
 
     m_environmentConfigurationNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("environmentId"))
+  {
+    m_environmentId = jsonValue.GetString("environmentId");
+
+    m_environmentIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("environmentParameters"))
@@ -59,6 +67,12 @@ JsonValue EnvironmentConfigurationUserParameter::Jsonize() const
   if(m_environmentConfigurationNameHasBeenSet)
   {
    payload.WithString("environmentConfigurationName", m_environmentConfigurationName);
+
+  }
+
+  if(m_environmentIdHasBeenSet)
+  {
+   payload.WithString("environmentId", m_environmentId);
 
   }
 
