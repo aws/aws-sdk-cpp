@@ -718,11 +718,18 @@ public abstract class CppClientGenerator implements ClientGenerator {
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
         context.put("RequestlessOperations", requestlessOperations);
-        
+        selectAuthschemeResolver(serviceModel, context);
+        String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
+                serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    private void selectAuthschemeResolver(final ServiceModel serviceModel, VelocityContext context)
+    {
         if(serviceModel.getAuthSchemes().size() > 1)
         {
             context.put("AuthSchemeResolver", "SigV4MultiAuthSchemeResolver");
-            context.put("IsMultiAuth", true);
         }
         else
         {
@@ -734,16 +741,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
             }
             else
             {
-                throw new RuntimeException(String.format("authSchemes '%s'",serviceModel.getAuthSchemes().stream().collect(Collectors.toList())
-                ));
+                throw new RuntimeException(String.format("authSchemes '%s'",serviceModel.getAuthSchemes().stream().collect(Collectors.toList())));
             }
         }
         context.put("AuthSchemeVariants", serviceModel.getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));
-
-        String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
-                serviceModel.getMetadata().getClassNamePrefix());
-
-        return makeFile(template, context, fileName, true);
     }
 
     protected SdkFileEntry GenerateSmithyClientSourceFile(final ServiceModel serviceModel, int i, Optional<String> templateFile) {
@@ -753,27 +754,8 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
-            
-        if(serviceModel.getAuthSchemes().size() > 1)
-        {
-            context.put("AuthSchemeResolver", "SigV4MultiAuthSchemeResolver");
-        }
-        else
-        {
-            Optional<String> firstAuthScheme = serviceModel.getAuthSchemes().stream().filter(entry->ResolverMapping.containsKey(entry)).findFirst();
-
-            if(firstAuthScheme.isPresent())
-            {
-                context.put("AuthSchemeResolver", ResolverMapping.get(firstAuthScheme.get()));
-            }
-            else
-            {
-                throw new RuntimeException(String.format("authSchemes '%s'",serviceModel.getAuthSchemes().stream().collect(Collectors.toList())
-                ));
-            }
-        }
+        selectAuthschemeResolver(serviceModel, context);
         context.put("AuthSchemeMapEntries", createAuthSchemeMapEntries(serviceModel));
-        context.put("AuthSchemeVariants", serviceModel.getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));
 
         final String fileName;
         if (i == 0) {

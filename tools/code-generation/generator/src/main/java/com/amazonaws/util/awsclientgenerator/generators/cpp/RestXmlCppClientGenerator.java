@@ -47,38 +47,15 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
     @Override
     protected SdkFileEntry generateClientHeaderFile(final ServiceModel serviceModel) throws Exception {
 
+        if (serviceModel.isUseSmithyClient() ) {
+            return generateClientSmithyHeaderFile(serviceModel);
+        }
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlServiceClientHeader.vm", StandardCharsets.UTF_8.name());
+
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
         context.put("RequestlessOperations", requestlessOperations);
-        Template template;
-        if (serviceModel.isUseSmithyClient())
-        {
-            template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyClientHeader.vm", StandardCharsets.UTF_8.name());
-            if(serviceModel.getAuthSchemes().size() > 1)
-            {
-                context.put("AuthSchemeResolver", "SigV4MultiAuthSchemeResolver");
-                context.put("IsMultiAuth", true);
-            }
-            else
-            {
-                Optional<String> firstAuthScheme = serviceModel.getAuthSchemes().stream().filter(entry->ResolverMapping.containsKey(entry)).findFirst();
-
-                if(firstAuthScheme.isPresent())
-                {
-                    context.put("AuthSchemeResolver", ResolverMapping.get(firstAuthScheme.get()));
-                }
-                else
-                {
-                    throw new RuntimeException(String.format("authSchemes '%s'",serviceModel.getAuthSchemes().stream().collect(Collectors.toList())
-                    ));
-                }
-            }
-            context.put("AuthSchemeVariants", serviceModel.getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));    
-        }
-        else 
-        {
-            template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlServiceClientHeader.vm", StandardCharsets.UTF_8.name());
-        }
 
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
