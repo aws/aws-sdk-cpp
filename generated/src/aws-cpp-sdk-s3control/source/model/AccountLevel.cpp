@@ -20,18 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-AccountLevel::AccountLevel() : 
-    m_activityMetricsHasBeenSet(false),
-    m_bucketLevelHasBeenSet(false),
-    m_advancedCostOptimizationMetricsHasBeenSet(false),
-    m_advancedDataProtectionMetricsHasBeenSet(false),
-    m_detailedStatusCodesMetricsHasBeenSet(false),
-    m_storageLensGroupLevelHasBeenSet(false)
-{
-}
-
 AccountLevel::AccountLevel(const XmlNode& xmlNode)
-  : AccountLevel()
 {
   *this = xmlNode;
 }
@@ -47,36 +36,42 @@ AccountLevel& AccountLevel::operator =(const XmlNode& xmlNode)
     {
       m_activityMetrics = activityMetricsNode;
       m_activityMetricsHasBeenSet = true;
+       m_activityMetricsHasBeenSet = true;
     }
     XmlNode bucketLevelNode = resultNode.FirstChild("BucketLevel");
     if(!bucketLevelNode.IsNull())
     {
       m_bucketLevel = bucketLevelNode;
       m_bucketLevelHasBeenSet = true;
+       m_bucketLevelHasBeenSet = true;
     }
     XmlNode advancedCostOptimizationMetricsNode = resultNode.FirstChild("AdvancedCostOptimizationMetrics");
     if(!advancedCostOptimizationMetricsNode.IsNull())
     {
       m_advancedCostOptimizationMetrics = advancedCostOptimizationMetricsNode;
       m_advancedCostOptimizationMetricsHasBeenSet = true;
+       m_advancedCostOptimizationMetricsHasBeenSet = true;
     }
     XmlNode advancedDataProtectionMetricsNode = resultNode.FirstChild("AdvancedDataProtectionMetrics");
     if(!advancedDataProtectionMetricsNode.IsNull())
     {
       m_advancedDataProtectionMetrics = advancedDataProtectionMetricsNode;
       m_advancedDataProtectionMetricsHasBeenSet = true;
+       m_advancedDataProtectionMetricsHasBeenSet = true;
     }
     XmlNode detailedStatusCodesMetricsNode = resultNode.FirstChild("DetailedStatusCodesMetrics");
     if(!detailedStatusCodesMetricsNode.IsNull())
     {
       m_detailedStatusCodesMetrics = detailedStatusCodesMetricsNode;
       m_detailedStatusCodesMetricsHasBeenSet = true;
+       m_detailedStatusCodesMetricsHasBeenSet = true;
     }
     XmlNode storageLensGroupLevelNode = resultNode.FirstChild("StorageLensGroupLevel");
     if(!storageLensGroupLevelNode.IsNull())
     {
       m_storageLensGroupLevel = storageLensGroupLevelNode;
       m_storageLensGroupLevelHasBeenSet = true;
+       m_storageLensGroupLevelHasBeenSet = true;
     }
   }
 

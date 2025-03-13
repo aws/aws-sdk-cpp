@@ -10,14 +10,6 @@
 using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
-AssumeRootRequest::AssumeRootRequest() : 
-    m_targetPrincipalHasBeenSet(false),
-    m_taskPolicyArnHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false)
-{
-}
-
 Aws::String AssumeRootRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCallerIdentityResult::GetCallerIdentityResult()
-{
-}
-
 GetCallerIdentityResult::GetCallerIdentityResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,22 +38,26 @@ GetCallerIdentityResult& GetCallerIdentityResult::operator =(const Aws::AmazonWe
     if(!userIdNode.IsNull())
     {
       m_userId = Aws::Utils::Xml::DecodeEscapedXmlText(userIdNode.GetText());
+      m_userIdHasBeenSet = true;
     }
     XmlNode accountNode = resultNode.FirstChild("Account");
     if(!accountNode.IsNull())
     {
       m_account = Aws::Utils::Xml::DecodeEscapedXmlText(accountNode.GetText());
+      m_accountHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
+      m_arnHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::STS::Model::GetCallerIdentityResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

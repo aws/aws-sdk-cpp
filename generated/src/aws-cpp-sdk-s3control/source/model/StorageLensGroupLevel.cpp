@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-StorageLensGroupLevel::StorageLensGroupLevel() : 
-    m_selectionCriteriaHasBeenSet(false)
-{
-}
-
 StorageLensGroupLevel::StorageLensGroupLevel(const XmlNode& xmlNode)
-  : StorageLensGroupLevel()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ StorageLensGroupLevel& StorageLensGroupLevel::operator =(const XmlNode& xmlNode)
     {
       m_selectionCriteria = selectionCriteriaNode;
       m_selectionCriteriaHasBeenSet = true;
+       m_selectionCriteriaHasBeenSet = true;
     }
   }
 

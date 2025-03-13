@@ -28,35 +28,35 @@ namespace Model
   class XmlUnionsResult
   {
   public:
-    AWS_RESTXMLPROTOCOL_API XmlUnionsResult();
+    AWS_RESTXMLPROTOCOL_API XmlUnionsResult() = default;
     AWS_RESTXMLPROTOCOL_API XmlUnionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RESTXMLPROTOCOL_API XmlUnionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const XmlUnionShape& GetUnionValue() const{ return m_unionValue; }
-    inline void SetUnionValue(const XmlUnionShape& value) { m_unionValue = value; }
-    inline void SetUnionValue(XmlUnionShape&& value) { m_unionValue = std::move(value); }
-    inline XmlUnionsResult& WithUnionValue(const XmlUnionShape& value) { SetUnionValue(value); return *this;}
-    inline XmlUnionsResult& WithUnionValue(XmlUnionShape&& value) { SetUnionValue(std::move(value)); return *this;}
+    inline const XmlUnionShape& GetUnionValue() const { return m_unionValue; }
+    template<typename UnionValueT = XmlUnionShape>
+    void SetUnionValue(UnionValueT&& value) { m_unionValueHasBeenSet = true; m_unionValue = std::forward<UnionValueT>(value); }
+    template<typename UnionValueT = XmlUnionShape>
+    XmlUnionsResult& WithUnionValue(UnionValueT&& value) { SetUnionValue(std::forward<UnionValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline XmlUnionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline XmlUnionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline XmlUnionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    XmlUnionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     XmlUnionShape m_unionValue;
+    bool m_unionValueHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

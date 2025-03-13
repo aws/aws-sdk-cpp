@@ -20,13 +20,7 @@ namespace RestXmlProtocol
 namespace Model
 {
 
-UnionPayload::UnionPayload() : 
-    m_greetingHasBeenSet(false)
-{
-}
-
 UnionPayload::UnionPayload(const XmlNode& xmlNode)
-  : UnionPayload()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ UnionPayload& UnionPayload::operator =(const XmlNode& xmlNode)
     {
       m_greeting = Aws::Utils::Xml::DecodeEscapedXmlText(greetingNode.GetText());
       m_greetingHasBeenSet = true;
+       m_greetingHasBeenSet = true;
     }
   }
 

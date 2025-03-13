@@ -20,10 +20,6 @@ namespace S3
 namespace Model
 {
 
-SSES3::SSES3()
-{
-}
-
 SSES3::SSES3(const XmlNode& xmlNode)
 {
   *this = xmlNode;

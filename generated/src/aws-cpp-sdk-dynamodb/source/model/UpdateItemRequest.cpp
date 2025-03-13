@@ -12,28 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateItemRequest::UpdateItemRequest() : 
-    m_tableNameHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_attributeUpdatesHasBeenSet(false),
-    m_expectedHasBeenSet(false),
-    m_conditionalOperator(ConditionalOperator::NOT_SET),
-    m_conditionalOperatorHasBeenSet(false),
-    m_returnValues(ReturnValue::NOT_SET),
-    m_returnValuesHasBeenSet(false),
-    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
-    m_returnConsumedCapacityHasBeenSet(false),
-    m_returnItemCollectionMetrics(ReturnItemCollectionMetrics::NOT_SET),
-    m_returnItemCollectionMetricsHasBeenSet(false),
-    m_updateExpressionHasBeenSet(false),
-    m_conditionExpressionHasBeenSet(false),
-    m_expressionAttributeNamesHasBeenSet(false),
-    m_expressionAttributeValuesHasBeenSet(false),
-    m_returnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure::NOT_SET),
-    m_returnValuesOnConditionCheckFailureHasBeenSet(false)
-{
-}
-
 Aws::String UpdateItemRequest::SerializePayload() const
 {
   JsonValue payload;

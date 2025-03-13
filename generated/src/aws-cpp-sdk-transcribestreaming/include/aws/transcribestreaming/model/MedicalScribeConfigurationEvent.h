@@ -42,7 +42,7 @@ namespace Model
   class MedicalScribeConfigurationEvent
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeConfigurationEvent();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeConfigurationEvent() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeConfigurationEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeConfigurationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * <p>Specify the name of the custom vocabulary you want to use for your streaming
      * session. Custom vocabulary names are case-sensitive. </p>
      */
-    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
+    inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
-    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
-    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
-    inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
-    inline MedicalScribeConfigurationEvent& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-    inline MedicalScribeConfigurationEvent& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-    inline MedicalScribeConfigurationEvent& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+    template<typename VocabularyNameT = Aws::String>
+    void SetVocabularyName(VocabularyNameT&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::forward<VocabularyNameT>(value); }
+    template<typename VocabularyNameT = Aws::String>
+    MedicalScribeConfigurationEvent& WithVocabularyName(VocabularyNameT&& value) { SetVocabularyName(std::forward<VocabularyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <code>MedicalScribeConfigurationEvent</code>, you must also include
      * <code>VocabularyFilterMethod</code>. </p>
      */
-    inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
+    inline const Aws::String& GetVocabularyFilterName() const { return m_vocabularyFilterName; }
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
-    inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
-    inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
-    inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
-    inline MedicalScribeConfigurationEvent& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
-    inline MedicalScribeConfigurationEvent& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
-    inline MedicalScribeConfigurationEvent& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
+    template<typename VocabularyFilterNameT = Aws::String>
+    void SetVocabularyFilterName(VocabularyFilterNameT&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::forward<VocabularyFilterNameT>(value); }
+    template<typename VocabularyFilterNameT = Aws::String>
+    MedicalScribeConfigurationEvent& WithVocabularyFilterName(VocabularyFilterNameT&& value) { SetVocabularyFilterName(std::forward<VocabularyFilterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +84,10 @@ namespace Model
      * <code>mask</code>. </p> <p>To delete words, specify <code>remove</code>. </p>
      * <p>To flag words without changing them, specify <code>tag</code>. </p>
      */
-    inline const MedicalScribeVocabularyFilterMethod& GetVocabularyFilterMethod() const{ return m_vocabularyFilterMethod; }
+    inline MedicalScribeVocabularyFilterMethod GetVocabularyFilterMethod() const { return m_vocabularyFilterMethod; }
     inline bool VocabularyFilterMethodHasBeenSet() const { return m_vocabularyFilterMethodHasBeenSet; }
-    inline void SetVocabularyFilterMethod(const MedicalScribeVocabularyFilterMethod& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
-    inline void SetVocabularyFilterMethod(MedicalScribeVocabularyFilterMethod&& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = std::move(value); }
-    inline MedicalScribeConfigurationEvent& WithVocabularyFilterMethod(const MedicalScribeVocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
-    inline MedicalScribeConfigurationEvent& WithVocabularyFilterMethod(MedicalScribeVocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
+    inline void SetVocabularyFilterMethod(MedicalScribeVocabularyFilterMethod value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
+    inline MedicalScribeConfigurationEvent& WithVocabularyFilterMethod(MedicalScribeVocabularyFilterMethod value) { SetVocabularyFilterMethod(value); return *this;}
     ///@}
 
     ///@{
@@ -108,52 +102,50 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/health-scribe-streaming.html">Amazon
      * Web Services HealthScribe</a>.</p>
      */
-    inline const Aws::String& GetResourceAccessRoleArn() const{ return m_resourceAccessRoleArn; }
+    inline const Aws::String& GetResourceAccessRoleArn() const { return m_resourceAccessRoleArn; }
     inline bool ResourceAccessRoleArnHasBeenSet() const { return m_resourceAccessRoleArnHasBeenSet; }
-    inline void SetResourceAccessRoleArn(const Aws::String& value) { m_resourceAccessRoleArnHasBeenSet = true; m_resourceAccessRoleArn = value; }
-    inline void SetResourceAccessRoleArn(Aws::String&& value) { m_resourceAccessRoleArnHasBeenSet = true; m_resourceAccessRoleArn = std::move(value); }
-    inline void SetResourceAccessRoleArn(const char* value) { m_resourceAccessRoleArnHasBeenSet = true; m_resourceAccessRoleArn.assign(value); }
-    inline MedicalScribeConfigurationEvent& WithResourceAccessRoleArn(const Aws::String& value) { SetResourceAccessRoleArn(value); return *this;}
-    inline MedicalScribeConfigurationEvent& WithResourceAccessRoleArn(Aws::String&& value) { SetResourceAccessRoleArn(std::move(value)); return *this;}
-    inline MedicalScribeConfigurationEvent& WithResourceAccessRoleArn(const char* value) { SetResourceAccessRoleArn(value); return *this;}
+    template<typename ResourceAccessRoleArnT = Aws::String>
+    void SetResourceAccessRoleArn(ResourceAccessRoleArnT&& value) { m_resourceAccessRoleArnHasBeenSet = true; m_resourceAccessRoleArn = std::forward<ResourceAccessRoleArnT>(value); }
+    template<typename ResourceAccessRoleArnT = Aws::String>
+    MedicalScribeConfigurationEvent& WithResourceAccessRoleArn(ResourceAccessRoleArnT&& value) { SetResourceAccessRoleArn(std::forward<ResourceAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specify which speaker is on which audio channel.</p>
      */
-    inline const Aws::Vector<MedicalScribeChannelDefinition>& GetChannelDefinitions() const{ return m_channelDefinitions; }
+    inline const Aws::Vector<MedicalScribeChannelDefinition>& GetChannelDefinitions() const { return m_channelDefinitions; }
     inline bool ChannelDefinitionsHasBeenSet() const { return m_channelDefinitionsHasBeenSet; }
-    inline void SetChannelDefinitions(const Aws::Vector<MedicalScribeChannelDefinition>& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = value; }
-    inline void SetChannelDefinitions(Aws::Vector<MedicalScribeChannelDefinition>&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = std::move(value); }
-    inline MedicalScribeConfigurationEvent& WithChannelDefinitions(const Aws::Vector<MedicalScribeChannelDefinition>& value) { SetChannelDefinitions(value); return *this;}
-    inline MedicalScribeConfigurationEvent& WithChannelDefinitions(Aws::Vector<MedicalScribeChannelDefinition>&& value) { SetChannelDefinitions(std::move(value)); return *this;}
-    inline MedicalScribeConfigurationEvent& AddChannelDefinitions(const MedicalScribeChannelDefinition& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(value); return *this; }
-    inline MedicalScribeConfigurationEvent& AddChannelDefinitions(MedicalScribeChannelDefinition&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(std::move(value)); return *this; }
+    template<typename ChannelDefinitionsT = Aws::Vector<MedicalScribeChannelDefinition>>
+    void SetChannelDefinitions(ChannelDefinitionsT&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = std::forward<ChannelDefinitionsT>(value); }
+    template<typename ChannelDefinitionsT = Aws::Vector<MedicalScribeChannelDefinition>>
+    MedicalScribeConfigurationEvent& WithChannelDefinitions(ChannelDefinitionsT&& value) { SetChannelDefinitions(std::forward<ChannelDefinitionsT>(value)); return *this;}
+    template<typename ChannelDefinitionsT = MedicalScribeChannelDefinition>
+    MedicalScribeConfigurationEvent& AddChannelDefinitions(ChannelDefinitionsT&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.emplace_back(std::forward<ChannelDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specify the encryption settings for your streaming session.</p>
      */
-    inline const MedicalScribeEncryptionSettings& GetEncryptionSettings() const{ return m_encryptionSettings; }
+    inline const MedicalScribeEncryptionSettings& GetEncryptionSettings() const { return m_encryptionSettings; }
     inline bool EncryptionSettingsHasBeenSet() const { return m_encryptionSettingsHasBeenSet; }
-    inline void SetEncryptionSettings(const MedicalScribeEncryptionSettings& value) { m_encryptionSettingsHasBeenSet = true; m_encryptionSettings = value; }
-    inline void SetEncryptionSettings(MedicalScribeEncryptionSettings&& value) { m_encryptionSettingsHasBeenSet = true; m_encryptionSettings = std::move(value); }
-    inline MedicalScribeConfigurationEvent& WithEncryptionSettings(const MedicalScribeEncryptionSettings& value) { SetEncryptionSettings(value); return *this;}
-    inline MedicalScribeConfigurationEvent& WithEncryptionSettings(MedicalScribeEncryptionSettings&& value) { SetEncryptionSettings(std::move(value)); return *this;}
+    template<typename EncryptionSettingsT = MedicalScribeEncryptionSettings>
+    void SetEncryptionSettings(EncryptionSettingsT&& value) { m_encryptionSettingsHasBeenSet = true; m_encryptionSettings = std::forward<EncryptionSettingsT>(value); }
+    template<typename EncryptionSettingsT = MedicalScribeEncryptionSettings>
+    MedicalScribeConfigurationEvent& WithEncryptionSettings(EncryptionSettingsT&& value) { SetEncryptionSettings(std::forward<EncryptionSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specify settings for post-stream analytics.</p>
      */
-    inline const MedicalScribePostStreamAnalyticsSettings& GetPostStreamAnalyticsSettings() const{ return m_postStreamAnalyticsSettings; }
+    inline const MedicalScribePostStreamAnalyticsSettings& GetPostStreamAnalyticsSettings() const { return m_postStreamAnalyticsSettings; }
     inline bool PostStreamAnalyticsSettingsHasBeenSet() const { return m_postStreamAnalyticsSettingsHasBeenSet; }
-    inline void SetPostStreamAnalyticsSettings(const MedicalScribePostStreamAnalyticsSettings& value) { m_postStreamAnalyticsSettingsHasBeenSet = true; m_postStreamAnalyticsSettings = value; }
-    inline void SetPostStreamAnalyticsSettings(MedicalScribePostStreamAnalyticsSettings&& value) { m_postStreamAnalyticsSettingsHasBeenSet = true; m_postStreamAnalyticsSettings = std::move(value); }
-    inline MedicalScribeConfigurationEvent& WithPostStreamAnalyticsSettings(const MedicalScribePostStreamAnalyticsSettings& value) { SetPostStreamAnalyticsSettings(value); return *this;}
-    inline MedicalScribeConfigurationEvent& WithPostStreamAnalyticsSettings(MedicalScribePostStreamAnalyticsSettings&& value) { SetPostStreamAnalyticsSettings(std::move(value)); return *this;}
+    template<typename PostStreamAnalyticsSettingsT = MedicalScribePostStreamAnalyticsSettings>
+    void SetPostStreamAnalyticsSettings(PostStreamAnalyticsSettingsT&& value) { m_postStreamAnalyticsSettingsHasBeenSet = true; m_postStreamAnalyticsSettings = std::forward<PostStreamAnalyticsSettingsT>(value); }
+    template<typename PostStreamAnalyticsSettingsT = MedicalScribePostStreamAnalyticsSettings>
+    MedicalScribeConfigurationEvent& WithPostStreamAnalyticsSettings(PostStreamAnalyticsSettingsT&& value) { SetPostStreamAnalyticsSettings(std::forward<PostStreamAnalyticsSettingsT>(value)); return *this;}
     ///@}
   private:
 
@@ -163,7 +155,7 @@ namespace Model
     Aws::String m_vocabularyFilterName;
     bool m_vocabularyFilterNameHasBeenSet = false;
 
-    MedicalScribeVocabularyFilterMethod m_vocabularyFilterMethod;
+    MedicalScribeVocabularyFilterMethod m_vocabularyFilterMethod{MedicalScribeVocabularyFilterMethod::NOT_SET};
     bool m_vocabularyFilterMethodHasBeenSet = false;
 
     Aws::String m_resourceAccessRoleArn;

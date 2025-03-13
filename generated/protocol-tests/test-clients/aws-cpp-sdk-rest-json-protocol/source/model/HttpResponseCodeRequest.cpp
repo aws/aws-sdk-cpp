@@ -12,10 +12,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-HttpResponseCodeRequest::HttpResponseCodeRequest()
-{
-}
-
 Aws::String HttpResponseCodeRequest::SerializePayload() const
 {
   return {};

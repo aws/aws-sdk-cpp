@@ -32,7 +32,7 @@ namespace Model
   class GetObjectAttributesResult
   {
   public:
-    AWS_S3_API GetObjectAttributesResult();
+    AWS_S3_API GetObjectAttributesResult() = default;
     AWS_S3_API GetObjectAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3_API GetObjectAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -47,8 +47,8 @@ namespace Model
      * with delete markers</a>.</p>  <p>This functionality is not supported for
      * directory buckets.</p> 
      */
-    inline bool GetDeleteMarker() const{ return m_deleteMarker; }
-    inline void SetDeleteMarker(bool value) { m_deleteMarker = value; }
+    inline bool GetDeleteMarker() const { return m_deleteMarker; }
+    inline void SetDeleteMarker(bool value) { m_deleteMarkerHasBeenSet = true; m_deleteMarker = value; }
     inline GetObjectAttributesResult& WithDeleteMarker(bool value) { SetDeleteMarker(value); return *this;}
     ///@}
 
@@ -56,11 +56,11 @@ namespace Model
     /**
      * <p>Date and time when the object was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
-    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModified = value; }
-    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModified = std::move(value); }
-    inline GetObjectAttributesResult& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
-    inline GetObjectAttributesResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModified() const { return m_lastModified; }
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    void SetLastModified(LastModifiedT&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::forward<LastModifiedT>(value); }
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    GetObjectAttributesResult& WithLastModified(LastModifiedT&& value) { SetLastModified(std::forward<LastModifiedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,22 +68,18 @@ namespace Model
      * <p>The version ID of the object.</p>  <p>This functionality is not
      * supported for directory buckets.</p> 
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
-    inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionId.assign(value); }
-    inline GetObjectAttributesResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline GetObjectAttributesResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline GetObjectAttributesResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    GetObjectAttributesResult& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
-    inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
-    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
-    inline GetObjectAttributesResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
-    inline GetObjectAttributesResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
+    inline RequestCharged GetRequestCharged() const { return m_requestCharged; }
+    inline void SetRequestCharged(RequestCharged value) { m_requestChargedHasBeenSet = true; m_requestCharged = value; }
+    inline GetObjectAttributesResult& WithRequestCharged(RequestCharged value) { SetRequestCharged(value); return *this;}
     ///@}
 
     ///@{
@@ -91,35 +87,33 @@ namespace Model
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
      * version of a resource found at a URL.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
-    inline void SetETag(const Aws::String& value) { m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTag.assign(value); }
-    inline GetObjectAttributesResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline GetObjectAttributesResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline GetObjectAttributesResult& WithETag(const char* value) { SetETag(value); return *this;}
+    inline const Aws::String& GetETag() const { return m_eTag; }
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    GetObjectAttributesResult& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The checksum or digest of the object.</p>
      */
-    inline const Checksum& GetChecksum() const{ return m_checksum; }
-    inline void SetChecksum(const Checksum& value) { m_checksum = value; }
-    inline void SetChecksum(Checksum&& value) { m_checksum = std::move(value); }
-    inline GetObjectAttributesResult& WithChecksum(const Checksum& value) { SetChecksum(value); return *this;}
-    inline GetObjectAttributesResult& WithChecksum(Checksum&& value) { SetChecksum(std::move(value)); return *this;}
+    inline const Checksum& GetChecksum() const { return m_checksum; }
+    template<typename ChecksumT = Checksum>
+    void SetChecksum(ChecksumT&& value) { m_checksumHasBeenSet = true; m_checksum = std::forward<ChecksumT>(value); }
+    template<typename ChecksumT = Checksum>
+    GetObjectAttributesResult& WithChecksum(ChecksumT&& value) { SetChecksum(std::forward<ChecksumT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A collection of parts associated with a multipart upload.</p>
      */
-    inline const GetObjectAttributesParts& GetObjectParts() const{ return m_objectParts; }
-    inline void SetObjectParts(const GetObjectAttributesParts& value) { m_objectParts = value; }
-    inline void SetObjectParts(GetObjectAttributesParts&& value) { m_objectParts = std::move(value); }
-    inline GetObjectAttributesResult& WithObjectParts(const GetObjectAttributesParts& value) { SetObjectParts(value); return *this;}
-    inline GetObjectAttributesResult& WithObjectParts(GetObjectAttributesParts&& value) { SetObjectParts(std::move(value)); return *this;}
+    inline const GetObjectAttributesParts& GetObjectParts() const { return m_objectParts; }
+    template<typename ObjectPartsT = GetObjectAttributesParts>
+    void SetObjectParts(ObjectPartsT&& value) { m_objectPartsHasBeenSet = true; m_objectParts = std::forward<ObjectPartsT>(value); }
+    template<typename ObjectPartsT = GetObjectAttributesParts>
+    GetObjectAttributesResult& WithObjectParts(ObjectPartsT&& value) { SetObjectParts(std::forward<ObjectPartsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,53 +126,59 @@ namespace Model
      * Zone storage class is supported by directory buckets to store objects.</p>
      * 
      */
-    inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
-    inline void SetStorageClass(const StorageClass& value) { m_storageClass = value; }
-    inline void SetStorageClass(StorageClass&& value) { m_storageClass = std::move(value); }
-    inline GetObjectAttributesResult& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
-    inline GetObjectAttributesResult& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+    inline StorageClass GetStorageClass() const { return m_storageClass; }
+    inline void SetStorageClass(StorageClass value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline GetObjectAttributesResult& WithStorageClass(StorageClass value) { SetStorageClass(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the object in bytes.</p>
      */
-    inline long long GetObjectSize() const{ return m_objectSize; }
-    inline void SetObjectSize(long long value) { m_objectSize = value; }
+    inline long long GetObjectSize() const { return m_objectSize; }
+    inline void SetObjectSize(long long value) { m_objectSizeHasBeenSet = true; m_objectSize = value; }
     inline GetObjectAttributesResult& WithObjectSize(long long value) { SetObjectSize(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetObjectAttributesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetObjectAttributesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetObjectAttributesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetObjectAttributesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_deleteMarker;
+    bool m_deleteMarker{false};
+    bool m_deleteMarkerHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModified;
+    Aws::Utils::DateTime m_lastModified{};
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_versionId;
+    bool m_versionIdHasBeenSet = false;
 
-    RequestCharged m_requestCharged;
+    RequestCharged m_requestCharged{RequestCharged::NOT_SET};
+    bool m_requestChargedHasBeenSet = false;
 
     Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
 
     Checksum m_checksum;
+    bool m_checksumHasBeenSet = false;
 
     GetObjectAttributesParts m_objectParts;
+    bool m_objectPartsHasBeenSet = false;
 
-    StorageClass m_storageClass;
+    StorageClass m_storageClass{StorageClass::NOT_SET};
+    bool m_storageClassHasBeenSet = false;
 
-    long long m_objectSize;
+    long long m_objectSize{0};
+    bool m_objectSizeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

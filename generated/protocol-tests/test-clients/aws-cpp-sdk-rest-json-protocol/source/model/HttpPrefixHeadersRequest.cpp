@@ -13,12 +13,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-HttpPrefixHeadersRequest::HttpPrefixHeadersRequest() : 
-    m_fooHasBeenSet(false),
-    m_fooMapHasBeenSet(false)
-{
-}
-
 Aws::String HttpPrefixHeadersRequest::SerializePayload() const
 {
   return {};

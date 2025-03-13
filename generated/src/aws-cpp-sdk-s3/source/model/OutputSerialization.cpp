@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-OutputSerialization::OutputSerialization() : 
-    m_cSVHasBeenSet(false),
-    m_jSONHasBeenSet(false)
-{
-}
-
 OutputSerialization::OutputSerialization(const XmlNode& xmlNode)
-  : OutputSerialization()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ OutputSerialization& OutputSerialization::operator =(const XmlNode& xmlNode)
     {
       m_cSV = cSVNode;
       m_cSVHasBeenSet = true;
+       m_cSVHasBeenSet = true;
     }
     XmlNode jSONNode = resultNode.FirstChild("JSON");
     if(!jSONNode.IsNull())
     {
       m_jSON = jSONNode;
       m_jSONHasBeenSet = true;
+       m_jSONHasBeenSet = true;
     }
   }
 

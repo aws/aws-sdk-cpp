@@ -15,11 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetAccessGrantsLocationRequest::GetAccessGrantsLocationRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_accessGrantsLocationIdHasBeenSet(false)
-{
-}
 
 Aws::String GetAccessGrantsLocationRequest::SerializePayload() const
 {

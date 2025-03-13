@@ -20,16 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-MatchObjectSize::MatchObjectSize() : 
-    m_bytesGreaterThan(0),
-    m_bytesGreaterThanHasBeenSet(false),
-    m_bytesLessThan(0),
-    m_bytesLessThanHasBeenSet(false)
-{
-}
-
 MatchObjectSize::MatchObjectSize(const XmlNode& xmlNode)
-  : MatchObjectSize()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ MatchObjectSize& MatchObjectSize::operator =(const XmlNode& xmlNode)
     {
       m_bytesGreaterThan = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bytesGreaterThanNode.GetText()).c_str()).c_str());
       m_bytesGreaterThanHasBeenSet = true;
+       m_bytesGreaterThanHasBeenSet = true;
     }
     XmlNode bytesLessThanNode = resultNode.FirstChild("BytesLessThan");
     if(!bytesLessThanNode.IsNull())
     {
       m_bytesLessThan = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bytesLessThanNode.GetText()).c_str()).c_str());
       m_bytesLessThanHasBeenSet = true;
+       m_bytesLessThanHasBeenSet = true;
     }
   }
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketWebsiteResult::GetBucketWebsiteResult()
-{
-}
-
 GetBucketWebsiteResult::GetBucketWebsiteResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,21 +32,25 @@ GetBucketWebsiteResult& GetBucketWebsiteResult::operator =(const Aws::AmazonWebS
     if(!redirectAllRequestsToNode.IsNull())
     {
       m_redirectAllRequestsTo = redirectAllRequestsToNode;
+      m_redirectAllRequestsToHasBeenSet = true;
     }
     XmlNode indexDocumentNode = resultNode.FirstChild("IndexDocument");
     if(!indexDocumentNode.IsNull())
     {
       m_indexDocument = indexDocumentNode;
+      m_indexDocumentHasBeenSet = true;
     }
     XmlNode errorDocumentNode = resultNode.FirstChild("ErrorDocument");
     if(!errorDocumentNode.IsNull())
     {
       m_errorDocument = errorDocumentNode;
+      m_errorDocumentHasBeenSet = true;
     }
     XmlNode routingRulesNode = resultNode.FirstChild("RoutingRules");
     if(!routingRulesNode.IsNull())
     {
       XmlNode routingRulesMember = routingRulesNode.FirstChild("RoutingRule");
+      m_routingRulesHasBeenSet = !routingRulesMember.IsNull();
       while(!routingRulesMember.IsNull())
       {
         m_routingRules.push_back(routingRulesMember);
@@ -65,6 +65,7 @@ GetBucketWebsiteResult& GetBucketWebsiteResult::operator =(const Aws::AmazonWebS
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-NestedXmlMapsResult::NestedXmlMapsResult()
-{
-}
-
 NestedXmlMapsResult::NestedXmlMapsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -37,6 +33,7 @@ NestedXmlMapsResult& NestedXmlMapsResult::operator =(const Aws::AmazonWebService
     if(!nestedMapNode.IsNull())
     {
       XmlNode nestedMapEntry = nestedMapNode.FirstChild("entry");
+      m_nestedMapHasBeenSet = !nestedMapEntry.IsNull();
       while(!nestedMapEntry.IsNull())
       {
         XmlNode keyNode = nestedMapEntry.FirstChild("key");
@@ -64,6 +61,7 @@ NestedXmlMapsResult& NestedXmlMapsResult::operator =(const Aws::AmazonWebService
     if(!flatNestedMapNode.IsNull())
     {
       XmlNode flatNestedMapEntry = flatNestedMapNode.FirstChild("entry");
+      m_flatNestedMapHasBeenSet = !flatNestedMapEntry.IsNull();
       while(!flatNestedMapEntry.IsNull())
       {
         XmlNode keyNode = flatNestedMapEntry.FirstChild("key");
@@ -93,6 +91,7 @@ NestedXmlMapsResult& NestedXmlMapsResult::operator =(const Aws::AmazonWebService
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

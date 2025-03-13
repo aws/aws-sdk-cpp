@@ -20,22 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ListAccessGrantEntry::ListAccessGrantEntry() : 
-    m_createdAtHasBeenSet(false),
-    m_accessGrantIdHasBeenSet(false),
-    m_accessGrantArnHasBeenSet(false),
-    m_granteeHasBeenSet(false),
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_accessGrantsLocationIdHasBeenSet(false),
-    m_accessGrantsLocationConfigurationHasBeenSet(false),
-    m_grantScopeHasBeenSet(false),
-    m_applicationArnHasBeenSet(false)
-{
-}
-
 ListAccessGrantEntry::ListAccessGrantEntry(const XmlNode& xmlNode)
-  : ListAccessGrantEntry()
 {
   *this = xmlNode;
 }
@@ -51,54 +36,63 @@ ListAccessGrantEntry& ListAccessGrantEntry::operator =(const XmlNode& xmlNode)
     {
       m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdAtHasBeenSet = true;
+       m_createdAtHasBeenSet = true;
     }
     XmlNode accessGrantIdNode = resultNode.FirstChild("AccessGrantId");
     if(!accessGrantIdNode.IsNull())
     {
       m_accessGrantId = Aws::Utils::Xml::DecodeEscapedXmlText(accessGrantIdNode.GetText());
       m_accessGrantIdHasBeenSet = true;
+       m_accessGrantIdHasBeenSet = true;
     }
     XmlNode accessGrantArnNode = resultNode.FirstChild("AccessGrantArn");
     if(!accessGrantArnNode.IsNull())
     {
       m_accessGrantArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessGrantArnNode.GetText());
       m_accessGrantArnHasBeenSet = true;
+       m_accessGrantArnHasBeenSet = true;
     }
     XmlNode granteeNode = resultNode.FirstChild("Grantee");
     if(!granteeNode.IsNull())
     {
       m_grantee = granteeNode;
       m_granteeHasBeenSet = true;
+       m_granteeHasBeenSet = true;
     }
     XmlNode permissionNode = resultNode.FirstChild("Permission");
     if(!permissionNode.IsNull())
     {
-      m_permission = PermissionMapper::GetPermissionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()).c_str());
+      m_permission = PermissionMapper::GetPermissionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()));
       m_permissionHasBeenSet = true;
+       m_permissionHasBeenSet = true;
     }
     XmlNode accessGrantsLocationIdNode = resultNode.FirstChild("AccessGrantsLocationId");
     if(!accessGrantsLocationIdNode.IsNull())
     {
       m_accessGrantsLocationId = Aws::Utils::Xml::DecodeEscapedXmlText(accessGrantsLocationIdNode.GetText());
       m_accessGrantsLocationIdHasBeenSet = true;
+       m_accessGrantsLocationIdHasBeenSet = true;
     }
     XmlNode accessGrantsLocationConfigurationNode = resultNode.FirstChild("AccessGrantsLocationConfiguration");
     if(!accessGrantsLocationConfigurationNode.IsNull())
     {
       m_accessGrantsLocationConfiguration = accessGrantsLocationConfigurationNode;
       m_accessGrantsLocationConfigurationHasBeenSet = true;
+       m_accessGrantsLocationConfigurationHasBeenSet = true;
     }
     XmlNode grantScopeNode = resultNode.FirstChild("GrantScope");
     if(!grantScopeNode.IsNull())
     {
       m_grantScope = Aws::Utils::Xml::DecodeEscapedXmlText(grantScopeNode.GetText());
       m_grantScopeHasBeenSet = true;
+       m_grantScopeHasBeenSet = true;
     }
     XmlNode applicationArnNode = resultNode.FirstChild("ApplicationArn");
     if(!applicationArnNode.IsNull())
     {
       m_applicationArn = Aws::Utils::Xml::DecodeEscapedXmlText(applicationArnNode.GetText());
       m_applicationArnHasBeenSet = true;
+       m_applicationArnHasBeenSet = true;
     }
   }
 

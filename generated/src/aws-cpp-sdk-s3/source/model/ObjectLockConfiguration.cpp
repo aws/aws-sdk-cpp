@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-ObjectLockConfiguration::ObjectLockConfiguration() : 
-    m_objectLockEnabled(ObjectLockEnabled::NOT_SET),
-    m_objectLockEnabledHasBeenSet(false),
-    m_ruleHasBeenSet(false)
-{
-}
-
 ObjectLockConfiguration::ObjectLockConfiguration(const XmlNode& xmlNode)
-  : ObjectLockConfiguration()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ ObjectLockConfiguration& ObjectLockConfiguration::operator =(const XmlNode& xmlN
     XmlNode objectLockEnabledNode = resultNode.FirstChild("ObjectLockEnabled");
     if(!objectLockEnabledNode.IsNull())
     {
-      m_objectLockEnabled = ObjectLockEnabledMapper::GetObjectLockEnabledForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectLockEnabledNode.GetText()).c_str()).c_str());
+      m_objectLockEnabled = ObjectLockEnabledMapper::GetObjectLockEnabledForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectLockEnabledNode.GetText()).c_str()));
       m_objectLockEnabledHasBeenSet = true;
+       m_objectLockEnabledHasBeenSet = true;
     }
     XmlNode ruleNode = resultNode.FirstChild("Rule");
     if(!ruleNode.IsNull())
     {
       m_rule = ruleNode;
       m_ruleHasBeenSet = true;
+       m_ruleHasBeenSet = true;
     }
   }
 

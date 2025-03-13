@@ -20,17 +20,7 @@ namespace S3
 namespace Model
 {
 
-DeletedObject::DeletedObject() : 
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_deleteMarker(false),
-    m_deleteMarkerHasBeenSet(false),
-    m_deleteMarkerVersionIdHasBeenSet(false)
-{
-}
-
 DeletedObject::DeletedObject(const XmlNode& xmlNode)
-  : DeletedObject()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ DeletedObject& DeletedObject::operator =(const XmlNode& xmlNode)
     {
       m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
       m_keyHasBeenSet = true;
+       m_keyHasBeenSet = true;
     }
     XmlNode versionIdNode = resultNode.FirstChild("VersionId");
     if(!versionIdNode.IsNull())
     {
       m_versionId = Aws::Utils::Xml::DecodeEscapedXmlText(versionIdNode.GetText());
       m_versionIdHasBeenSet = true;
+       m_versionIdHasBeenSet = true;
     }
     XmlNode deleteMarkerNode = resultNode.FirstChild("DeleteMarker");
     if(!deleteMarkerNode.IsNull())
     {
       m_deleteMarker = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteMarkerNode.GetText()).c_str()).c_str());
       m_deleteMarkerHasBeenSet = true;
+       m_deleteMarkerHasBeenSet = true;
     }
     XmlNode deleteMarkerVersionIdNode = resultNode.FirstChild("DeleteMarkerVersionId");
     if(!deleteMarkerVersionIdNode.IsNull())
     {
       m_deleteMarkerVersionId = Aws::Utils::Xml::DecodeEscapedXmlText(deleteMarkerVersionIdNode.GetText());
       m_deleteMarkerVersionIdHasBeenSet = true;
+       m_deleteMarkerVersionIdHasBeenSet = true;
     }
   }
 

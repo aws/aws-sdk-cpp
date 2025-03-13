@@ -25,7 +25,7 @@ namespace Model
   class AssumeRoleRequest : public STSRequest
   {
   public:
-    AWS_STS_API AssumeRoleRequest();
+    AWS_STS_API AssumeRoleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the role to assume.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline AssumeRoleRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline AssumeRoleRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline AssumeRoleRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    AssumeRoleRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include underscores or any
      * of the following characters: =,.@-</p>
      */
-    inline const Aws::String& GetRoleSessionName() const{ return m_roleSessionName; }
+    inline const Aws::String& GetRoleSessionName() const { return m_roleSessionName; }
     inline bool RoleSessionNameHasBeenSet() const { return m_roleSessionNameHasBeenSet; }
-    inline void SetRoleSessionName(const Aws::String& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = value; }
-    inline void SetRoleSessionName(Aws::String&& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = std::move(value); }
-    inline void SetRoleSessionName(const char* value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName.assign(value); }
-    inline AssumeRoleRequest& WithRoleSessionName(const Aws::String& value) { SetRoleSessionName(value); return *this;}
-    inline AssumeRoleRequest& WithRoleSessionName(Aws::String&& value) { SetRoleSessionName(std::move(value)); return *this;}
-    inline AssumeRoleRequest& WithRoleSessionName(const char* value) { SetRoleSessionName(value); return *this;}
+    template<typename RoleSessionNameT = Aws::String>
+    void SetRoleSessionName(RoleSessionNameT&& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = std::forward<RoleSessionNameT>(value); }
+    template<typename RoleSessionNameT = Aws::String>
+    AssumeRoleRequest& WithRoleSessionName(RoleSessionNameT&& value) { SetRoleSessionName(std::forward<RoleSessionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +107,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline const Aws::Vector<PolicyDescriptorType>& GetPolicyArns() const{ return m_policyArns; }
+    inline const Aws::Vector<PolicyDescriptorType>& GetPolicyArns() const { return m_policyArns; }
     inline bool PolicyArnsHasBeenSet() const { return m_policyArnsHasBeenSet; }
-    inline void SetPolicyArns(const Aws::Vector<PolicyDescriptorType>& value) { m_policyArnsHasBeenSet = true; m_policyArns = value; }
-    inline void SetPolicyArns(Aws::Vector<PolicyDescriptorType>&& value) { m_policyArnsHasBeenSet = true; m_policyArns = std::move(value); }
-    inline AssumeRoleRequest& WithPolicyArns(const Aws::Vector<PolicyDescriptorType>& value) { SetPolicyArns(value); return *this;}
-    inline AssumeRoleRequest& WithPolicyArns(Aws::Vector<PolicyDescriptorType>&& value) { SetPolicyArns(std::move(value)); return *this;}
-    inline AssumeRoleRequest& AddPolicyArns(const PolicyDescriptorType& value) { m_policyArnsHasBeenSet = true; m_policyArns.push_back(value); return *this; }
-    inline AssumeRoleRequest& AddPolicyArns(PolicyDescriptorType&& value) { m_policyArnsHasBeenSet = true; m_policyArns.push_back(std::move(value)); return *this; }
+    template<typename PolicyArnsT = Aws::Vector<PolicyDescriptorType>>
+    void SetPolicyArns(PolicyArnsT&& value) { m_policyArnsHasBeenSet = true; m_policyArns = std::forward<PolicyArnsT>(value); }
+    template<typename PolicyArnsT = Aws::Vector<PolicyDescriptorType>>
+    AssumeRoleRequest& WithPolicyArns(PolicyArnsT&& value) { SetPolicyArns(std::forward<PolicyArnsT>(value)); return *this;}
+    template<typename PolicyArnsT = PolicyDescriptorType>
+    AssumeRoleRequest& AddPolicyArns(PolicyArnsT&& value) { m_policyArnsHasBeenSet = true; m_policyArns.emplace_back(std::forward<PolicyArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -148,14 +144,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * policies</a>.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline AssumeRoleRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline AssumeRoleRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline AssumeRoleRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    AssumeRoleRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,7 +181,7 @@ namespace Model
      * a URL that Enables Federated Users to Access the Amazon Web Services Management
      * Console</a> in the <i>IAM User Guide</i>.</p> 
      */
-    inline int GetDurationSeconds() const{ return m_durationSeconds; }
+    inline int GetDurationSeconds() const { return m_durationSeconds; }
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
     inline AssumeRoleRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
@@ -227,14 +221,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_ctlogs">Viewing
      * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline AssumeRoleRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline AssumeRoleRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline AssumeRoleRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline AssumeRoleRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    AssumeRoleRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    AssumeRoleRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -248,15 +242,14 @@ namespace Model
      * binary size.</p> <p>If you choose not to specify a transitive tag key, then no
      * tags are passed from this session to any subsequent sessions.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTransitiveTagKeys() const{ return m_transitiveTagKeys; }
+    inline const Aws::Vector<Aws::String>& GetTransitiveTagKeys() const { return m_transitiveTagKeys; }
     inline bool TransitiveTagKeysHasBeenSet() const { return m_transitiveTagKeysHasBeenSet; }
-    inline void SetTransitiveTagKeys(const Aws::Vector<Aws::String>& value) { m_transitiveTagKeysHasBeenSet = true; m_transitiveTagKeys = value; }
-    inline void SetTransitiveTagKeys(Aws::Vector<Aws::String>&& value) { m_transitiveTagKeysHasBeenSet = true; m_transitiveTagKeys = std::move(value); }
-    inline AssumeRoleRequest& WithTransitiveTagKeys(const Aws::Vector<Aws::String>& value) { SetTransitiveTagKeys(value); return *this;}
-    inline AssumeRoleRequest& WithTransitiveTagKeys(Aws::Vector<Aws::String>&& value) { SetTransitiveTagKeys(std::move(value)); return *this;}
-    inline AssumeRoleRequest& AddTransitiveTagKeys(const Aws::String& value) { m_transitiveTagKeysHasBeenSet = true; m_transitiveTagKeys.push_back(value); return *this; }
-    inline AssumeRoleRequest& AddTransitiveTagKeys(Aws::String&& value) { m_transitiveTagKeysHasBeenSet = true; m_transitiveTagKeys.push_back(std::move(value)); return *this; }
-    inline AssumeRoleRequest& AddTransitiveTagKeys(const char* value) { m_transitiveTagKeysHasBeenSet = true; m_transitiveTagKeys.push_back(value); return *this; }
+    template<typename TransitiveTagKeysT = Aws::Vector<Aws::String>>
+    void SetTransitiveTagKeys(TransitiveTagKeysT&& value) { m_transitiveTagKeysHasBeenSet = true; m_transitiveTagKeys = std::forward<TransitiveTagKeysT>(value); }
+    template<typename TransitiveTagKeysT = Aws::Vector<Aws::String>>
+    AssumeRoleRequest& WithTransitiveTagKeys(TransitiveTagKeysT&& value) { SetTransitiveTagKeys(std::forward<TransitiveTagKeysT>(value)); return *this;}
+    template<typename TransitiveTagKeysT = Aws::String>
+    AssumeRoleRequest& AddTransitiveTagKeys(TransitiveTagKeysT&& value) { m_transitiveTagKeysHasBeenSet = true; m_transitiveTagKeys.emplace_back(std::forward<TransitiveTagKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -277,14 +270,12 @@ namespace Model
      * lower-case alphanumeric characters with no spaces. You can also include
      * underscores or any of the following characters: =,.@:/-</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline AssumeRoleRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline AssumeRoleRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline AssumeRoleRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    AssumeRoleRequest& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -299,14 +290,12 @@ namespace Model
      * consisting of upper- and lower-case alphanumeric characters with no spaces. You
      * can also include underscores or any of the following characters: =,.@-</p>
      */
-    inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
+    inline const Aws::String& GetSerialNumber() const { return m_serialNumber; }
     inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
-    inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
-    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
-    inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
-    inline AssumeRoleRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
-    inline AssumeRoleRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
-    inline AssumeRoleRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
+    template<typename SerialNumberT = Aws::String>
+    void SetSerialNumber(SerialNumberT&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::forward<SerialNumberT>(value); }
+    template<typename SerialNumberT = Aws::String>
+    AssumeRoleRequest& WithSerialNumber(SerialNumberT&& value) { SetSerialNumber(std::forward<SerialNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -318,14 +307,12 @@ namespace Model
      * call returns an "access denied" error.</p> <p>The format for this parameter, as
      * described by its regex pattern, is a sequence of six numeric digits.</p>
      */
-    inline const Aws::String& GetTokenCode() const{ return m_tokenCode; }
+    inline const Aws::String& GetTokenCode() const { return m_tokenCode; }
     inline bool TokenCodeHasBeenSet() const { return m_tokenCodeHasBeenSet; }
-    inline void SetTokenCode(const Aws::String& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = value; }
-    inline void SetTokenCode(Aws::String&& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = std::move(value); }
-    inline void SetTokenCode(const char* value) { m_tokenCodeHasBeenSet = true; m_tokenCode.assign(value); }
-    inline AssumeRoleRequest& WithTokenCode(const Aws::String& value) { SetTokenCode(value); return *this;}
-    inline AssumeRoleRequest& WithTokenCode(Aws::String&& value) { SetTokenCode(std::move(value)); return *this;}
-    inline AssumeRoleRequest& WithTokenCode(const char* value) { SetTokenCode(value); return *this;}
+    template<typename TokenCodeT = Aws::String>
+    void SetTokenCode(TokenCodeT&& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = std::forward<TokenCodeT>(value); }
+    template<typename TokenCodeT = Aws::String>
+    AssumeRoleRequest& WithTokenCode(TokenCodeT&& value) { SetTokenCode(std::forward<TokenCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -350,14 +337,12 @@ namespace Model
      * +=,.@-. You cannot use a value that begins with the text <code>aws:</code>. This
      * prefix is reserved for Amazon Web Services internal use.</p>
      */
-    inline const Aws::String& GetSourceIdentity() const{ return m_sourceIdentity; }
+    inline const Aws::String& GetSourceIdentity() const { return m_sourceIdentity; }
     inline bool SourceIdentityHasBeenSet() const { return m_sourceIdentityHasBeenSet; }
-    inline void SetSourceIdentity(const Aws::String& value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity = value; }
-    inline void SetSourceIdentity(Aws::String&& value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity = std::move(value); }
-    inline void SetSourceIdentity(const char* value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity.assign(value); }
-    inline AssumeRoleRequest& WithSourceIdentity(const Aws::String& value) { SetSourceIdentity(value); return *this;}
-    inline AssumeRoleRequest& WithSourceIdentity(Aws::String&& value) { SetSourceIdentity(std::move(value)); return *this;}
-    inline AssumeRoleRequest& WithSourceIdentity(const char* value) { SetSourceIdentity(value); return *this;}
+    template<typename SourceIdentityT = Aws::String>
+    void SetSourceIdentity(SourceIdentityT&& value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity = std::forward<SourceIdentityT>(value); }
+    template<typename SourceIdentityT = Aws::String>
+    AssumeRoleRequest& WithSourceIdentity(SourceIdentityT&& value) { SetSourceIdentity(std::forward<SourceIdentityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -371,14 +356,14 @@ namespace Model
      * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
      * </p>
      */
-    inline const Aws::Vector<ProvidedContext>& GetProvidedContexts() const{ return m_providedContexts; }
+    inline const Aws::Vector<ProvidedContext>& GetProvidedContexts() const { return m_providedContexts; }
     inline bool ProvidedContextsHasBeenSet() const { return m_providedContextsHasBeenSet; }
-    inline void SetProvidedContexts(const Aws::Vector<ProvidedContext>& value) { m_providedContextsHasBeenSet = true; m_providedContexts = value; }
-    inline void SetProvidedContexts(Aws::Vector<ProvidedContext>&& value) { m_providedContextsHasBeenSet = true; m_providedContexts = std::move(value); }
-    inline AssumeRoleRequest& WithProvidedContexts(const Aws::Vector<ProvidedContext>& value) { SetProvidedContexts(value); return *this;}
-    inline AssumeRoleRequest& WithProvidedContexts(Aws::Vector<ProvidedContext>&& value) { SetProvidedContexts(std::move(value)); return *this;}
-    inline AssumeRoleRequest& AddProvidedContexts(const ProvidedContext& value) { m_providedContextsHasBeenSet = true; m_providedContexts.push_back(value); return *this; }
-    inline AssumeRoleRequest& AddProvidedContexts(ProvidedContext&& value) { m_providedContextsHasBeenSet = true; m_providedContexts.push_back(std::move(value)); return *this; }
+    template<typename ProvidedContextsT = Aws::Vector<ProvidedContext>>
+    void SetProvidedContexts(ProvidedContextsT&& value) { m_providedContextsHasBeenSet = true; m_providedContexts = std::forward<ProvidedContextsT>(value); }
+    template<typename ProvidedContextsT = Aws::Vector<ProvidedContext>>
+    AssumeRoleRequest& WithProvidedContexts(ProvidedContextsT&& value) { SetProvidedContexts(std::forward<ProvidedContextsT>(value)); return *this;}
+    template<typename ProvidedContextsT = ProvidedContext>
+    AssumeRoleRequest& AddProvidedContexts(ProvidedContextsT&& value) { m_providedContextsHasBeenSet = true; m_providedContexts.emplace_back(std::forward<ProvidedContextsT>(value)); return *this; }
     ///@}
   private:
 
@@ -394,7 +379,7 @@ namespace Model
     Aws::String m_policy;
     bool m_policyHasBeenSet = false;
 
-    int m_durationSeconds;
+    int m_durationSeconds{0};
     bool m_durationSecondsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

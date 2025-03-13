@@ -32,7 +32,7 @@ namespace Model
   class DeleteMarkerEntry
   {
   public:
-    AWS_S3_API DeleteMarkerEntry();
+    AWS_S3_API DeleteMarkerEntry() = default;
     AWS_S3_API DeleteMarkerEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API DeleteMarkerEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,40 +43,36 @@ namespace Model
     /**
      * <p>The account that created the delete marker. </p>
      */
-    inline const Owner& GetOwner() const{ return m_owner; }
+    inline const Owner& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline DeleteMarkerEntry& WithOwner(const Owner& value) { SetOwner(value); return *this;}
-    inline DeleteMarkerEntry& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+    template<typename OwnerT = Owner>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Owner>
+    DeleteMarkerEntry& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The object key.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline DeleteMarkerEntry& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline DeleteMarkerEntry& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline DeleteMarkerEntry& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    DeleteMarkerEntry& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Version ID of an object.</p>
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-    inline DeleteMarkerEntry& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline DeleteMarkerEntry& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline DeleteMarkerEntry& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    DeleteMarkerEntry& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +80,7 @@ namespace Model
      * <p>Specifies whether the object is (true) or is not (false) the latest version
      * of an object. </p>
      */
-    inline bool GetIsLatest() const{ return m_isLatest; }
+    inline bool GetIsLatest() const { return m_isLatest; }
     inline bool IsLatestHasBeenSet() const { return m_isLatestHasBeenSet; }
     inline void SetIsLatest(bool value) { m_isLatestHasBeenSet = true; m_isLatest = value; }
     inline DeleteMarkerEntry& WithIsLatest(bool value) { SetIsLatest(value); return *this;}
@@ -94,12 +90,12 @@ namespace Model
     /**
      * <p>Date and time when the object was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
+    inline const Aws::Utils::DateTime& GetLastModified() const { return m_lastModified; }
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
-    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
-    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
-    inline DeleteMarkerEntry& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
-    inline DeleteMarkerEntry& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    void SetLastModified(LastModifiedT&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::forward<LastModifiedT>(value); }
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    DeleteMarkerEntry& WithLastModified(LastModifiedT&& value) { SetLastModified(std::forward<LastModifiedT>(value)); return *this;}
     ///@}
   private:
 
@@ -112,10 +108,10 @@ namespace Model
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet = false;
 
-    bool m_isLatest;
+    bool m_isLatest{false};
     bool m_isLatestHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModified;
+    Aws::Utils::DateTime m_lastModified{};
     bool m_lastModifiedHasBeenSet = false;
   };
 

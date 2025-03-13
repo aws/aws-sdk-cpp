@@ -15,11 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetAccessPointPolicyRequest::GetAccessPointPolicyRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
 
 Aws::String GetAccessPointPolicyRequest::SerializePayload() const
 {

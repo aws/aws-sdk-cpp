@@ -20,21 +20,7 @@ namespace S3
 namespace Model
 {
 
-InventoryConfiguration::InventoryConfiguration() : 
-    m_destinationHasBeenSet(false),
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_includedObjectVersions(InventoryIncludedObjectVersions::NOT_SET),
-    m_includedObjectVersionsHasBeenSet(false),
-    m_optionalFieldsHasBeenSet(false),
-    m_scheduleHasBeenSet(false)
-{
-}
-
 InventoryConfiguration::InventoryConfiguration(const XmlNode& xmlNode)
-  : InventoryConfiguration()
 {
   *this = xmlNode;
 }
@@ -50,48 +36,55 @@ InventoryConfiguration& InventoryConfiguration::operator =(const XmlNode& xmlNod
     {
       m_destination = destinationNode;
       m_destinationHasBeenSet = true;
+       m_destinationHasBeenSet = true;
     }
     XmlNode isEnabledNode = resultNode.FirstChild("IsEnabled");
     if(!isEnabledNode.IsNull())
     {
       m_isEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isEnabledNode.GetText()).c_str()).c_str());
       m_isEnabledHasBeenSet = true;
+       m_isEnabledHasBeenSet = true;
     }
     XmlNode filterNode = resultNode.FirstChild("Filter");
     if(!filterNode.IsNull())
     {
       m_filter = filterNode;
       m_filterHasBeenSet = true;
+       m_filterHasBeenSet = true;
     }
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode includedObjectVersionsNode = resultNode.FirstChild("IncludedObjectVersions");
     if(!includedObjectVersionsNode.IsNull())
     {
-      m_includedObjectVersions = InventoryIncludedObjectVersionsMapper::GetInventoryIncludedObjectVersionsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includedObjectVersionsNode.GetText()).c_str()).c_str());
+      m_includedObjectVersions = InventoryIncludedObjectVersionsMapper::GetInventoryIncludedObjectVersionsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includedObjectVersionsNode.GetText()).c_str()));
       m_includedObjectVersionsHasBeenSet = true;
+       m_includedObjectVersionsHasBeenSet = true;
     }
     XmlNode optionalFieldsNode = resultNode.FirstChild("OptionalFields");
     if(!optionalFieldsNode.IsNull())
     {
       XmlNode optionalFieldsMember = optionalFieldsNode.FirstChild("Field");
+      m_optionalFieldsHasBeenSet = !optionalFieldsMember.IsNull();
       while(!optionalFieldsMember.IsNull())
       {
         m_optionalFields.push_back(InventoryOptionalFieldMapper::GetInventoryOptionalFieldForName(StringUtils::Trim(optionalFieldsMember.GetText().c_str())));
         optionalFieldsMember = optionalFieldsMember.NextNode("Field");
       }
 
-      m_optionalFieldsHasBeenSet = true;
+       m_optionalFieldsHasBeenSet = true;
     }
     XmlNode scheduleNode = resultNode.FirstChild("Schedule");
     if(!scheduleNode.IsNull())
     {
       m_schedule = scheduleNode;
       m_scheduleHasBeenSet = true;
+       m_scheduleHasBeenSet = true;
     }
   }
 

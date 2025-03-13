@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-Delete::Delete() : 
-    m_objectsHasBeenSet(false),
-    m_quiet(false),
-    m_quietHasBeenSet(false)
-{
-}
-
 Delete::Delete(const XmlNode& xmlNode)
-  : Delete()
 {
   *this = xmlNode;
 }
@@ -43,19 +35,21 @@ Delete& Delete::operator =(const XmlNode& xmlNode)
     if(!objectsNode.IsNull())
     {
       XmlNode objectMember = objectsNode;
+      m_objectsHasBeenSet = !objectMember.IsNull();
       while(!objectMember.IsNull())
       {
         m_objects.push_back(objectMember);
         objectMember = objectMember.NextNode("Object");
       }
 
-      m_objectsHasBeenSet = true;
+       m_objectsHasBeenSet = true;
     }
     XmlNode quietNode = resultNode.FirstChild("Quiet");
     if(!quietNode.IsNull())
     {
       m_quiet = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(quietNode.GetText()).c_str()).c_str());
       m_quietHasBeenSet = true;
+       m_quietHasBeenSet = true;
     }
   }
 

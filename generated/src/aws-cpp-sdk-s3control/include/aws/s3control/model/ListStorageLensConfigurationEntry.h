@@ -33,7 +33,7 @@ namespace Model
   class ListStorageLensConfigurationEntry
   {
   public:
-    AWS_S3CONTROL_API ListStorageLensConfigurationEntry();
+    AWS_S3CONTROL_API ListStorageLensConfigurationEntry() = default;
     AWS_S3CONTROL_API ListStorageLensConfigurationEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API ListStorageLensConfigurationEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>A container for the S3 Storage Lens configuration ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ListStorageLensConfigurationEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ListStorageLensConfigurationEntry& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ListStorageLensConfigurationEntry& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ListStorageLensConfigurationEntry& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
      */
-    inline const Aws::String& GetStorageLensArn() const{ return m_storageLensArn; }
+    inline const Aws::String& GetStorageLensArn() const { return m_storageLensArn; }
     inline bool StorageLensArnHasBeenSet() const { return m_storageLensArnHasBeenSet; }
-    inline void SetStorageLensArn(const Aws::String& value) { m_storageLensArnHasBeenSet = true; m_storageLensArn = value; }
-    inline void SetStorageLensArn(Aws::String&& value) { m_storageLensArnHasBeenSet = true; m_storageLensArn = std::move(value); }
-    inline void SetStorageLensArn(const char* value) { m_storageLensArnHasBeenSet = true; m_storageLensArn.assign(value); }
-    inline ListStorageLensConfigurationEntry& WithStorageLensArn(const Aws::String& value) { SetStorageLensArn(value); return *this;}
-    inline ListStorageLensConfigurationEntry& WithStorageLensArn(Aws::String&& value) { SetStorageLensArn(std::move(value)); return *this;}
-    inline ListStorageLensConfigurationEntry& WithStorageLensArn(const char* value) { SetStorageLensArn(value); return *this;}
+    template<typename StorageLensArnT = Aws::String>
+    void SetStorageLensArn(StorageLensArnT&& value) { m_storageLensArnHasBeenSet = true; m_storageLensArn = std::forward<StorageLensArnT>(value); }
+    template<typename StorageLensArnT = Aws::String>
+    ListStorageLensConfigurationEntry& WithStorageLensArn(StorageLensArnT&& value) { SetStorageLensArn(std::forward<StorageLensArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>A container for the S3 Storage Lens home Region. Your metrics data is stored
      * and retained in your designated S3 Storage Lens home Region.</p>
      */
-    inline const Aws::String& GetHomeRegion() const{ return m_homeRegion; }
+    inline const Aws::String& GetHomeRegion() const { return m_homeRegion; }
     inline bool HomeRegionHasBeenSet() const { return m_homeRegionHasBeenSet; }
-    inline void SetHomeRegion(const Aws::String& value) { m_homeRegionHasBeenSet = true; m_homeRegion = value; }
-    inline void SetHomeRegion(Aws::String&& value) { m_homeRegionHasBeenSet = true; m_homeRegion = std::move(value); }
-    inline void SetHomeRegion(const char* value) { m_homeRegionHasBeenSet = true; m_homeRegion.assign(value); }
-    inline ListStorageLensConfigurationEntry& WithHomeRegion(const Aws::String& value) { SetHomeRegion(value); return *this;}
-    inline ListStorageLensConfigurationEntry& WithHomeRegion(Aws::String&& value) { SetHomeRegion(std::move(value)); return *this;}
-    inline ListStorageLensConfigurationEntry& WithHomeRegion(const char* value) { SetHomeRegion(value); return *this;}
+    template<typename HomeRegionT = Aws::String>
+    void SetHomeRegion(HomeRegionT&& value) { m_homeRegionHasBeenSet = true; m_homeRegion = std::forward<HomeRegionT>(value); }
+    template<typename HomeRegionT = Aws::String>
+    ListStorageLensConfigurationEntry& WithHomeRegion(HomeRegionT&& value) { SetHomeRegion(std::forward<HomeRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,7 +82,7 @@ namespace Model
      * <p>A container for whether the S3 Storage Lens configuration is enabled. This
      * property is required.</p>
      */
-    inline bool GetIsEnabled() const{ return m_isEnabled; }
+    inline bool GetIsEnabled() const { return m_isEnabled; }
     inline bool IsEnabledHasBeenSet() const { return m_isEnabledHasBeenSet; }
     inline void SetIsEnabled(bool value) { m_isEnabledHasBeenSet = true; m_isEnabled = value; }
     inline ListStorageLensConfigurationEntry& WithIsEnabled(bool value) { SetIsEnabled(value); return *this;}
@@ -104,7 +98,7 @@ namespace Model
     Aws::String m_homeRegion;
     bool m_homeRegionHasBeenSet = false;
 
-    bool m_isEnabled;
+    bool m_isEnabled{false};
     bool m_isEnabledHasBeenSet = false;
   };
 

@@ -30,7 +30,7 @@ namespace Model
   class AnalyticsExportDestination
   {
   public:
-    AWS_S3_API AnalyticsExportDestination();
+    AWS_S3_API AnalyticsExportDestination() = default;
     AWS_S3_API AnalyticsExportDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API AnalyticsExportDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>A destination signifying output to an S3 bucket.</p>
      */
-    inline const AnalyticsS3BucketDestination& GetS3BucketDestination() const{ return m_s3BucketDestination; }
+    inline const AnalyticsS3BucketDestination& GetS3BucketDestination() const { return m_s3BucketDestination; }
     inline bool S3BucketDestinationHasBeenSet() const { return m_s3BucketDestinationHasBeenSet; }
-    inline void SetS3BucketDestination(const AnalyticsS3BucketDestination& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = value; }
-    inline void SetS3BucketDestination(AnalyticsS3BucketDestination&& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = std::move(value); }
-    inline AnalyticsExportDestination& WithS3BucketDestination(const AnalyticsS3BucketDestination& value) { SetS3BucketDestination(value); return *this;}
-    inline AnalyticsExportDestination& WithS3BucketDestination(AnalyticsS3BucketDestination&& value) { SetS3BucketDestination(std::move(value)); return *this;}
+    template<typename S3BucketDestinationT = AnalyticsS3BucketDestination>
+    void SetS3BucketDestination(S3BucketDestinationT&& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = std::forward<S3BucketDestinationT>(value); }
+    template<typename S3BucketDestinationT = AnalyticsS3BucketDestination>
+    AnalyticsExportDestination& WithS3BucketDestination(S3BucketDestinationT&& value) { SetS3BucketDestination(std::forward<S3BucketDestinationT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-MultiRegionAccessPointRegionalResponse::MultiRegionAccessPointRegionalResponse() : 
-    m_nameHasBeenSet(false),
-    m_requestStatusHasBeenSet(false)
-{
-}
-
 MultiRegionAccessPointRegionalResponse::MultiRegionAccessPointRegionalResponse(const XmlNode& xmlNode)
-  : MultiRegionAccessPointRegionalResponse()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ MultiRegionAccessPointRegionalResponse& MultiRegionAccessPointRegionalResponse::
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode requestStatusNode = resultNode.FirstChild("RequestStatus");
     if(!requestStatusNode.IsNull())
     {
       m_requestStatus = Aws::Utils::Xml::DecodeEscapedXmlText(requestStatusNode.GetText());
       m_requestStatusHasBeenSet = true;
+       m_requestStatusHasBeenSet = true;
     }
   }
 

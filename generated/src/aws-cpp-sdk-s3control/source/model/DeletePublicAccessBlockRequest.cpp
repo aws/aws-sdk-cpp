@@ -15,10 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-DeletePublicAccessBlockRequest::DeletePublicAccessBlockRequest() : 
-    m_accountIdHasBeenSet(false)
-{
-}
 
 Aws::String DeletePublicAccessBlockRequest::SerializePayload() const
 {

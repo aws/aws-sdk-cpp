@@ -17,14 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAccessPointsRequest::ListAccessPointsRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
 
 Aws::String ListAccessPointsRequest::SerializePayload() const
 {

@@ -21,20 +21,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-StartMedicalScribeStreamInitialResponse::StartMedicalScribeStreamInitialResponse() : 
-    m_sessionIdHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_languageCode(MedicalScribeLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_mediaSampleRateHertz(0),
-    m_mediaSampleRateHertzHasBeenSet(false),
-    m_mediaEncoding(MedicalScribeMediaEncoding::NOT_SET),
-    m_mediaEncodingHasBeenSet(false)
-{
-}
-
 StartMedicalScribeStreamInitialResponse::StartMedicalScribeStreamInitialResponse(JsonView jsonValue)
-  : StartMedicalScribeStreamInitialResponse()
 {
   *this = jsonValue;
 }
@@ -51,30 +38,35 @@ StartMedicalScribeStreamInitialResponse::StartMedicalScribeStreamInitialResponse
   if(sessionIdIter != headers.end())
   {
     m_sessionId = sessionIdIter->second;
+    m_sessionIdHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-request-id");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& languageCodeIter = headers.find("x-amzn-transcribe-language-code");
   if(languageCodeIter != headers.end())
   {
     m_languageCode = MedicalScribeLanguageCodeMapper::GetMedicalScribeLanguageCodeForName(languageCodeIter->second);
+    m_languageCodeHasBeenSet = true;
   }
 
   const auto& mediaSampleRateHertzIter = headers.find("x-amzn-transcribe-sample-rate");
   if(mediaSampleRateHertzIter != headers.end())
   {
-     m_mediaSampleRateHertz = StringUtils::ConvertToInt32(mediaSampleRateHertzIter->second.c_str());
+    m_mediaSampleRateHertz = StringUtils::ConvertToInt32(mediaSampleRateHertzIter->second.c_str());
+    m_mediaSampleRateHertzHasBeenSet = true;
   }
 
   const auto& mediaEncodingIter = headers.find("x-amzn-transcribe-media-encoding");
   if(mediaEncodingIter != headers.end())
   {
     m_mediaEncoding = MedicalScribeMediaEncodingMapper::GetMedicalScribeMediaEncodingForName(mediaEncodingIter->second);
+    m_mediaEncodingHasBeenSet = true;
   }
 
 }

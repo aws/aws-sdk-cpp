@@ -14,11 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-NestedXmlMapsRequest::NestedXmlMapsRequest() : 
-    m_nestedMapHasBeenSet(false),
-    m_flatNestedMapHasBeenSet(false)
-{
-}
 
 Aws::String NestedXmlMapsRequest::SerializePayload() const
 {

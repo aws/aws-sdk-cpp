@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-MetricsConfiguration::MetricsConfiguration() : 
-    m_idHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 MetricsConfiguration::MetricsConfiguration(const XmlNode& xmlNode)
-  : MetricsConfiguration()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ MetricsConfiguration& MetricsConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode filterNode = resultNode.FirstChild("Filter");
     if(!filterNode.IsNull())
     {
       m_filter = filterNode;
       m_filterHasBeenSet = true;
+       m_filterHasBeenSet = true;
     }
   }
 

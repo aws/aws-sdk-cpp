@@ -33,7 +33,7 @@ namespace Model
   class S3JobManifestGenerator
   {
   public:
-    AWS_S3CONTROL_API S3JobManifestGenerator();
+    AWS_S3CONTROL_API S3JobManifestGenerator() = default;
     AWS_S3CONTROL_API S3JobManifestGenerator(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API S3JobManifestGenerator& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
      * manifest is written to. If provided the generated manifest bucket's owner Amazon
      * Web Services account ID must match this value, else the job fails.</p>
      */
-    inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
+    inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
-    inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
-    inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
-    inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
-    inline S3JobManifestGenerator& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
-    inline S3JobManifestGenerator& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
-    inline S3JobManifestGenerator& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    void SetExpectedBucketOwner(ExpectedBucketOwnerT&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::forward<ExpectedBucketOwnerT>(value); }
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    S3JobManifestGenerator& WithExpectedBucketOwner(ExpectedBucketOwnerT&& value) { SetExpectedBucketOwner(std::forward<ExpectedBucketOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * buckets used by <code>S3JobManifestGenerator</code> to generate the job
      * manifest.</p> 
      */
-    inline const Aws::String& GetSourceBucket() const{ return m_sourceBucket; }
+    inline const Aws::String& GetSourceBucket() const { return m_sourceBucket; }
     inline bool SourceBucketHasBeenSet() const { return m_sourceBucketHasBeenSet; }
-    inline void SetSourceBucket(const Aws::String& value) { m_sourceBucketHasBeenSet = true; m_sourceBucket = value; }
-    inline void SetSourceBucket(Aws::String&& value) { m_sourceBucketHasBeenSet = true; m_sourceBucket = std::move(value); }
-    inline void SetSourceBucket(const char* value) { m_sourceBucketHasBeenSet = true; m_sourceBucket.assign(value); }
-    inline S3JobManifestGenerator& WithSourceBucket(const Aws::String& value) { SetSourceBucket(value); return *this;}
-    inline S3JobManifestGenerator& WithSourceBucket(Aws::String&& value) { SetSourceBucket(std::move(value)); return *this;}
-    inline S3JobManifestGenerator& WithSourceBucket(const char* value) { SetSourceBucket(value); return *this;}
+    template<typename SourceBucketT = Aws::String>
+    void SetSourceBucket(SourceBucketT&& value) { m_sourceBucketHasBeenSet = true; m_sourceBucket = std::forward<SourceBucketT>(value); }
+    template<typename SourceBucketT = Aws::String>
+    S3JobManifestGenerator& WithSourceBucket(SourceBucketT&& value) { SetSourceBucket(std::forward<SourceBucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +76,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
      * buckets</a>.</p>
      */
-    inline const S3ManifestOutputLocation& GetManifestOutputLocation() const{ return m_manifestOutputLocation; }
+    inline const S3ManifestOutputLocation& GetManifestOutputLocation() const { return m_manifestOutputLocation; }
     inline bool ManifestOutputLocationHasBeenSet() const { return m_manifestOutputLocationHasBeenSet; }
-    inline void SetManifestOutputLocation(const S3ManifestOutputLocation& value) { m_manifestOutputLocationHasBeenSet = true; m_manifestOutputLocation = value; }
-    inline void SetManifestOutputLocation(S3ManifestOutputLocation&& value) { m_manifestOutputLocationHasBeenSet = true; m_manifestOutputLocation = std::move(value); }
-    inline S3JobManifestGenerator& WithManifestOutputLocation(const S3ManifestOutputLocation& value) { SetManifestOutputLocation(value); return *this;}
-    inline S3JobManifestGenerator& WithManifestOutputLocation(S3ManifestOutputLocation&& value) { SetManifestOutputLocation(std::move(value)); return *this;}
+    template<typename ManifestOutputLocationT = S3ManifestOutputLocation>
+    void SetManifestOutputLocation(ManifestOutputLocationT&& value) { m_manifestOutputLocationHasBeenSet = true; m_manifestOutputLocation = std::forward<ManifestOutputLocationT>(value); }
+    template<typename ManifestOutputLocationT = S3ManifestOutputLocation>
+    S3JobManifestGenerator& WithManifestOutputLocation(ManifestOutputLocationT&& value) { SetManifestOutputLocation(std::forward<ManifestOutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +90,12 @@ namespace Model
      * object in the source bucket should or should not be included in the generated
      * job manifest.</p>
      */
-    inline const JobManifestGeneratorFilter& GetFilter() const{ return m_filter; }
+    inline const JobManifestGeneratorFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const JobManifestGeneratorFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(JobManifestGeneratorFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline S3JobManifestGenerator& WithFilter(const JobManifestGeneratorFilter& value) { SetFilter(value); return *this;}
-    inline S3JobManifestGenerator& WithFilter(JobManifestGeneratorFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = JobManifestGeneratorFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = JobManifestGeneratorFilter>
+    S3JobManifestGenerator& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,7 +103,7 @@ namespace Model
      * <p>Determines whether or not to write the job's generated manifest to a
      * bucket.</p>
      */
-    inline bool GetEnableManifestOutput() const{ return m_enableManifestOutput; }
+    inline bool GetEnableManifestOutput() const { return m_enableManifestOutput; }
     inline bool EnableManifestOutputHasBeenSet() const { return m_enableManifestOutputHasBeenSet; }
     inline void SetEnableManifestOutput(bool value) { m_enableManifestOutputHasBeenSet = true; m_enableManifestOutput = value; }
     inline S3JobManifestGenerator& WithEnableManifestOutput(bool value) { SetEnableManifestOutput(value); return *this;}
@@ -126,7 +122,7 @@ namespace Model
     JobManifestGeneratorFilter m_filter;
     bool m_filterHasBeenSet = false;
 
-    bool m_enableManifestOutput;
+    bool m_enableManifestOutput{false};
     bool m_enableManifestOutputHasBeenSet = false;
   };
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAccessPointsForObjectLambdaResult::ListAccessPointsForObjectLambdaResult()
-{
-}
-
 ListAccessPointsForObjectLambdaResult::ListAccessPointsForObjectLambdaResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ ListAccessPointsForObjectLambdaResult& ListAccessPointsForObjectLambdaResult::op
     if(!objectLambdaAccessPointListNode.IsNull())
     {
       XmlNode objectLambdaAccessPointListMember = objectLambdaAccessPointListNode.FirstChild("ObjectLambdaAccessPoint");
+      m_objectLambdaAccessPointListHasBeenSet = !objectLambdaAccessPointListMember.IsNull();
       while(!objectLambdaAccessPointListMember.IsNull())
       {
         m_objectLambdaAccessPointList.push_back(objectLambdaAccessPointListMember);
@@ -47,6 +44,7 @@ ListAccessPointsForObjectLambdaResult& ListAccessPointsForObjectLambdaResult::op
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -55,12 +53,14 @@ ListAccessPointsForObjectLambdaResult& ListAccessPointsForObjectLambdaResult::op
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

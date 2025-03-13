@@ -18,16 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ContributorInsightsSummary::ContributorInsightsSummary() : 
-    m_tableNameHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_contributorInsightsStatus(ContributorInsightsStatus::NOT_SET),
-    m_contributorInsightsStatusHasBeenSet(false)
-{
-}
-
 ContributorInsightsSummary::ContributorInsightsSummary(JsonView jsonValue)
-  : ContributorInsightsSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ContributorInsightsSummary& ContributorInsightsSummary::operator =(JsonView json
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContributorInsightsStatus"))
   {
     m_contributorInsightsStatus = ContributorInsightsStatusMapper::GetContributorInsightsStatusForName(jsonValue.GetString("ContributorInsightsStatus"));
-
     m_contributorInsightsStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

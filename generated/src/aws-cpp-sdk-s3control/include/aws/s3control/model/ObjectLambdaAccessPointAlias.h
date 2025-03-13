@@ -34,7 +34,7 @@ namespace Model
   class ObjectLambdaAccessPointAlias
   {
   public:
-    AWS_S3CONTROL_API ObjectLambdaAccessPointAlias();
+    AWS_S3CONTROL_API ObjectLambdaAccessPointAlias() = default;
     AWS_S3CONTROL_API ObjectLambdaAccessPointAlias(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API ObjectLambdaAccessPointAlias& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The alias value of the Object Lambda Access Point.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ObjectLambdaAccessPointAlias& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ObjectLambdaAccessPointAlias& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ObjectLambdaAccessPointAlias& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ObjectLambdaAccessPointAlias& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,19 +61,17 @@ namespace Model
      * <code>READY</code>, the Object Lambda Access Point alias is successfully
      * provisioned and ready for use.</p>
      */
-    inline const ObjectLambdaAccessPointAliasStatus& GetStatus() const{ return m_status; }
+    inline ObjectLambdaAccessPointAliasStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ObjectLambdaAccessPointAliasStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ObjectLambdaAccessPointAliasStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ObjectLambdaAccessPointAlias& WithStatus(const ObjectLambdaAccessPointAliasStatus& value) { SetStatus(value); return *this;}
-    inline ObjectLambdaAccessPointAlias& WithStatus(ObjectLambdaAccessPointAliasStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ObjectLambdaAccessPointAliasStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ObjectLambdaAccessPointAlias& WithStatus(ObjectLambdaAccessPointAliasStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    ObjectLambdaAccessPointAliasStatus m_status;
+    ObjectLambdaAccessPointAliasStatus m_status{ObjectLambdaAccessPointAliasStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

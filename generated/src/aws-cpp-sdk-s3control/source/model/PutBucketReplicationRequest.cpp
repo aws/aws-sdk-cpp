@@ -15,12 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-PutBucketReplicationRequest::PutBucketReplicationRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_replicationConfigurationHasBeenSet(false)
-{
-}
 
 Aws::String PutBucketReplicationRequest::SerializePayload() const
 {

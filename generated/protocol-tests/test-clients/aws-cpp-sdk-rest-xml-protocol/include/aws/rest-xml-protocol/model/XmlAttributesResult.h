@@ -27,50 +27,47 @@ namespace Model
   class XmlAttributesResult
   {
   public:
-    AWS_RESTXMLPROTOCOL_API XmlAttributesResult();
+    AWS_RESTXMLPROTOCOL_API XmlAttributesResult() = default;
     AWS_RESTXMLPROTOCOL_API XmlAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RESTXMLPROTOCOL_API XmlAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetFoo() const{ return m_foo; }
-    inline void SetFoo(const Aws::String& value) { m_foo = value; }
-    inline void SetFoo(Aws::String&& value) { m_foo = std::move(value); }
-    inline void SetFoo(const char* value) { m_foo.assign(value); }
-    inline XmlAttributesResult& WithFoo(const Aws::String& value) { SetFoo(value); return *this;}
-    inline XmlAttributesResult& WithFoo(Aws::String&& value) { SetFoo(std::move(value)); return *this;}
-    inline XmlAttributesResult& WithFoo(const char* value) { SetFoo(value); return *this;}
+    inline const Aws::String& GetFoo() const { return m_foo; }
+    template<typename FooT = Aws::String>
+    void SetFoo(FooT&& value) { m_fooHasBeenSet = true; m_foo = std::forward<FooT>(value); }
+    template<typename FooT = Aws::String>
+    XmlAttributesResult& WithFoo(FooT&& value) { SetFoo(std::forward<FooT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetAttr() const{ return m_attr; }
-    inline void SetAttr(const Aws::String& value) { m_attr = value; }
-    inline void SetAttr(Aws::String&& value) { m_attr = std::move(value); }
-    inline void SetAttr(const char* value) { m_attr.assign(value); }
-    inline XmlAttributesResult& WithAttr(const Aws::String& value) { SetAttr(value); return *this;}
-    inline XmlAttributesResult& WithAttr(Aws::String&& value) { SetAttr(std::move(value)); return *this;}
-    inline XmlAttributesResult& WithAttr(const char* value) { SetAttr(value); return *this;}
+    inline const Aws::String& GetAttr() const { return m_attr; }
+    template<typename AttrT = Aws::String>
+    void SetAttr(AttrT&& value) { m_attrHasBeenSet = true; m_attr = std::forward<AttrT>(value); }
+    template<typename AttrT = Aws::String>
+    XmlAttributesResult& WithAttr(AttrT&& value) { SetAttr(std::forward<AttrT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline XmlAttributesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline XmlAttributesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline XmlAttributesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    XmlAttributesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_foo;
+    bool m_fooHasBeenSet = false;
 
     Aws::String m_attr;
+    bool m_attrHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,7 +22,7 @@ namespace Model
   class EnableKinesisStreamingDestinationRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API EnableKinesisStreamingDestinationRequest();
+    AWS_DYNAMODB_API EnableKinesisStreamingDestinationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,40 +44,36 @@ namespace Model
      * <p>The name of the DynamoDB table. You can also provide the Amazon Resource Name
      * (ARN) of the table in this parameter.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline EnableKinesisStreamingDestinationRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline EnableKinesisStreamingDestinationRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline EnableKinesisStreamingDestinationRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    EnableKinesisStreamingDestinationRequest& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN for a Kinesis data stream.</p>
      */
-    inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
+    inline const Aws::String& GetStreamArn() const { return m_streamArn; }
     inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
-    inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
-    inline void SetStreamArn(Aws::String&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::move(value); }
-    inline void SetStreamArn(const char* value) { m_streamArnHasBeenSet = true; m_streamArn.assign(value); }
-    inline EnableKinesisStreamingDestinationRequest& WithStreamArn(const Aws::String& value) { SetStreamArn(value); return *this;}
-    inline EnableKinesisStreamingDestinationRequest& WithStreamArn(Aws::String&& value) { SetStreamArn(std::move(value)); return *this;}
-    inline EnableKinesisStreamingDestinationRequest& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
+    template<typename StreamArnT = Aws::String>
+    void SetStreamArn(StreamArnT&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::forward<StreamArnT>(value); }
+    template<typename StreamArnT = Aws::String>
+    EnableKinesisStreamingDestinationRequest& WithStreamArn(StreamArnT&& value) { SetStreamArn(std::forward<StreamArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source for the Kinesis streaming information that is being enabled.</p>
      */
-    inline const EnableKinesisStreamingConfiguration& GetEnableKinesisStreamingConfiguration() const{ return m_enableKinesisStreamingConfiguration; }
+    inline const EnableKinesisStreamingConfiguration& GetEnableKinesisStreamingConfiguration() const { return m_enableKinesisStreamingConfiguration; }
     inline bool EnableKinesisStreamingConfigurationHasBeenSet() const { return m_enableKinesisStreamingConfigurationHasBeenSet; }
-    inline void SetEnableKinesisStreamingConfiguration(const EnableKinesisStreamingConfiguration& value) { m_enableKinesisStreamingConfigurationHasBeenSet = true; m_enableKinesisStreamingConfiguration = value; }
-    inline void SetEnableKinesisStreamingConfiguration(EnableKinesisStreamingConfiguration&& value) { m_enableKinesisStreamingConfigurationHasBeenSet = true; m_enableKinesisStreamingConfiguration = std::move(value); }
-    inline EnableKinesisStreamingDestinationRequest& WithEnableKinesisStreamingConfiguration(const EnableKinesisStreamingConfiguration& value) { SetEnableKinesisStreamingConfiguration(value); return *this;}
-    inline EnableKinesisStreamingDestinationRequest& WithEnableKinesisStreamingConfiguration(EnableKinesisStreamingConfiguration&& value) { SetEnableKinesisStreamingConfiguration(std::move(value)); return *this;}
+    template<typename EnableKinesisStreamingConfigurationT = EnableKinesisStreamingConfiguration>
+    void SetEnableKinesisStreamingConfiguration(EnableKinesisStreamingConfigurationT&& value) { m_enableKinesisStreamingConfigurationHasBeenSet = true; m_enableKinesisStreamingConfiguration = std::forward<EnableKinesisStreamingConfigurationT>(value); }
+    template<typename EnableKinesisStreamingConfigurationT = EnableKinesisStreamingConfiguration>
+    EnableKinesisStreamingDestinationRequest& WithEnableKinesisStreamingConfiguration(EnableKinesisStreamingConfigurationT&& value) { SetEnableKinesisStreamingConfiguration(std::forward<EnableKinesisStreamingConfigurationT>(value)); return *this;}
     ///@}
   private:
 

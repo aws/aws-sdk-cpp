@@ -15,12 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-PutJobTaggingRequest::PutJobTaggingRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
 
 Aws::String PutJobTaggingRequest::SerializePayload() const
 {

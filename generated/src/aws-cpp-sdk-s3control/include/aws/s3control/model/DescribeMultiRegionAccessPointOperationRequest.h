@@ -21,7 +21,7 @@ namespace Model
   class DescribeMultiRegionAccessPointOperationRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API DescribeMultiRegionAccessPointOperationRequest();
+    AWS_S3CONTROL_API DescribeMultiRegionAccessPointOperationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
      * Point.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline DescribeMultiRegionAccessPointOperationRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline DescribeMultiRegionAccessPointOperationRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline DescribeMultiRegionAccessPointOperationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    DescribeMultiRegionAccessPointOperationRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * request. You provide this token to query about the status of the asynchronous
      * action.</p>
      */
-    inline const Aws::String& GetRequestTokenARN() const{ return m_requestTokenARN; }
+    inline const Aws::String& GetRequestTokenARN() const { return m_requestTokenARN; }
     inline bool RequestTokenARNHasBeenSet() const { return m_requestTokenARNHasBeenSet; }
-    inline void SetRequestTokenARN(const Aws::String& value) { m_requestTokenARNHasBeenSet = true; m_requestTokenARN = value; }
-    inline void SetRequestTokenARN(Aws::String&& value) { m_requestTokenARNHasBeenSet = true; m_requestTokenARN = std::move(value); }
-    inline void SetRequestTokenARN(const char* value) { m_requestTokenARNHasBeenSet = true; m_requestTokenARN.assign(value); }
-    inline DescribeMultiRegionAccessPointOperationRequest& WithRequestTokenARN(const Aws::String& value) { SetRequestTokenARN(value); return *this;}
-    inline DescribeMultiRegionAccessPointOperationRequest& WithRequestTokenARN(Aws::String&& value) { SetRequestTokenARN(std::move(value)); return *this;}
-    inline DescribeMultiRegionAccessPointOperationRequest& WithRequestTokenARN(const char* value) { SetRequestTokenARN(value); return *this;}
+    template<typename RequestTokenARNT = Aws::String>
+    void SetRequestTokenARN(RequestTokenARNT&& value) { m_requestTokenARNHasBeenSet = true; m_requestTokenARN = std::forward<RequestTokenARNT>(value); }
+    template<typename RequestTokenARNT = Aws::String>
+    DescribeMultiRegionAccessPointOperationRequest& WithRequestTokenARN(RequestTokenARNT&& value) { SetRequestTokenARN(std::forward<RequestTokenARNT>(value)); return *this;}
     ///@}
   private:
 

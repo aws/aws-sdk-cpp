@@ -39,7 +39,7 @@ namespace Model
   class CallAnalyticsTranscriptResultStream
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsTranscriptResultStream();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsTranscriptResultStream() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsTranscriptResultStream(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsTranscriptResultStream& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,12 @@ namespace Model
      * information relating to channel definitions, partial result stabilization,
      * sentiment, issue detection, and other transcription-related data.</p>
      */
-    inline const UtteranceEvent& GetUtteranceEvent() const{ return m_utteranceEvent; }
+    inline const UtteranceEvent& GetUtteranceEvent() const { return m_utteranceEvent; }
     inline bool UtteranceEventHasBeenSet() const { return m_utteranceEventHasBeenSet; }
-    inline void SetUtteranceEvent(const UtteranceEvent& value) { m_utteranceEventHasBeenSet = true; m_utteranceEvent = value; }
-    inline void SetUtteranceEvent(UtteranceEvent&& value) { m_utteranceEventHasBeenSet = true; m_utteranceEvent = std::move(value); }
-    inline CallAnalyticsTranscriptResultStream& WithUtteranceEvent(const UtteranceEvent& value) { SetUtteranceEvent(value); return *this;}
-    inline CallAnalyticsTranscriptResultStream& WithUtteranceEvent(UtteranceEvent&& value) { SetUtteranceEvent(std::move(value)); return *this;}
+    template<typename UtteranceEventT = UtteranceEvent>
+    void SetUtteranceEvent(UtteranceEventT&& value) { m_utteranceEventHasBeenSet = true; m_utteranceEvent = std::forward<UtteranceEventT>(value); }
+    template<typename UtteranceEventT = UtteranceEvent>
+    CallAnalyticsTranscriptResultStream& WithUtteranceEvent(UtteranceEventT&& value) { SetUtteranceEvent(std::forward<UtteranceEventT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,62 +65,62 @@ namespace Model
      * <p>Provides information on matched categories that were used to generate
      * real-time supervisor alerts.</p>
      */
-    inline const CategoryEvent& GetCategoryEvent() const{ return m_categoryEvent; }
+    inline const CategoryEvent& GetCategoryEvent() const { return m_categoryEvent; }
     inline bool CategoryEventHasBeenSet() const { return m_categoryEventHasBeenSet; }
-    inline void SetCategoryEvent(const CategoryEvent& value) { m_categoryEventHasBeenSet = true; m_categoryEvent = value; }
-    inline void SetCategoryEvent(CategoryEvent&& value) { m_categoryEventHasBeenSet = true; m_categoryEvent = std::move(value); }
-    inline CallAnalyticsTranscriptResultStream& WithCategoryEvent(const CategoryEvent& value) { SetCategoryEvent(value); return *this;}
-    inline CallAnalyticsTranscriptResultStream& WithCategoryEvent(CategoryEvent&& value) { SetCategoryEvent(std::move(value)); return *this;}
+    template<typename CategoryEventT = CategoryEvent>
+    void SetCategoryEvent(CategoryEventT&& value) { m_categoryEventHasBeenSet = true; m_categoryEvent = std::forward<CategoryEventT>(value); }
+    template<typename CategoryEventT = CategoryEvent>
+    CallAnalyticsTranscriptResultStream& WithCategoryEvent(CategoryEventT&& value) { SetCategoryEvent(std::forward<CategoryEventT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BadRequestException& GetBadRequestException() const{ return m_badRequestException; }
+    inline const BadRequestException& GetBadRequestException() const { return m_badRequestException; }
     inline bool BadRequestExceptionHasBeenSet() const { return m_badRequestExceptionHasBeenSet; }
-    inline void SetBadRequestException(const BadRequestException& value) { m_badRequestExceptionHasBeenSet = true; m_badRequestException = value; }
-    inline void SetBadRequestException(BadRequestException&& value) { m_badRequestExceptionHasBeenSet = true; m_badRequestException = std::move(value); }
-    inline CallAnalyticsTranscriptResultStream& WithBadRequestException(const BadRequestException& value) { SetBadRequestException(value); return *this;}
-    inline CallAnalyticsTranscriptResultStream& WithBadRequestException(BadRequestException&& value) { SetBadRequestException(std::move(value)); return *this;}
+    template<typename BadRequestExceptionT = BadRequestException>
+    void SetBadRequestException(BadRequestExceptionT&& value) { m_badRequestExceptionHasBeenSet = true; m_badRequestException = std::forward<BadRequestExceptionT>(value); }
+    template<typename BadRequestExceptionT = BadRequestException>
+    CallAnalyticsTranscriptResultStream& WithBadRequestException(BadRequestExceptionT&& value) { SetBadRequestException(std::forward<BadRequestExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const LimitExceededException& GetLimitExceededException() const{ return m_limitExceededException; }
+    inline const LimitExceededException& GetLimitExceededException() const { return m_limitExceededException; }
     inline bool LimitExceededExceptionHasBeenSet() const { return m_limitExceededExceptionHasBeenSet; }
-    inline void SetLimitExceededException(const LimitExceededException& value) { m_limitExceededExceptionHasBeenSet = true; m_limitExceededException = value; }
-    inline void SetLimitExceededException(LimitExceededException&& value) { m_limitExceededExceptionHasBeenSet = true; m_limitExceededException = std::move(value); }
-    inline CallAnalyticsTranscriptResultStream& WithLimitExceededException(const LimitExceededException& value) { SetLimitExceededException(value); return *this;}
-    inline CallAnalyticsTranscriptResultStream& WithLimitExceededException(LimitExceededException&& value) { SetLimitExceededException(std::move(value)); return *this;}
+    template<typename LimitExceededExceptionT = LimitExceededException>
+    void SetLimitExceededException(LimitExceededExceptionT&& value) { m_limitExceededExceptionHasBeenSet = true; m_limitExceededException = std::forward<LimitExceededExceptionT>(value); }
+    template<typename LimitExceededExceptionT = LimitExceededException>
+    CallAnalyticsTranscriptResultStream& WithLimitExceededException(LimitExceededExceptionT&& value) { SetLimitExceededException(std::forward<LimitExceededExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const InternalFailureException& GetInternalFailureException() const{ return m_internalFailureException; }
+    inline const InternalFailureException& GetInternalFailureException() const { return m_internalFailureException; }
     inline bool InternalFailureExceptionHasBeenSet() const { return m_internalFailureExceptionHasBeenSet; }
-    inline void SetInternalFailureException(const InternalFailureException& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = value; }
-    inline void SetInternalFailureException(InternalFailureException&& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = std::move(value); }
-    inline CallAnalyticsTranscriptResultStream& WithInternalFailureException(const InternalFailureException& value) { SetInternalFailureException(value); return *this;}
-    inline CallAnalyticsTranscriptResultStream& WithInternalFailureException(InternalFailureException&& value) { SetInternalFailureException(std::move(value)); return *this;}
+    template<typename InternalFailureExceptionT = InternalFailureException>
+    void SetInternalFailureException(InternalFailureExceptionT&& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = std::forward<InternalFailureExceptionT>(value); }
+    template<typename InternalFailureExceptionT = InternalFailureException>
+    CallAnalyticsTranscriptResultStream& WithInternalFailureException(InternalFailureExceptionT&& value) { SetInternalFailureException(std::forward<InternalFailureExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ConflictException& GetConflictException() const{ return m_conflictException; }
+    inline const ConflictException& GetConflictException() const { return m_conflictException; }
     inline bool ConflictExceptionHasBeenSet() const { return m_conflictExceptionHasBeenSet; }
-    inline void SetConflictException(const ConflictException& value) { m_conflictExceptionHasBeenSet = true; m_conflictException = value; }
-    inline void SetConflictException(ConflictException&& value) { m_conflictExceptionHasBeenSet = true; m_conflictException = std::move(value); }
-    inline CallAnalyticsTranscriptResultStream& WithConflictException(const ConflictException& value) { SetConflictException(value); return *this;}
-    inline CallAnalyticsTranscriptResultStream& WithConflictException(ConflictException&& value) { SetConflictException(std::move(value)); return *this;}
+    template<typename ConflictExceptionT = ConflictException>
+    void SetConflictException(ConflictExceptionT&& value) { m_conflictExceptionHasBeenSet = true; m_conflictException = std::forward<ConflictExceptionT>(value); }
+    template<typename ConflictExceptionT = ConflictException>
+    CallAnalyticsTranscriptResultStream& WithConflictException(ConflictExceptionT&& value) { SetConflictException(std::forward<ConflictExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ServiceUnavailableException& GetServiceUnavailableException() const{ return m_serviceUnavailableException; }
+    inline const ServiceUnavailableException& GetServiceUnavailableException() const { return m_serviceUnavailableException; }
     inline bool ServiceUnavailableExceptionHasBeenSet() const { return m_serviceUnavailableExceptionHasBeenSet; }
-    inline void SetServiceUnavailableException(const ServiceUnavailableException& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = value; }
-    inline void SetServiceUnavailableException(ServiceUnavailableException&& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = std::move(value); }
-    inline CallAnalyticsTranscriptResultStream& WithServiceUnavailableException(const ServiceUnavailableException& value) { SetServiceUnavailableException(value); return *this;}
-    inline CallAnalyticsTranscriptResultStream& WithServiceUnavailableException(ServiceUnavailableException&& value) { SetServiceUnavailableException(std::move(value)); return *this;}
+    template<typename ServiceUnavailableExceptionT = ServiceUnavailableException>
+    void SetServiceUnavailableException(ServiceUnavailableExceptionT&& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = std::forward<ServiceUnavailableExceptionT>(value); }
+    template<typename ServiceUnavailableExceptionT = ServiceUnavailableException>
+    CallAnalyticsTranscriptResultStream& WithServiceUnavailableException(ServiceUnavailableExceptionT&& value) { SetServiceUnavailableException(std::forward<ServiceUnavailableExceptionT>(value)); return *this;}
     ///@}
   private:
 

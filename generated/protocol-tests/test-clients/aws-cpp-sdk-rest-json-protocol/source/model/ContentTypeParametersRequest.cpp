@@ -12,12 +12,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ContentTypeParametersRequest::ContentTypeParametersRequest() : 
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 Aws::String ContentTypeParametersRequest::SerializePayload() const
 {
   JsonValue payload;

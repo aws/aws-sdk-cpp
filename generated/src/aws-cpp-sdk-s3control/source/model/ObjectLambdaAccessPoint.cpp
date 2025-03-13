@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ObjectLambdaAccessPoint::ObjectLambdaAccessPoint() : 
-    m_nameHasBeenSet(false),
-    m_objectLambdaAccessPointArnHasBeenSet(false),
-    m_aliasHasBeenSet(false)
-{
-}
-
 ObjectLambdaAccessPoint::ObjectLambdaAccessPoint(const XmlNode& xmlNode)
-  : ObjectLambdaAccessPoint()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ ObjectLambdaAccessPoint& ObjectLambdaAccessPoint::operator =(const XmlNode& xmlN
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode objectLambdaAccessPointArnNode = resultNode.FirstChild("ObjectLambdaAccessPointArn");
     if(!objectLambdaAccessPointArnNode.IsNull())
     {
       m_objectLambdaAccessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(objectLambdaAccessPointArnNode.GetText());
       m_objectLambdaAccessPointArnHasBeenSet = true;
+       m_objectLambdaAccessPointArnHasBeenSet = true;
     }
     XmlNode aliasNode = resultNode.FirstChild("Alias");
     if(!aliasNode.IsNull())
     {
       m_alias = aliasNode;
       m_aliasHasBeenSet = true;
+       m_aliasHasBeenSet = true;
     }
   }
 

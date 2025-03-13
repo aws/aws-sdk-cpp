@@ -28,7 +28,7 @@ namespace Model
   class SSES3
   {
   public:
-    AWS_S3CONTROL_API SSES3();
+    AWS_S3CONTROL_API SSES3() = default;
     AWS_S3CONTROL_API SSES3(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API SSES3& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 

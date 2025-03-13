@@ -24,7 +24,7 @@ namespace Model
   class JsonMapsRequest : public RestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API JsonMapsRequest();
+    AWS_RESTJSONPROTOCOL_API JsonMapsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,89 +39,80 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Map<Aws::String, GreetingStruct>& GetDenseStructMap() const{ return m_denseStructMap; }
+    inline const Aws::Map<Aws::String, GreetingStruct>& GetDenseStructMap() const { return m_denseStructMap; }
     inline bool DenseStructMapHasBeenSet() const { return m_denseStructMapHasBeenSet; }
-    inline void SetDenseStructMap(const Aws::Map<Aws::String, GreetingStruct>& value) { m_denseStructMapHasBeenSet = true; m_denseStructMap = value; }
-    inline void SetDenseStructMap(Aws::Map<Aws::String, GreetingStruct>&& value) { m_denseStructMapHasBeenSet = true; m_denseStructMap = std::move(value); }
-    inline JsonMapsRequest& WithDenseStructMap(const Aws::Map<Aws::String, GreetingStruct>& value) { SetDenseStructMap(value); return *this;}
-    inline JsonMapsRequest& WithDenseStructMap(Aws::Map<Aws::String, GreetingStruct>&& value) { SetDenseStructMap(std::move(value)); return *this;}
-    inline JsonMapsRequest& AddDenseStructMap(const Aws::String& key, const GreetingStruct& value) { m_denseStructMapHasBeenSet = true; m_denseStructMap.emplace(key, value); return *this; }
-    inline JsonMapsRequest& AddDenseStructMap(Aws::String&& key, const GreetingStruct& value) { m_denseStructMapHasBeenSet = true; m_denseStructMap.emplace(std::move(key), value); return *this; }
-    inline JsonMapsRequest& AddDenseStructMap(const Aws::String& key, GreetingStruct&& value) { m_denseStructMapHasBeenSet = true; m_denseStructMap.emplace(key, std::move(value)); return *this; }
-    inline JsonMapsRequest& AddDenseStructMap(Aws::String&& key, GreetingStruct&& value) { m_denseStructMapHasBeenSet = true; m_denseStructMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline JsonMapsRequest& AddDenseStructMap(const char* key, GreetingStruct&& value) { m_denseStructMapHasBeenSet = true; m_denseStructMap.emplace(key, std::move(value)); return *this; }
-    inline JsonMapsRequest& AddDenseStructMap(const char* key, const GreetingStruct& value) { m_denseStructMapHasBeenSet = true; m_denseStructMap.emplace(key, value); return *this; }
+    template<typename DenseStructMapT = Aws::Map<Aws::String, GreetingStruct>>
+    void SetDenseStructMap(DenseStructMapT&& value) { m_denseStructMapHasBeenSet = true; m_denseStructMap = std::forward<DenseStructMapT>(value); }
+    template<typename DenseStructMapT = Aws::Map<Aws::String, GreetingStruct>>
+    JsonMapsRequest& WithDenseStructMap(DenseStructMapT&& value) { SetDenseStructMap(std::forward<DenseStructMapT>(value)); return *this;}
+    template<typename DenseStructMapKeyT = Aws::String, typename DenseStructMapValueT = GreetingStruct>
+    JsonMapsRequest& AddDenseStructMap(DenseStructMapKeyT&& key, DenseStructMapValueT&& value) {
+      m_denseStructMapHasBeenSet = true; m_denseStructMap.emplace(std::forward<DenseStructMapKeyT>(key), std::forward<DenseStructMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, int>& GetDenseNumberMap() const{ return m_denseNumberMap; }
+    inline const Aws::Map<Aws::String, int>& GetDenseNumberMap() const { return m_denseNumberMap; }
     inline bool DenseNumberMapHasBeenSet() const { return m_denseNumberMapHasBeenSet; }
-    inline void SetDenseNumberMap(const Aws::Map<Aws::String, int>& value) { m_denseNumberMapHasBeenSet = true; m_denseNumberMap = value; }
-    inline void SetDenseNumberMap(Aws::Map<Aws::String, int>&& value) { m_denseNumberMapHasBeenSet = true; m_denseNumberMap = std::move(value); }
-    inline JsonMapsRequest& WithDenseNumberMap(const Aws::Map<Aws::String, int>& value) { SetDenseNumberMap(value); return *this;}
-    inline JsonMapsRequest& WithDenseNumberMap(Aws::Map<Aws::String, int>&& value) { SetDenseNumberMap(std::move(value)); return *this;}
-    inline JsonMapsRequest& AddDenseNumberMap(const Aws::String& key, int value) { m_denseNumberMapHasBeenSet = true; m_denseNumberMap.emplace(key, value); return *this; }
-    inline JsonMapsRequest& AddDenseNumberMap(Aws::String&& key, int value) { m_denseNumberMapHasBeenSet = true; m_denseNumberMap.emplace(std::move(key), value); return *this; }
-    inline JsonMapsRequest& AddDenseNumberMap(const char* key, int value) { m_denseNumberMapHasBeenSet = true; m_denseNumberMap.emplace(key, value); return *this; }
+    template<typename DenseNumberMapT = Aws::Map<Aws::String, int>>
+    void SetDenseNumberMap(DenseNumberMapT&& value) { m_denseNumberMapHasBeenSet = true; m_denseNumberMap = std::forward<DenseNumberMapT>(value); }
+    template<typename DenseNumberMapT = Aws::Map<Aws::String, int>>
+    JsonMapsRequest& WithDenseNumberMap(DenseNumberMapT&& value) { SetDenseNumberMap(std::forward<DenseNumberMapT>(value)); return *this;}
+    inline JsonMapsRequest& AddDenseNumberMap(Aws::String key, int value) {
+      m_denseNumberMapHasBeenSet = true; m_denseNumberMap.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, bool>& GetDenseBooleanMap() const{ return m_denseBooleanMap; }
+    inline const Aws::Map<Aws::String, bool>& GetDenseBooleanMap() const { return m_denseBooleanMap; }
     inline bool DenseBooleanMapHasBeenSet() const { return m_denseBooleanMapHasBeenSet; }
-    inline void SetDenseBooleanMap(const Aws::Map<Aws::String, bool>& value) { m_denseBooleanMapHasBeenSet = true; m_denseBooleanMap = value; }
-    inline void SetDenseBooleanMap(Aws::Map<Aws::String, bool>&& value) { m_denseBooleanMapHasBeenSet = true; m_denseBooleanMap = std::move(value); }
-    inline JsonMapsRequest& WithDenseBooleanMap(const Aws::Map<Aws::String, bool>& value) { SetDenseBooleanMap(value); return *this;}
-    inline JsonMapsRequest& WithDenseBooleanMap(Aws::Map<Aws::String, bool>&& value) { SetDenseBooleanMap(std::move(value)); return *this;}
-    inline JsonMapsRequest& AddDenseBooleanMap(const Aws::String& key, bool value) { m_denseBooleanMapHasBeenSet = true; m_denseBooleanMap.emplace(key, value); return *this; }
-    inline JsonMapsRequest& AddDenseBooleanMap(Aws::String&& key, bool value) { m_denseBooleanMapHasBeenSet = true; m_denseBooleanMap.emplace(std::move(key), value); return *this; }
-    inline JsonMapsRequest& AddDenseBooleanMap(const char* key, bool value) { m_denseBooleanMapHasBeenSet = true; m_denseBooleanMap.emplace(key, value); return *this; }
+    template<typename DenseBooleanMapT = Aws::Map<Aws::String, bool>>
+    void SetDenseBooleanMap(DenseBooleanMapT&& value) { m_denseBooleanMapHasBeenSet = true; m_denseBooleanMap = std::forward<DenseBooleanMapT>(value); }
+    template<typename DenseBooleanMapT = Aws::Map<Aws::String, bool>>
+    JsonMapsRequest& WithDenseBooleanMap(DenseBooleanMapT&& value) { SetDenseBooleanMap(std::forward<DenseBooleanMapT>(value)); return *this;}
+    inline JsonMapsRequest& AddDenseBooleanMap(Aws::String key, bool value) {
+      m_denseBooleanMapHasBeenSet = true; m_denseBooleanMap.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetDenseStringMap() const{ return m_denseStringMap; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDenseStringMap() const { return m_denseStringMap; }
     inline bool DenseStringMapHasBeenSet() const { return m_denseStringMapHasBeenSet; }
-    inline void SetDenseStringMap(const Aws::Map<Aws::String, Aws::String>& value) { m_denseStringMapHasBeenSet = true; m_denseStringMap = value; }
-    inline void SetDenseStringMap(Aws::Map<Aws::String, Aws::String>&& value) { m_denseStringMapHasBeenSet = true; m_denseStringMap = std::move(value); }
-    inline JsonMapsRequest& WithDenseStringMap(const Aws::Map<Aws::String, Aws::String>& value) { SetDenseStringMap(value); return *this;}
-    inline JsonMapsRequest& WithDenseStringMap(Aws::Map<Aws::String, Aws::String>&& value) { SetDenseStringMap(std::move(value)); return *this;}
-    inline JsonMapsRequest& AddDenseStringMap(const Aws::String& key, const Aws::String& value) { m_denseStringMapHasBeenSet = true; m_denseStringMap.emplace(key, value); return *this; }
-    inline JsonMapsRequest& AddDenseStringMap(Aws::String&& key, const Aws::String& value) { m_denseStringMapHasBeenSet = true; m_denseStringMap.emplace(std::move(key), value); return *this; }
-    inline JsonMapsRequest& AddDenseStringMap(const Aws::String& key, Aws::String&& value) { m_denseStringMapHasBeenSet = true; m_denseStringMap.emplace(key, std::move(value)); return *this; }
-    inline JsonMapsRequest& AddDenseStringMap(Aws::String&& key, Aws::String&& value) { m_denseStringMapHasBeenSet = true; m_denseStringMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline JsonMapsRequest& AddDenseStringMap(const char* key, Aws::String&& value) { m_denseStringMapHasBeenSet = true; m_denseStringMap.emplace(key, std::move(value)); return *this; }
-    inline JsonMapsRequest& AddDenseStringMap(Aws::String&& key, const char* value) { m_denseStringMapHasBeenSet = true; m_denseStringMap.emplace(std::move(key), value); return *this; }
-    inline JsonMapsRequest& AddDenseStringMap(const char* key, const char* value) { m_denseStringMapHasBeenSet = true; m_denseStringMap.emplace(key, value); return *this; }
+    template<typename DenseStringMapT = Aws::Map<Aws::String, Aws::String>>
+    void SetDenseStringMap(DenseStringMapT&& value) { m_denseStringMapHasBeenSet = true; m_denseStringMap = std::forward<DenseStringMapT>(value); }
+    template<typename DenseStringMapT = Aws::Map<Aws::String, Aws::String>>
+    JsonMapsRequest& WithDenseStringMap(DenseStringMapT&& value) { SetDenseStringMap(std::forward<DenseStringMapT>(value)); return *this;}
+    template<typename DenseStringMapKeyT = Aws::String, typename DenseStringMapValueT = Aws::String>
+    JsonMapsRequest& AddDenseStringMap(DenseStringMapKeyT&& key, DenseStringMapValueT&& value) {
+      m_denseStringMapHasBeenSet = true; m_denseStringMap.emplace(std::forward<DenseStringMapKeyT>(key), std::forward<DenseStringMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetDenseSetMap() const{ return m_denseSetMap; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetDenseSetMap() const { return m_denseSetMap; }
     inline bool DenseSetMapHasBeenSet() const { return m_denseSetMapHasBeenSet; }
-    inline void SetDenseSetMap(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_denseSetMapHasBeenSet = true; m_denseSetMap = value; }
-    inline void SetDenseSetMap(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_denseSetMapHasBeenSet = true; m_denseSetMap = std::move(value); }
-    inline JsonMapsRequest& WithDenseSetMap(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetDenseSetMap(value); return *this;}
-    inline JsonMapsRequest& WithDenseSetMap(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetDenseSetMap(std::move(value)); return *this;}
-    inline JsonMapsRequest& AddDenseSetMap(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_denseSetMapHasBeenSet = true; m_denseSetMap.emplace(key, value); return *this; }
-    inline JsonMapsRequest& AddDenseSetMap(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_denseSetMapHasBeenSet = true; m_denseSetMap.emplace(std::move(key), value); return *this; }
-    inline JsonMapsRequest& AddDenseSetMap(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_denseSetMapHasBeenSet = true; m_denseSetMap.emplace(key, std::move(value)); return *this; }
-    inline JsonMapsRequest& AddDenseSetMap(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_denseSetMapHasBeenSet = true; m_denseSetMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline JsonMapsRequest& AddDenseSetMap(const char* key, Aws::Vector<Aws::String>&& value) { m_denseSetMapHasBeenSet = true; m_denseSetMap.emplace(key, std::move(value)); return *this; }
-    inline JsonMapsRequest& AddDenseSetMap(const char* key, const Aws::Vector<Aws::String>& value) { m_denseSetMapHasBeenSet = true; m_denseSetMap.emplace(key, value); return *this; }
+    template<typename DenseSetMapT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetDenseSetMap(DenseSetMapT&& value) { m_denseSetMapHasBeenSet = true; m_denseSetMap = std::forward<DenseSetMapT>(value); }
+    template<typename DenseSetMapT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    JsonMapsRequest& WithDenseSetMap(DenseSetMapT&& value) { SetDenseSetMap(std::forward<DenseSetMapT>(value)); return *this;}
+    template<typename DenseSetMapKeyT = Aws::String, typename DenseSetMapValueT = Aws::Vector<Aws::String>>
+    JsonMapsRequest& AddDenseSetMap(DenseSetMapKeyT&& key, DenseSetMapValueT&& value) {
+      m_denseSetMapHasBeenSet = true; m_denseSetMap.emplace(std::forward<DenseSetMapKeyT>(key), std::forward<DenseSetMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline JsonMapsRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline JsonMapsRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline JsonMapsRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    JsonMapsRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 

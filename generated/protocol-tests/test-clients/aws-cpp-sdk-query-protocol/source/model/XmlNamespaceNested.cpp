@@ -20,14 +20,7 @@ namespace QueryProtocol
 namespace Model
 {
 
-XmlNamespaceNested::XmlNamespaceNested() : 
-    m_fooHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 XmlNamespaceNested::XmlNamespaceNested(const XmlNode& xmlNode)
-  : XmlNamespaceNested()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ XmlNamespaceNested& XmlNamespaceNested::operator =(const XmlNode& xmlNode)
     {
       m_foo = Aws::Utils::Xml::DecodeEscapedXmlText(fooNode.GetText());
       m_fooHasBeenSet = true;
+       m_fooHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("values");
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("member");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(valuesMember.GetText());
         valuesMember = valuesMember.NextNode("member");
       }
 
-      m_valuesHasBeenSet = true;
+       m_valuesHasBeenSet = true;
     }
   }
 

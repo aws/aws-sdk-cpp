@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3AccessControlList::S3AccessControlList() : 
-    m_ownerHasBeenSet(false),
-    m_grantsHasBeenSet(false)
-{
-}
-
 S3AccessControlList::S3AccessControlList(const XmlNode& xmlNode)
-  : S3AccessControlList()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ S3AccessControlList& S3AccessControlList::operator =(const XmlNode& xmlNode)
     {
       m_owner = ownerNode;
       m_ownerHasBeenSet = true;
+       m_ownerHasBeenSet = true;
     }
     XmlNode grantsNode = resultNode.FirstChild("Grants");
     if(!grantsNode.IsNull())
     {
       XmlNode grantsMember = grantsNode.FirstChild("member");
+      m_grantsHasBeenSet = !grantsMember.IsNull();
       while(!grantsMember.IsNull())
       {
         m_grants.push_back(grantsMember);
         grantsMember = grantsMember.NextNode("member");
       }
 
-      m_grantsHasBeenSet = true;
+       m_grantsHasBeenSet = true;
     }
   }
 

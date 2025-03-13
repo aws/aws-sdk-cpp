@@ -42,7 +42,7 @@ namespace Model
   class MedicalScribeStreamDetails
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeStreamDetails();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeStreamDetails() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeStreamDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeStreamDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,57 +52,53 @@ namespace Model
     /**
      * <p>The identifier of the HealthScribe streaming session.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline MedicalScribeStreamDetails& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline MedicalScribeStreamDetails& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline MedicalScribeStreamDetails& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    MedicalScribeStreamDetails& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the HealthScribe streaming session was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetStreamCreatedAt() const{ return m_streamCreatedAt; }
+    inline const Aws::Utils::DateTime& GetStreamCreatedAt() const { return m_streamCreatedAt; }
     inline bool StreamCreatedAtHasBeenSet() const { return m_streamCreatedAtHasBeenSet; }
-    inline void SetStreamCreatedAt(const Aws::Utils::DateTime& value) { m_streamCreatedAtHasBeenSet = true; m_streamCreatedAt = value; }
-    inline void SetStreamCreatedAt(Aws::Utils::DateTime&& value) { m_streamCreatedAtHasBeenSet = true; m_streamCreatedAt = std::move(value); }
-    inline MedicalScribeStreamDetails& WithStreamCreatedAt(const Aws::Utils::DateTime& value) { SetStreamCreatedAt(value); return *this;}
-    inline MedicalScribeStreamDetails& WithStreamCreatedAt(Aws::Utils::DateTime&& value) { SetStreamCreatedAt(std::move(value)); return *this;}
+    template<typename StreamCreatedAtT = Aws::Utils::DateTime>
+    void SetStreamCreatedAt(StreamCreatedAtT&& value) { m_streamCreatedAtHasBeenSet = true; m_streamCreatedAt = std::forward<StreamCreatedAtT>(value); }
+    template<typename StreamCreatedAtT = Aws::Utils::DateTime>
+    MedicalScribeStreamDetails& WithStreamCreatedAt(StreamCreatedAtT&& value) { SetStreamCreatedAt(std::forward<StreamCreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the HealthScribe streaming session was ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetStreamEndedAt() const{ return m_streamEndedAt; }
+    inline const Aws::Utils::DateTime& GetStreamEndedAt() const { return m_streamEndedAt; }
     inline bool StreamEndedAtHasBeenSet() const { return m_streamEndedAtHasBeenSet; }
-    inline void SetStreamEndedAt(const Aws::Utils::DateTime& value) { m_streamEndedAtHasBeenSet = true; m_streamEndedAt = value; }
-    inline void SetStreamEndedAt(Aws::Utils::DateTime&& value) { m_streamEndedAtHasBeenSet = true; m_streamEndedAt = std::move(value); }
-    inline MedicalScribeStreamDetails& WithStreamEndedAt(const Aws::Utils::DateTime& value) { SetStreamEndedAt(value); return *this;}
-    inline MedicalScribeStreamDetails& WithStreamEndedAt(Aws::Utils::DateTime&& value) { SetStreamEndedAt(std::move(value)); return *this;}
+    template<typename StreamEndedAtT = Aws::Utils::DateTime>
+    void SetStreamEndedAt(StreamEndedAtT&& value) { m_streamEndedAtHasBeenSet = true; m_streamEndedAt = std::forward<StreamEndedAtT>(value); }
+    template<typename StreamEndedAtT = Aws::Utils::DateTime>
+    MedicalScribeStreamDetails& WithStreamEndedAt(StreamEndedAtT&& value) { SetStreamEndedAt(std::forward<StreamEndedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Language Code of the HealthScribe streaming session.</p>
      */
-    inline const MedicalScribeLanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline MedicalScribeLanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const MedicalScribeLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(MedicalScribeLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline MedicalScribeStreamDetails& WithLanguageCode(const MedicalScribeLanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline MedicalScribeStreamDetails& WithLanguageCode(MedicalScribeLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(MedicalScribeLanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline MedicalScribeStreamDetails& WithLanguageCode(MedicalScribeLanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sample rate (in hertz) of the HealthScribe streaming session.</p>
      */
-    inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
+    inline int GetMediaSampleRateHertz() const { return m_mediaSampleRateHertz; }
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
     inline MedicalScribeStreamDetails& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
@@ -112,26 +108,22 @@ namespace Model
     /**
      * <p>The Media Encoding of the HealthScribe streaming session.</p>
      */
-    inline const MedicalScribeMediaEncoding& GetMediaEncoding() const{ return m_mediaEncoding; }
+    inline MedicalScribeMediaEncoding GetMediaEncoding() const { return m_mediaEncoding; }
     inline bool MediaEncodingHasBeenSet() const { return m_mediaEncodingHasBeenSet; }
-    inline void SetMediaEncoding(const MedicalScribeMediaEncoding& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
-    inline void SetMediaEncoding(MedicalScribeMediaEncoding&& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = std::move(value); }
-    inline MedicalScribeStreamDetails& WithMediaEncoding(const MedicalScribeMediaEncoding& value) { SetMediaEncoding(value); return *this;}
-    inline MedicalScribeStreamDetails& WithMediaEncoding(MedicalScribeMediaEncoding&& value) { SetMediaEncoding(std::move(value)); return *this;}
+    inline void SetMediaEncoding(MedicalScribeMediaEncoding value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
+    inline MedicalScribeStreamDetails& WithMediaEncoding(MedicalScribeMediaEncoding value) { SetMediaEncoding(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The vocabulary name of the HealthScribe streaming session.</p>
      */
-    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
+    inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
-    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
-    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
-    inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
-    inline MedicalScribeStreamDetails& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-    inline MedicalScribeStreamDetails& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-    inline MedicalScribeStreamDetails& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+    template<typename VocabularyNameT = Aws::String>
+    void SetVocabularyName(VocabularyNameT&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::forward<VocabularyNameT>(value); }
+    template<typename VocabularyNameT = Aws::String>
+    MedicalScribeStreamDetails& WithVocabularyName(VocabularyNameT&& value) { SetVocabularyName(std::forward<VocabularyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,14 +131,12 @@ namespace Model
      * <p>The name of the vocabulary filter used for the HealthScribe streaming session
      * .</p>
      */
-    inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
+    inline const Aws::String& GetVocabularyFilterName() const { return m_vocabularyFilterName; }
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
-    inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
-    inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
-    inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
-    inline MedicalScribeStreamDetails& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
-    inline MedicalScribeStreamDetails& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
-    inline MedicalScribeStreamDetails& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
+    template<typename VocabularyFilterNameT = Aws::String>
+    void SetVocabularyFilterName(VocabularyFilterNameT&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::forward<VocabularyFilterNameT>(value); }
+    template<typename VocabularyFilterNameT = Aws::String>
+    MedicalScribeStreamDetails& WithVocabularyFilterName(VocabularyFilterNameT&& value) { SetVocabularyFilterName(std::forward<VocabularyFilterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,12 +144,10 @@ namespace Model
      * <p>The method of the vocabulary filter for the HealthScribe streaming
      * session.</p>
      */
-    inline const MedicalScribeVocabularyFilterMethod& GetVocabularyFilterMethod() const{ return m_vocabularyFilterMethod; }
+    inline MedicalScribeVocabularyFilterMethod GetVocabularyFilterMethod() const { return m_vocabularyFilterMethod; }
     inline bool VocabularyFilterMethodHasBeenSet() const { return m_vocabularyFilterMethodHasBeenSet; }
-    inline void SetVocabularyFilterMethod(const MedicalScribeVocabularyFilterMethod& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
-    inline void SetVocabularyFilterMethod(MedicalScribeVocabularyFilterMethod&& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = std::move(value); }
-    inline MedicalScribeStreamDetails& WithVocabularyFilterMethod(const MedicalScribeVocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
-    inline MedicalScribeStreamDetails& WithVocabularyFilterMethod(MedicalScribeVocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
+    inline void SetVocabularyFilterMethod(MedicalScribeVocabularyFilterMethod value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
+    inline MedicalScribeStreamDetails& WithVocabularyFilterMethod(MedicalScribeVocabularyFilterMethod value) { SetVocabularyFilterMethod(value); return *this;}
     ///@}
 
     ///@{
@@ -167,40 +155,38 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the role used in the HealthScribe streaming
      * session.</p>
      */
-    inline const Aws::String& GetResourceAccessRoleArn() const{ return m_resourceAccessRoleArn; }
+    inline const Aws::String& GetResourceAccessRoleArn() const { return m_resourceAccessRoleArn; }
     inline bool ResourceAccessRoleArnHasBeenSet() const { return m_resourceAccessRoleArnHasBeenSet; }
-    inline void SetResourceAccessRoleArn(const Aws::String& value) { m_resourceAccessRoleArnHasBeenSet = true; m_resourceAccessRoleArn = value; }
-    inline void SetResourceAccessRoleArn(Aws::String&& value) { m_resourceAccessRoleArnHasBeenSet = true; m_resourceAccessRoleArn = std::move(value); }
-    inline void SetResourceAccessRoleArn(const char* value) { m_resourceAccessRoleArnHasBeenSet = true; m_resourceAccessRoleArn.assign(value); }
-    inline MedicalScribeStreamDetails& WithResourceAccessRoleArn(const Aws::String& value) { SetResourceAccessRoleArn(value); return *this;}
-    inline MedicalScribeStreamDetails& WithResourceAccessRoleArn(Aws::String&& value) { SetResourceAccessRoleArn(std::move(value)); return *this;}
-    inline MedicalScribeStreamDetails& WithResourceAccessRoleArn(const char* value) { SetResourceAccessRoleArn(value); return *this;}
+    template<typename ResourceAccessRoleArnT = Aws::String>
+    void SetResourceAccessRoleArn(ResourceAccessRoleArnT&& value) { m_resourceAccessRoleArnHasBeenSet = true; m_resourceAccessRoleArn = std::forward<ResourceAccessRoleArnT>(value); }
+    template<typename ResourceAccessRoleArnT = Aws::String>
+    MedicalScribeStreamDetails& WithResourceAccessRoleArn(ResourceAccessRoleArnT&& value) { SetResourceAccessRoleArn(std::forward<ResourceAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Channel Definitions of the HealthScribe streaming session.</p>
      */
-    inline const Aws::Vector<MedicalScribeChannelDefinition>& GetChannelDefinitions() const{ return m_channelDefinitions; }
+    inline const Aws::Vector<MedicalScribeChannelDefinition>& GetChannelDefinitions() const { return m_channelDefinitions; }
     inline bool ChannelDefinitionsHasBeenSet() const { return m_channelDefinitionsHasBeenSet; }
-    inline void SetChannelDefinitions(const Aws::Vector<MedicalScribeChannelDefinition>& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = value; }
-    inline void SetChannelDefinitions(Aws::Vector<MedicalScribeChannelDefinition>&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = std::move(value); }
-    inline MedicalScribeStreamDetails& WithChannelDefinitions(const Aws::Vector<MedicalScribeChannelDefinition>& value) { SetChannelDefinitions(value); return *this;}
-    inline MedicalScribeStreamDetails& WithChannelDefinitions(Aws::Vector<MedicalScribeChannelDefinition>&& value) { SetChannelDefinitions(std::move(value)); return *this;}
-    inline MedicalScribeStreamDetails& AddChannelDefinitions(const MedicalScribeChannelDefinition& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(value); return *this; }
-    inline MedicalScribeStreamDetails& AddChannelDefinitions(MedicalScribeChannelDefinition&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(std::move(value)); return *this; }
+    template<typename ChannelDefinitionsT = Aws::Vector<MedicalScribeChannelDefinition>>
+    void SetChannelDefinitions(ChannelDefinitionsT&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = std::forward<ChannelDefinitionsT>(value); }
+    template<typename ChannelDefinitionsT = Aws::Vector<MedicalScribeChannelDefinition>>
+    MedicalScribeStreamDetails& WithChannelDefinitions(ChannelDefinitionsT&& value) { SetChannelDefinitions(std::forward<ChannelDefinitionsT>(value)); return *this;}
+    template<typename ChannelDefinitionsT = MedicalScribeChannelDefinition>
+    MedicalScribeStreamDetails& AddChannelDefinitions(ChannelDefinitionsT&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.emplace_back(std::forward<ChannelDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Encryption Settings of the HealthScribe streaming session.</p>
      */
-    inline const MedicalScribeEncryptionSettings& GetEncryptionSettings() const{ return m_encryptionSettings; }
+    inline const MedicalScribeEncryptionSettings& GetEncryptionSettings() const { return m_encryptionSettings; }
     inline bool EncryptionSettingsHasBeenSet() const { return m_encryptionSettingsHasBeenSet; }
-    inline void SetEncryptionSettings(const MedicalScribeEncryptionSettings& value) { m_encryptionSettingsHasBeenSet = true; m_encryptionSettings = value; }
-    inline void SetEncryptionSettings(MedicalScribeEncryptionSettings&& value) { m_encryptionSettingsHasBeenSet = true; m_encryptionSettings = std::move(value); }
-    inline MedicalScribeStreamDetails& WithEncryptionSettings(const MedicalScribeEncryptionSettings& value) { SetEncryptionSettings(value); return *this;}
-    inline MedicalScribeStreamDetails& WithEncryptionSettings(MedicalScribeEncryptionSettings&& value) { SetEncryptionSettings(std::move(value)); return *this;}
+    template<typename EncryptionSettingsT = MedicalScribeEncryptionSettings>
+    void SetEncryptionSettings(EncryptionSettingsT&& value) { m_encryptionSettingsHasBeenSet = true; m_encryptionSettings = std::forward<EncryptionSettingsT>(value); }
+    template<typename EncryptionSettingsT = MedicalScribeEncryptionSettings>
+    MedicalScribeStreamDetails& WithEncryptionSettings(EncryptionSettingsT&& value) { SetEncryptionSettings(std::forward<EncryptionSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -215,24 +201,22 @@ namespace Model
      * <code>MedicalScribePostStreamAnalyticsResult</code>. For example, you can view
      * the status of the <code>ClinicalNoteGenerationResult</code>. </p> 
      */
-    inline const MedicalScribeStreamStatus& GetStreamStatus() const{ return m_streamStatus; }
+    inline MedicalScribeStreamStatus GetStreamStatus() const { return m_streamStatus; }
     inline bool StreamStatusHasBeenSet() const { return m_streamStatusHasBeenSet; }
-    inline void SetStreamStatus(const MedicalScribeStreamStatus& value) { m_streamStatusHasBeenSet = true; m_streamStatus = value; }
-    inline void SetStreamStatus(MedicalScribeStreamStatus&& value) { m_streamStatusHasBeenSet = true; m_streamStatus = std::move(value); }
-    inline MedicalScribeStreamDetails& WithStreamStatus(const MedicalScribeStreamStatus& value) { SetStreamStatus(value); return *this;}
-    inline MedicalScribeStreamDetails& WithStreamStatus(MedicalScribeStreamStatus&& value) { SetStreamStatus(std::move(value)); return *this;}
+    inline void SetStreamStatus(MedicalScribeStreamStatus value) { m_streamStatusHasBeenSet = true; m_streamStatus = value; }
+    inline MedicalScribeStreamDetails& WithStreamStatus(MedicalScribeStreamStatus value) { SetStreamStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The post-stream analytics settings of the HealthScribe streaming session.</p>
      */
-    inline const MedicalScribePostStreamAnalyticsSettings& GetPostStreamAnalyticsSettings() const{ return m_postStreamAnalyticsSettings; }
+    inline const MedicalScribePostStreamAnalyticsSettings& GetPostStreamAnalyticsSettings() const { return m_postStreamAnalyticsSettings; }
     inline bool PostStreamAnalyticsSettingsHasBeenSet() const { return m_postStreamAnalyticsSettingsHasBeenSet; }
-    inline void SetPostStreamAnalyticsSettings(const MedicalScribePostStreamAnalyticsSettings& value) { m_postStreamAnalyticsSettingsHasBeenSet = true; m_postStreamAnalyticsSettings = value; }
-    inline void SetPostStreamAnalyticsSettings(MedicalScribePostStreamAnalyticsSettings&& value) { m_postStreamAnalyticsSettingsHasBeenSet = true; m_postStreamAnalyticsSettings = std::move(value); }
-    inline MedicalScribeStreamDetails& WithPostStreamAnalyticsSettings(const MedicalScribePostStreamAnalyticsSettings& value) { SetPostStreamAnalyticsSettings(value); return *this;}
-    inline MedicalScribeStreamDetails& WithPostStreamAnalyticsSettings(MedicalScribePostStreamAnalyticsSettings&& value) { SetPostStreamAnalyticsSettings(std::move(value)); return *this;}
+    template<typename PostStreamAnalyticsSettingsT = MedicalScribePostStreamAnalyticsSettings>
+    void SetPostStreamAnalyticsSettings(PostStreamAnalyticsSettingsT&& value) { m_postStreamAnalyticsSettingsHasBeenSet = true; m_postStreamAnalyticsSettings = std::forward<PostStreamAnalyticsSettingsT>(value); }
+    template<typename PostStreamAnalyticsSettingsT = MedicalScribePostStreamAnalyticsSettings>
+    MedicalScribeStreamDetails& WithPostStreamAnalyticsSettings(PostStreamAnalyticsSettingsT&& value) { SetPostStreamAnalyticsSettings(std::forward<PostStreamAnalyticsSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -240,31 +224,31 @@ namespace Model
      * <p>The result of post-stream analytics for the HealthScribe streaming
      * session.</p>
      */
-    inline const MedicalScribePostStreamAnalyticsResult& GetPostStreamAnalyticsResult() const{ return m_postStreamAnalyticsResult; }
+    inline const MedicalScribePostStreamAnalyticsResult& GetPostStreamAnalyticsResult() const { return m_postStreamAnalyticsResult; }
     inline bool PostStreamAnalyticsResultHasBeenSet() const { return m_postStreamAnalyticsResultHasBeenSet; }
-    inline void SetPostStreamAnalyticsResult(const MedicalScribePostStreamAnalyticsResult& value) { m_postStreamAnalyticsResultHasBeenSet = true; m_postStreamAnalyticsResult = value; }
-    inline void SetPostStreamAnalyticsResult(MedicalScribePostStreamAnalyticsResult&& value) { m_postStreamAnalyticsResultHasBeenSet = true; m_postStreamAnalyticsResult = std::move(value); }
-    inline MedicalScribeStreamDetails& WithPostStreamAnalyticsResult(const MedicalScribePostStreamAnalyticsResult& value) { SetPostStreamAnalyticsResult(value); return *this;}
-    inline MedicalScribeStreamDetails& WithPostStreamAnalyticsResult(MedicalScribePostStreamAnalyticsResult&& value) { SetPostStreamAnalyticsResult(std::move(value)); return *this;}
+    template<typename PostStreamAnalyticsResultT = MedicalScribePostStreamAnalyticsResult>
+    void SetPostStreamAnalyticsResult(PostStreamAnalyticsResultT&& value) { m_postStreamAnalyticsResultHasBeenSet = true; m_postStreamAnalyticsResult = std::forward<PostStreamAnalyticsResultT>(value); }
+    template<typename PostStreamAnalyticsResultT = MedicalScribePostStreamAnalyticsResult>
+    MedicalScribeStreamDetails& WithPostStreamAnalyticsResult(PostStreamAnalyticsResultT&& value) { SetPostStreamAnalyticsResult(std::forward<PostStreamAnalyticsResultT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_streamCreatedAt;
+    Aws::Utils::DateTime m_streamCreatedAt{};
     bool m_streamCreatedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_streamEndedAt;
+    Aws::Utils::DateTime m_streamEndedAt{};
     bool m_streamEndedAtHasBeenSet = false;
 
-    MedicalScribeLanguageCode m_languageCode;
+    MedicalScribeLanguageCode m_languageCode{MedicalScribeLanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    int m_mediaSampleRateHertz;
+    int m_mediaSampleRateHertz{0};
     bool m_mediaSampleRateHertzHasBeenSet = false;
 
-    MedicalScribeMediaEncoding m_mediaEncoding;
+    MedicalScribeMediaEncoding m_mediaEncoding{MedicalScribeMediaEncoding::NOT_SET};
     bool m_mediaEncodingHasBeenSet = false;
 
     Aws::String m_vocabularyName;
@@ -273,7 +257,7 @@ namespace Model
     Aws::String m_vocabularyFilterName;
     bool m_vocabularyFilterNameHasBeenSet = false;
 
-    MedicalScribeVocabularyFilterMethod m_vocabularyFilterMethod;
+    MedicalScribeVocabularyFilterMethod m_vocabularyFilterMethod{MedicalScribeVocabularyFilterMethod::NOT_SET};
     bool m_vocabularyFilterMethodHasBeenSet = false;
 
     Aws::String m_resourceAccessRoleArn;
@@ -285,7 +269,7 @@ namespace Model
     MedicalScribeEncryptionSettings m_encryptionSettings;
     bool m_encryptionSettingsHasBeenSet = false;
 
-    MedicalScribeStreamStatus m_streamStatus;
+    MedicalScribeStreamStatus m_streamStatus{MedicalScribeStreamStatus::NOT_SET};
     bool m_streamStatusHasBeenSet = false;
 
     MedicalScribePostStreamAnalyticsSettings m_postStreamAnalyticsSettings;

@@ -17,13 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListMultiRegionAccessPointsRequest::ListMultiRegionAccessPointsRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
 
 Aws::String ListMultiRegionAccessPointsRequest::SerializePayload() const
 {

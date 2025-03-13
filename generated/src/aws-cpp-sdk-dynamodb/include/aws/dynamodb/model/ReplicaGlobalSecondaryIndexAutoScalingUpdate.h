@@ -33,7 +33,7 @@ namespace Model
   class ReplicaGlobalSecondaryIndexAutoScalingUpdate
   {
   public:
-    AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexAutoScalingUpdate();
+    AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexAutoScalingUpdate() = default;
     AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexAutoScalingUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexAutoScalingUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,22 @@ namespace Model
     /**
      * <p>The name of the global secondary index.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const Aws::String& GetIndexName() const { return m_indexName; }
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-    inline ReplicaGlobalSecondaryIndexAutoScalingUpdate& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-    inline ReplicaGlobalSecondaryIndexAutoScalingUpdate& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-    inline ReplicaGlobalSecondaryIndexAutoScalingUpdate& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    template<typename IndexNameT = Aws::String>
+    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
+    template<typename IndexNameT = Aws::String>
+    ReplicaGlobalSecondaryIndexAutoScalingUpdate& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AutoScalingSettingsUpdate& GetProvisionedReadCapacityAutoScalingUpdate() const{ return m_provisionedReadCapacityAutoScalingUpdate; }
+    inline const AutoScalingSettingsUpdate& GetProvisionedReadCapacityAutoScalingUpdate() const { return m_provisionedReadCapacityAutoScalingUpdate; }
     inline bool ProvisionedReadCapacityAutoScalingUpdateHasBeenSet() const { return m_provisionedReadCapacityAutoScalingUpdateHasBeenSet; }
-    inline void SetProvisionedReadCapacityAutoScalingUpdate(const AutoScalingSettingsUpdate& value) { m_provisionedReadCapacityAutoScalingUpdateHasBeenSet = true; m_provisionedReadCapacityAutoScalingUpdate = value; }
-    inline void SetProvisionedReadCapacityAutoScalingUpdate(AutoScalingSettingsUpdate&& value) { m_provisionedReadCapacityAutoScalingUpdateHasBeenSet = true; m_provisionedReadCapacityAutoScalingUpdate = std::move(value); }
-    inline ReplicaGlobalSecondaryIndexAutoScalingUpdate& WithProvisionedReadCapacityAutoScalingUpdate(const AutoScalingSettingsUpdate& value) { SetProvisionedReadCapacityAutoScalingUpdate(value); return *this;}
-    inline ReplicaGlobalSecondaryIndexAutoScalingUpdate& WithProvisionedReadCapacityAutoScalingUpdate(AutoScalingSettingsUpdate&& value) { SetProvisionedReadCapacityAutoScalingUpdate(std::move(value)); return *this;}
+    template<typename ProvisionedReadCapacityAutoScalingUpdateT = AutoScalingSettingsUpdate>
+    void SetProvisionedReadCapacityAutoScalingUpdate(ProvisionedReadCapacityAutoScalingUpdateT&& value) { m_provisionedReadCapacityAutoScalingUpdateHasBeenSet = true; m_provisionedReadCapacityAutoScalingUpdate = std::forward<ProvisionedReadCapacityAutoScalingUpdateT>(value); }
+    template<typename ProvisionedReadCapacityAutoScalingUpdateT = AutoScalingSettingsUpdate>
+    ReplicaGlobalSecondaryIndexAutoScalingUpdate& WithProvisionedReadCapacityAutoScalingUpdate(ProvisionedReadCapacityAutoScalingUpdateT&& value) { SetProvisionedReadCapacityAutoScalingUpdate(std::forward<ProvisionedReadCapacityAutoScalingUpdateT>(value)); return *this;}
     ///@}
   private:
 

@@ -28,7 +28,7 @@ namespace Model
   class GetBucketMetadataTableConfigurationSdkResult
   {
   public:
-    AWS_S3_API GetBucketMetadataTableConfigurationSdkResult();
+    AWS_S3_API GetBucketMetadataTableConfigurationSdkResult() = default;
     AWS_S3_API GetBucketMetadataTableConfigurationSdkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3_API GetBucketMetadataTableConfigurationSdkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p> The metadata table configuration for the general purpose bucket. </p>
      */
-    inline const GetBucketMetadataTableConfigurationResult& GetGetBucketMetadataTableConfigurationResult() const{ return m_getBucketMetadataTableConfigurationResult; }
-    inline void SetGetBucketMetadataTableConfigurationResult(const GetBucketMetadataTableConfigurationResult& value) { m_getBucketMetadataTableConfigurationResult = value; }
-    inline void SetGetBucketMetadataTableConfigurationResult(GetBucketMetadataTableConfigurationResult&& value) { m_getBucketMetadataTableConfigurationResult = std::move(value); }
-    inline GetBucketMetadataTableConfigurationSdkResult& WithGetBucketMetadataTableConfigurationResult(const GetBucketMetadataTableConfigurationResult& value) { SetGetBucketMetadataTableConfigurationResult(value); return *this;}
-    inline GetBucketMetadataTableConfigurationSdkResult& WithGetBucketMetadataTableConfigurationResult(GetBucketMetadataTableConfigurationResult&& value) { SetGetBucketMetadataTableConfigurationResult(std::move(value)); return *this;}
+    inline const GetBucketMetadataTableConfigurationResult& GetGetBucketMetadataTableConfigurationResult() const { return m_getBucketMetadataTableConfigurationResult; }
+    template<typename GetBucketMetadataTableConfigurationResultT = GetBucketMetadataTableConfigurationResult>
+    void SetGetBucketMetadataTableConfigurationResult(GetBucketMetadataTableConfigurationResultT&& value) { m_getBucketMetadataTableConfigurationResultHasBeenSet = true; m_getBucketMetadataTableConfigurationResult = std::forward<GetBucketMetadataTableConfigurationResultT>(value); }
+    template<typename GetBucketMetadataTableConfigurationResultT = GetBucketMetadataTableConfigurationResult>
+    GetBucketMetadataTableConfigurationSdkResult& WithGetBucketMetadataTableConfigurationResult(GetBucketMetadataTableConfigurationResultT&& value) { SetGetBucketMetadataTableConfigurationResult(std::forward<GetBucketMetadataTableConfigurationResultT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBucketMetadataTableConfigurationSdkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBucketMetadataTableConfigurationSdkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBucketMetadataTableConfigurationSdkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBucketMetadataTableConfigurationSdkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     GetBucketMetadataTableConfigurationResult m_getBucketMetadataTableConfigurationResult;
+    bool m_getBucketMetadataTableConfigurationResultHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-StreamSpecification::StreamSpecification() : 
-    m_streamEnabled(false),
-    m_streamEnabledHasBeenSet(false),
-    m_streamViewType(StreamViewType::NOT_SET),
-    m_streamViewTypeHasBeenSet(false)
-{
-}
-
 StreamSpecification::StreamSpecification(JsonView jsonValue)
-  : StreamSpecification()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ StreamSpecification& StreamSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StreamEnabled"))
   {
     m_streamEnabled = jsonValue.GetBool("StreamEnabled");
-
     m_streamEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamViewType"))
   {
     m_streamViewType = StreamViewTypeMapper::GetStreamViewTypeForName(jsonValue.GetString("StreamViewType"));
-
     m_streamViewTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

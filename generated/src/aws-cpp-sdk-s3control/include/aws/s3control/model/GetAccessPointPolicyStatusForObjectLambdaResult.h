@@ -28,52 +28,51 @@ namespace Model
   class GetAccessPointPolicyStatusForObjectLambdaResult
   {
   public:
-    AWS_S3CONTROL_API GetAccessPointPolicyStatusForObjectLambdaResult();
+    AWS_S3CONTROL_API GetAccessPointPolicyStatusForObjectLambdaResult() = default;
     AWS_S3CONTROL_API GetAccessPointPolicyStatusForObjectLambdaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CONTROL_API GetAccessPointPolicyStatusForObjectLambdaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const PolicyStatus& GetPolicyStatus() const{ return m_policyStatus; }
-    inline void SetPolicyStatus(const PolicyStatus& value) { m_policyStatus = value; }
-    inline void SetPolicyStatus(PolicyStatus&& value) { m_policyStatus = std::move(value); }
-    inline GetAccessPointPolicyStatusForObjectLambdaResult& WithPolicyStatus(const PolicyStatus& value) { SetPolicyStatus(value); return *this;}
-    inline GetAccessPointPolicyStatusForObjectLambdaResult& WithPolicyStatus(PolicyStatus&& value) { SetPolicyStatus(std::move(value)); return *this;}
+    inline const PolicyStatus& GetPolicyStatus() const { return m_policyStatus; }
+    template<typename PolicyStatusT = PolicyStatus>
+    void SetPolicyStatus(PolicyStatusT&& value) { m_policyStatusHasBeenSet = true; m_policyStatus = std::forward<PolicyStatusT>(value); }
+    template<typename PolicyStatusT = PolicyStatus>
+    GetAccessPointPolicyStatusForObjectLambdaResult& WithPolicyStatus(PolicyStatusT&& value) { SetPolicyStatus(std::forward<PolicyStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * AWS Request Id value
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAccessPointPolicyStatusForObjectLambdaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAccessPointPolicyStatusForObjectLambdaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAccessPointPolicyStatusForObjectLambdaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAccessPointPolicyStatusForObjectLambdaResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * x-amz-id-2 header value, also known as Host Id
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
-    inline void SetHostId(const Aws::String& value) { m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostId.assign(value); }
-    inline GetAccessPointPolicyStatusForObjectLambdaResult& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline GetAccessPointPolicyStatusForObjectLambdaResult& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline GetAccessPointPolicyStatusForObjectLambdaResult& WithHostId(const char* value) { SetHostId(value); return *this;}
+    inline const Aws::String& GetHostId() const { return m_hostId; }
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    GetAccessPointPolicyStatusForObjectLambdaResult& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
   private:
 
     PolicyStatus m_policyStatus;
+    bool m_policyStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_hostId;
+    bool m_hostIdHasBeenSet = false;
   };
 
 } // namespace Model

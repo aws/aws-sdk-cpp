@@ -15,15 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateAccessPointRequest::CreateAccessPointRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_publicAccessBlockConfigurationHasBeenSet(false),
-    m_bucketAccountIdHasBeenSet(false)
-{
-}
 
 Aws::String CreateAccessPointRequest::SerializePayload() const
 {

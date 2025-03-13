@@ -32,7 +32,7 @@ namespace Model
   class MedicalScribeSessionControlEvent
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeSessionControlEvent();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeSessionControlEvent() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeSessionControlEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeSessionControlEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,16 +54,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_MedicalScribeStreamDetails.html">MedicalScribeStreamDetails</a>.
      * </p> </li> </ul>
      */
-    inline const MedicalScribeSessionControlEventType& GetType() const{ return m_type; }
+    inline MedicalScribeSessionControlEventType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MedicalScribeSessionControlEventType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MedicalScribeSessionControlEventType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline MedicalScribeSessionControlEvent& WithType(const MedicalScribeSessionControlEventType& value) { SetType(value); return *this;}
-    inline MedicalScribeSessionControlEvent& WithType(MedicalScribeSessionControlEventType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MedicalScribeSessionControlEventType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline MedicalScribeSessionControlEvent& WithType(MedicalScribeSessionControlEventType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    MedicalScribeSessionControlEventType m_type;
+    MedicalScribeSessionControlEventType m_type{MedicalScribeSessionControlEventType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

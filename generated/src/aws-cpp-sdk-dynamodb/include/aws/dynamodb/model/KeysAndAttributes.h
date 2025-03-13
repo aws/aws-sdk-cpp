@@ -39,7 +39,7 @@ namespace Model
   class KeysAndAttributes
   {
   public:
-    AWS_DYNAMODB_API KeysAndAttributes();
+    AWS_DYNAMODB_API KeysAndAttributes() = default;
     AWS_DYNAMODB_API KeysAndAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API KeysAndAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,14 @@ namespace Model
      * <p>The primary key attribute values that define the items and the attributes
      * associated with the items.</p>
      */
-    inline const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& GetKeys() const{ return m_keys; }
+    inline const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& GetKeys() const { return m_keys; }
     inline bool KeysHasBeenSet() const { return m_keysHasBeenSet; }
-    inline void SetKeys(const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { m_keysHasBeenSet = true; m_keys = value; }
-    inline void SetKeys(Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { m_keysHasBeenSet = true; m_keys = std::move(value); }
-    inline KeysAndAttributes& WithKeys(const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { SetKeys(value); return *this;}
-    inline KeysAndAttributes& WithKeys(Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { SetKeys(std::move(value)); return *this;}
-    inline KeysAndAttributes& AddKeys(const Aws::Map<Aws::String, AttributeValue>& value) { m_keysHasBeenSet = true; m_keys.push_back(value); return *this; }
-    inline KeysAndAttributes& AddKeys(Aws::Map<Aws::String, AttributeValue>&& value) { m_keysHasBeenSet = true; m_keys.push_back(std::move(value)); return *this; }
+    template<typename KeysT = Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>
+    void SetKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys = std::forward<KeysT>(value); }
+    template<typename KeysT = Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>
+    KeysAndAttributes& WithKeys(KeysT&& value) { SetKeys(std::forward<KeysT>(value)); return *this;}
+    template<typename KeysT = Aws::Map<Aws::String, AttributeValue>>
+    KeysAndAttributes& AddKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys.emplace_back(std::forward<KeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -67,15 +67,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAttributesToGet() const{ return m_attributesToGet; }
+    inline const Aws::Vector<Aws::String>& GetAttributesToGet() const { return m_attributesToGet; }
     inline bool AttributesToGetHasBeenSet() const { return m_attributesToGetHasBeenSet; }
-    inline void SetAttributesToGet(const Aws::Vector<Aws::String>& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
-    inline void SetAttributesToGet(Aws::Vector<Aws::String>&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::move(value); }
-    inline KeysAndAttributes& WithAttributesToGet(const Aws::Vector<Aws::String>& value) { SetAttributesToGet(value); return *this;}
-    inline KeysAndAttributes& WithAttributesToGet(Aws::Vector<Aws::String>&& value) { SetAttributesToGet(std::move(value)); return *this;}
-    inline KeysAndAttributes& AddAttributesToGet(const Aws::String& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
-    inline KeysAndAttributes& AddAttributesToGet(Aws::String&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(std::move(value)); return *this; }
-    inline KeysAndAttributes& AddAttributesToGet(const char* value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
+    template<typename AttributesToGetT = Aws::Vector<Aws::String>>
+    void SetAttributesToGet(AttributesToGetT&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::forward<AttributesToGetT>(value); }
+    template<typename AttributesToGetT = Aws::Vector<Aws::String>>
+    KeysAndAttributes& WithAttributesToGet(AttributesToGetT&& value) { SetAttributesToGet(std::forward<AttributesToGetT>(value)); return *this;}
+    template<typename AttributesToGetT = Aws::String>
+    KeysAndAttributes& AddAttributesToGet(AttributesToGetT&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.emplace_back(std::forward<AttributesToGetT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,7 +83,7 @@ namespace Model
      * strongly consistent read is used; otherwise, an eventually consistent read is
      * used.</p>
      */
-    inline bool GetConsistentRead() const{ return m_consistentRead; }
+    inline bool GetConsistentRead() const { return m_consistentRead; }
     inline bool ConsistentReadHasBeenSet() const { return m_consistentReadHasBeenSet; }
     inline void SetConsistentRead(bool value) { m_consistentReadHasBeenSet = true; m_consistentRead = value; }
     inline KeysAndAttributes& WithConsistentRead(bool value) { SetConsistentRead(value); return *this;}
@@ -101,14 +100,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetProjectionExpression() const{ return m_projectionExpression; }
+    inline const Aws::String& GetProjectionExpression() const { return m_projectionExpression; }
     inline bool ProjectionExpressionHasBeenSet() const { return m_projectionExpressionHasBeenSet; }
-    inline void SetProjectionExpression(const Aws::String& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = value; }
-    inline void SetProjectionExpression(Aws::String&& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = std::move(value); }
-    inline void SetProjectionExpression(const char* value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression.assign(value); }
-    inline KeysAndAttributes& WithProjectionExpression(const Aws::String& value) { SetProjectionExpression(value); return *this;}
-    inline KeysAndAttributes& WithProjectionExpression(Aws::String&& value) { SetProjectionExpression(std::move(value)); return *this;}
-    inline KeysAndAttributes& WithProjectionExpression(const char* value) { SetProjectionExpression(value); return *this;}
+    template<typename ProjectionExpressionT = Aws::String>
+    void SetProjectionExpression(ProjectionExpressionT&& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = std::forward<ProjectionExpressionT>(value); }
+    template<typename ProjectionExpressionT = Aws::String>
+    KeysAndAttributes& WithProjectionExpression(ProjectionExpressionT&& value) { SetProjectionExpression(std::forward<ProjectionExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,19 +134,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetExpressionAttributeNames() const{ return m_expressionAttributeNames; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetExpressionAttributeNames() const { return m_expressionAttributeNames; }
     inline bool ExpressionAttributeNamesHasBeenSet() const { return m_expressionAttributeNamesHasBeenSet; }
-    inline void SetExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = value; }
-    inline void SetExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = std::move(value); }
-    inline KeysAndAttributes& WithExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { SetExpressionAttributeNames(value); return *this;}
-    inline KeysAndAttributes& WithExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { SetExpressionAttributeNames(std::move(value)); return *this;}
-    inline KeysAndAttributes& AddExpressionAttributeNames(const Aws::String& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
-    inline KeysAndAttributes& AddExpressionAttributeNames(Aws::String&& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
-    inline KeysAndAttributes& AddExpressionAttributeNames(const Aws::String& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
-    inline KeysAndAttributes& AddExpressionAttributeNames(Aws::String&& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), std::move(value)); return *this; }
-    inline KeysAndAttributes& AddExpressionAttributeNames(const char* key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
-    inline KeysAndAttributes& AddExpressionAttributeNames(Aws::String&& key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
-    inline KeysAndAttributes& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
+    template<typename ExpressionAttributeNamesT = Aws::Map<Aws::String, Aws::String>>
+    void SetExpressionAttributeNames(ExpressionAttributeNamesT&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = std::forward<ExpressionAttributeNamesT>(value); }
+    template<typename ExpressionAttributeNamesT = Aws::Map<Aws::String, Aws::String>>
+    KeysAndAttributes& WithExpressionAttributeNames(ExpressionAttributeNamesT&& value) { SetExpressionAttributeNames(std::forward<ExpressionAttributeNamesT>(value)); return *this;}
+    template<typename ExpressionAttributeNamesKeyT = Aws::String, typename ExpressionAttributeNamesValueT = Aws::String>
+    KeysAndAttributes& AddExpressionAttributeNames(ExpressionAttributeNamesKeyT&& key, ExpressionAttributeNamesValueT&& value) {
+      m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::forward<ExpressionAttributeNamesKeyT>(key), std::forward<ExpressionAttributeNamesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -159,7 +153,7 @@ namespace Model
     Aws::Vector<Aws::String> m_attributesToGet;
     bool m_attributesToGetHasBeenSet = false;
 
-    bool m_consistentRead;
+    bool m_consistentRead{false};
     bool m_consistentReadHasBeenSet = false;
 
     Aws::String m_projectionExpression;

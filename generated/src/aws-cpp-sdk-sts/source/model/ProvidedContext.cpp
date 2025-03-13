@@ -20,14 +20,7 @@ namespace STS
 namespace Model
 {
 
-ProvidedContext::ProvidedContext() : 
-    m_providerArnHasBeenSet(false),
-    m_contextAssertionHasBeenSet(false)
-{
-}
-
 ProvidedContext::ProvidedContext(const XmlNode& xmlNode)
-  : ProvidedContext()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ProvidedContext& ProvidedContext::operator =(const XmlNode& xmlNode)
     {
       m_providerArn = Aws::Utils::Xml::DecodeEscapedXmlText(providerArnNode.GetText());
       m_providerArnHasBeenSet = true;
+       m_providerArnHasBeenSet = true;
     }
     XmlNode contextAssertionNode = resultNode.FirstChild("ContextAssertion");
     if(!contextAssertionNode.IsNull())
     {
       m_contextAssertion = Aws::Utils::Xml::DecodeEscapedXmlText(contextAssertionNode.GetText());
       m_contextAssertionHasBeenSet = true;
+       m_contextAssertionHasBeenSet = true;
     }
   }
 

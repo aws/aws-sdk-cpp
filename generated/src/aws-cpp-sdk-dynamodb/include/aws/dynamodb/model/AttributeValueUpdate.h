@@ -40,7 +40,7 @@ namespace Model
   class AttributeValueUpdate
   {
   public:
-    AWS_DYNAMODB_API AttributeValueUpdate();
+    AWS_DYNAMODB_API AttributeValueUpdate() = default;
     AWS_DYNAMODB_API AttributeValueUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API AttributeValueUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
-    inline const AttributeValue& GetValue() const{ return m_value; }
+    inline const AttributeValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const AttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(AttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline AttributeValueUpdate& WithValue(const AttributeValue& value) { SetValue(value); return *this;}
-    inline AttributeValueUpdate& WithValue(AttributeValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = AttributeValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = AttributeValue>
+    AttributeValueUpdate& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,19 +115,17 @@ namespace Model
      * for the attribute value. The only data types allowed are number, number set,
      * string set or binary set.</p> </li> </ul>
      */
-    inline const AttributeAction& GetAction() const{ return m_action; }
+    inline AttributeAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const AttributeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(AttributeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline AttributeValueUpdate& WithAction(const AttributeAction& value) { SetAction(value); return *this;}
-    inline AttributeValueUpdate& WithAction(AttributeAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(AttributeAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline AttributeValueUpdate& WithAction(AttributeAction value) { SetAction(value); return *this;}
     ///@}
   private:
 
     AttributeValue m_value;
     bool m_valueHasBeenSet = false;
 
-    AttributeAction m_action;
+    AttributeAction m_action{AttributeAction::NOT_SET};
     bool m_actionHasBeenSet = false;
   };
 

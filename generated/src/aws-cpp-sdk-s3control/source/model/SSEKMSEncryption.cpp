@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-SSEKMSEncryption::SSEKMSEncryption() : 
-    m_keyIdHasBeenSet(false)
-{
-}
-
 SSEKMSEncryption::SSEKMSEncryption(const XmlNode& xmlNode)
-  : SSEKMSEncryption()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ SSEKMSEncryption& SSEKMSEncryption::operator =(const XmlNode& xmlNode)
     {
       m_keyId = Aws::Utils::Xml::DecodeEscapedXmlText(keyIdNode.GetText());
       m_keyIdHasBeenSet = true;
+       m_keyIdHasBeenSet = true;
     }
   }
 

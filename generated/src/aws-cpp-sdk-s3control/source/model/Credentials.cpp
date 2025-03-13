@@ -20,16 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-Credentials::Credentials() : 
-    m_accessKeyIdHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false),
-    m_expirationHasBeenSet(false)
-{
-}
-
 Credentials::Credentials(const XmlNode& xmlNode)
-  : Credentials()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ Credentials& Credentials::operator =(const XmlNode& xmlNode)
     {
       m_accessKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(accessKeyIdNode.GetText());
       m_accessKeyIdHasBeenSet = true;
+       m_accessKeyIdHasBeenSet = true;
     }
     XmlNode secretAccessKeyNode = resultNode.FirstChild("SecretAccessKey");
     if(!secretAccessKeyNode.IsNull())
     {
       m_secretAccessKey = Aws::Utils::Xml::DecodeEscapedXmlText(secretAccessKeyNode.GetText());
       m_secretAccessKeyHasBeenSet = true;
+       m_secretAccessKeyHasBeenSet = true;
     }
     XmlNode sessionTokenNode = resultNode.FirstChild("SessionToken");
     if(!sessionTokenNode.IsNull())
     {
       m_sessionToken = Aws::Utils::Xml::DecodeEscapedXmlText(sessionTokenNode.GetText());
       m_sessionTokenHasBeenSet = true;
+       m_sessionTokenHasBeenSet = true;
     }
     XmlNode expirationNode = resultNode.FirstChild("Expiration");
     if(!expirationNode.IsNull())
     {
       m_expiration = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_expirationHasBeenSet = true;
+       m_expirationHasBeenSet = true;
     }
   }
 

@@ -20,21 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobOperation::JobOperation() : 
-    m_lambdaInvokeHasBeenSet(false),
-    m_s3PutObjectCopyHasBeenSet(false),
-    m_s3PutObjectAclHasBeenSet(false),
-    m_s3PutObjectTaggingHasBeenSet(false),
-    m_s3DeleteObjectTaggingHasBeenSet(false),
-    m_s3InitiateRestoreObjectHasBeenSet(false),
-    m_s3PutObjectLegalHoldHasBeenSet(false),
-    m_s3PutObjectRetentionHasBeenSet(false),
-    m_s3ReplicateObjectHasBeenSet(false)
-{
-}
-
 JobOperation::JobOperation(const XmlNode& xmlNode)
-  : JobOperation()
 {
   *this = xmlNode;
 }
@@ -50,54 +36,63 @@ JobOperation& JobOperation::operator =(const XmlNode& xmlNode)
     {
       m_lambdaInvoke = lambdaInvokeNode;
       m_lambdaInvokeHasBeenSet = true;
+       m_lambdaInvokeHasBeenSet = true;
     }
     XmlNode s3PutObjectCopyNode = resultNode.FirstChild("S3PutObjectCopy");
     if(!s3PutObjectCopyNode.IsNull())
     {
       m_s3PutObjectCopy = s3PutObjectCopyNode;
       m_s3PutObjectCopyHasBeenSet = true;
+       m_s3PutObjectCopyHasBeenSet = true;
     }
     XmlNode s3PutObjectAclNode = resultNode.FirstChild("S3PutObjectAcl");
     if(!s3PutObjectAclNode.IsNull())
     {
       m_s3PutObjectAcl = s3PutObjectAclNode;
       m_s3PutObjectAclHasBeenSet = true;
+       m_s3PutObjectAclHasBeenSet = true;
     }
     XmlNode s3PutObjectTaggingNode = resultNode.FirstChild("S3PutObjectTagging");
     if(!s3PutObjectTaggingNode.IsNull())
     {
       m_s3PutObjectTagging = s3PutObjectTaggingNode;
       m_s3PutObjectTaggingHasBeenSet = true;
+       m_s3PutObjectTaggingHasBeenSet = true;
     }
     XmlNode s3DeleteObjectTaggingNode = resultNode.FirstChild("S3DeleteObjectTagging");
     if(!s3DeleteObjectTaggingNode.IsNull())
     {
       m_s3DeleteObjectTagging = s3DeleteObjectTaggingNode;
       m_s3DeleteObjectTaggingHasBeenSet = true;
+       m_s3DeleteObjectTaggingHasBeenSet = true;
     }
     XmlNode s3InitiateRestoreObjectNode = resultNode.FirstChild("S3InitiateRestoreObject");
     if(!s3InitiateRestoreObjectNode.IsNull())
     {
       m_s3InitiateRestoreObject = s3InitiateRestoreObjectNode;
       m_s3InitiateRestoreObjectHasBeenSet = true;
+       m_s3InitiateRestoreObjectHasBeenSet = true;
     }
     XmlNode s3PutObjectLegalHoldNode = resultNode.FirstChild("S3PutObjectLegalHold");
     if(!s3PutObjectLegalHoldNode.IsNull())
     {
       m_s3PutObjectLegalHold = s3PutObjectLegalHoldNode;
       m_s3PutObjectLegalHoldHasBeenSet = true;
+       m_s3PutObjectLegalHoldHasBeenSet = true;
     }
     XmlNode s3PutObjectRetentionNode = resultNode.FirstChild("S3PutObjectRetention");
     if(!s3PutObjectRetentionNode.IsNull())
     {
       m_s3PutObjectRetention = s3PutObjectRetentionNode;
       m_s3PutObjectRetentionHasBeenSet = true;
+       m_s3PutObjectRetentionHasBeenSet = true;
     }
     XmlNode s3ReplicateObjectNode = resultNode.FirstChild("S3ReplicateObject");
     if(!s3ReplicateObjectNode.IsNull())
     {
       m_s3ReplicateObject = s3ReplicateObjectNode;
       m_s3ReplicateObjectHasBeenSet = true;
+       m_s3ReplicateObjectHasBeenSet = true;
     }
   }
 

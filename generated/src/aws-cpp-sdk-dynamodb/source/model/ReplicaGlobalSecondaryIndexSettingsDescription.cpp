@@ -18,21 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ReplicaGlobalSecondaryIndexSettingsDescription::ReplicaGlobalSecondaryIndexSettingsDescription() : 
-    m_indexNameHasBeenSet(false),
-    m_indexStatus(IndexStatus::NOT_SET),
-    m_indexStatusHasBeenSet(false),
-    m_provisionedReadCapacityUnits(0),
-    m_provisionedReadCapacityUnitsHasBeenSet(false),
-    m_provisionedReadCapacityAutoScalingSettingsHasBeenSet(false),
-    m_provisionedWriteCapacityUnits(0),
-    m_provisionedWriteCapacityUnitsHasBeenSet(false),
-    m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet(false)
-{
-}
-
 ReplicaGlobalSecondaryIndexSettingsDescription::ReplicaGlobalSecondaryIndexSettingsDescription(JsonView jsonValue)
-  : ReplicaGlobalSecondaryIndexSettingsDescription()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ ReplicaGlobalSecondaryIndexSettingsDescription& ReplicaGlobalSecondaryIndexSetti
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexStatus"))
   {
     m_indexStatus = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("IndexStatus"));
-
     m_indexStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedReadCapacityUnits"))
   {
     m_provisionedReadCapacityUnits = jsonValue.GetInt64("ProvisionedReadCapacityUnits");
-
     m_provisionedReadCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedReadCapacityAutoScalingSettings"))
   {
     m_provisionedReadCapacityAutoScalingSettings = jsonValue.GetObject("ProvisionedReadCapacityAutoScalingSettings");
-
     m_provisionedReadCapacityAutoScalingSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedWriteCapacityUnits"))
   {
     m_provisionedWriteCapacityUnits = jsonValue.GetInt64("ProvisionedWriteCapacityUnits");
-
     m_provisionedWriteCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedWriteCapacityAutoScalingSettings"))
   {
     m_provisionedWriteCapacityAutoScalingSettings = jsonValue.GetObject("ProvisionedWriteCapacityAutoScalingSettings");
-
     m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

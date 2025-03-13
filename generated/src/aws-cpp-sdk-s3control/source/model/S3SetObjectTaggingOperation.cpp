@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3SetObjectTaggingOperation::S3SetObjectTaggingOperation() : 
-    m_tagSetHasBeenSet(false)
-{
-}
-
 S3SetObjectTaggingOperation::S3SetObjectTaggingOperation(const XmlNode& xmlNode)
-  : S3SetObjectTaggingOperation()
 {
   *this = xmlNode;
 }
@@ -41,13 +35,14 @@ S3SetObjectTaggingOperation& S3SetObjectTaggingOperation::operator =(const XmlNo
     if(!tagSetNode.IsNull())
     {
       XmlNode tagSetMember = tagSetNode.FirstChild("member");
+      m_tagSetHasBeenSet = !tagSetMember.IsNull();
       while(!tagSetMember.IsNull())
       {
         m_tagSet.push_back(tagSetMember);
         tagSetMember = tagSetMember.NextNode("member");
       }
 
-      m_tagSetHasBeenSet = true;
+       m_tagSetHasBeenSet = true;
     }
   }
 

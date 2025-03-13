@@ -37,7 +37,7 @@ namespace Model
   class AssumeRoleWithWebIdentityResult
   {
   public:
-    AWS_STS_API AssumeRoleWithWebIdentityResult();
+    AWS_STS_API AssumeRoleWithWebIdentityResult() = default;
     AWS_STS_API AssumeRoleWithWebIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_STS_API AssumeRoleWithWebIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -49,11 +49,11 @@ namespace Model
      * that STS API operations return is not fixed. We strongly recommend that you make
      * no assumptions about the maximum size.</p> 
      */
-    inline const Credentials& GetCredentials() const{ return m_credentials; }
-    inline void SetCredentials(const Credentials& value) { m_credentials = value; }
-    inline void SetCredentials(Credentials&& value) { m_credentials = std::move(value); }
-    inline AssumeRoleWithWebIdentityResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
-    inline AssumeRoleWithWebIdentityResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
+    inline const Credentials& GetCredentials() const { return m_credentials; }
+    template<typename CredentialsT = Credentials>
+    void SetCredentials(CredentialsT&& value) { m_credentialsHasBeenSet = true; m_credentials = std::forward<CredentialsT>(value); }
+    template<typename CredentialsT = Credentials>
+    AssumeRoleWithWebIdentityResult& WithCredentials(CredentialsT&& value) { SetCredentials(std::forward<CredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,13 +66,11 @@ namespace Model
      * tokens, this field contains the value returned by the identity provider as the
      * token's <code>sub</code> (Subject) claim. </p>
      */
-    inline const Aws::String& GetSubjectFromWebIdentityToken() const{ return m_subjectFromWebIdentityToken; }
-    inline void SetSubjectFromWebIdentityToken(const Aws::String& value) { m_subjectFromWebIdentityToken = value; }
-    inline void SetSubjectFromWebIdentityToken(Aws::String&& value) { m_subjectFromWebIdentityToken = std::move(value); }
-    inline void SetSubjectFromWebIdentityToken(const char* value) { m_subjectFromWebIdentityToken.assign(value); }
-    inline AssumeRoleWithWebIdentityResult& WithSubjectFromWebIdentityToken(const Aws::String& value) { SetSubjectFromWebIdentityToken(value); return *this;}
-    inline AssumeRoleWithWebIdentityResult& WithSubjectFromWebIdentityToken(Aws::String&& value) { SetSubjectFromWebIdentityToken(std::move(value)); return *this;}
-    inline AssumeRoleWithWebIdentityResult& WithSubjectFromWebIdentityToken(const char* value) { SetSubjectFromWebIdentityToken(value); return *this;}
+    inline const Aws::String& GetSubjectFromWebIdentityToken() const { return m_subjectFromWebIdentityToken; }
+    template<typename SubjectFromWebIdentityTokenT = Aws::String>
+    void SetSubjectFromWebIdentityToken(SubjectFromWebIdentityTokenT&& value) { m_subjectFromWebIdentityTokenHasBeenSet = true; m_subjectFromWebIdentityToken = std::forward<SubjectFromWebIdentityTokenT>(value); }
+    template<typename SubjectFromWebIdentityTokenT = Aws::String>
+    AssumeRoleWithWebIdentityResult& WithSubjectFromWebIdentityToken(SubjectFromWebIdentityTokenT&& value) { SetSubjectFromWebIdentityToken(std::forward<SubjectFromWebIdentityTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,11 +82,11 @@ namespace Model
      * <code>RoleSessionName</code> that you specified when you called
      * <code>AssumeRole</code>. </p>
      */
-    inline const AssumedRoleUser& GetAssumedRoleUser() const{ return m_assumedRoleUser; }
-    inline void SetAssumedRoleUser(const AssumedRoleUser& value) { m_assumedRoleUser = value; }
-    inline void SetAssumedRoleUser(AssumedRoleUser&& value) { m_assumedRoleUser = std::move(value); }
-    inline AssumeRoleWithWebIdentityResult& WithAssumedRoleUser(const AssumedRoleUser& value) { SetAssumedRoleUser(value); return *this;}
-    inline AssumeRoleWithWebIdentityResult& WithAssumedRoleUser(AssumedRoleUser&& value) { SetAssumedRoleUser(std::move(value)); return *this;}
+    inline const AssumedRoleUser& GetAssumedRoleUser() const { return m_assumedRoleUser; }
+    template<typename AssumedRoleUserT = AssumedRoleUser>
+    void SetAssumedRoleUser(AssumedRoleUserT&& value) { m_assumedRoleUserHasBeenSet = true; m_assumedRoleUser = std::forward<AssumedRoleUserT>(value); }
+    template<typename AssumedRoleUserT = AssumedRoleUser>
+    AssumeRoleWithWebIdentityResult& WithAssumedRoleUser(AssumedRoleUserT&& value) { SetAssumedRoleUser(std::forward<AssumedRoleUserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,8 +96,8 @@ namespace Model
      * size is greater than 100 percent, which means the policies and tags exceeded the
      * allowed space.</p>
      */
-    inline int GetPackedPolicySize() const{ return m_packedPolicySize; }
-    inline void SetPackedPolicySize(int value) { m_packedPolicySize = value; }
+    inline int GetPackedPolicySize() const { return m_packedPolicySize; }
+    inline void SetPackedPolicySize(int value) { m_packedPolicySizeHasBeenSet = true; m_packedPolicySize = value; }
     inline AssumeRoleWithWebIdentityResult& WithPackedPolicySize(int value) { SetPackedPolicySize(value); return *this;}
     ///@}
 
@@ -111,13 +109,11 @@ namespace Model
      * parameter that was passed in the <code>AssumeRoleWithWebIdentity</code>
      * request.</p>
      */
-    inline const Aws::String& GetProvider() const{ return m_provider; }
-    inline void SetProvider(const Aws::String& value) { m_provider = value; }
-    inline void SetProvider(Aws::String&& value) { m_provider = std::move(value); }
-    inline void SetProvider(const char* value) { m_provider.assign(value); }
-    inline AssumeRoleWithWebIdentityResult& WithProvider(const Aws::String& value) { SetProvider(value); return *this;}
-    inline AssumeRoleWithWebIdentityResult& WithProvider(Aws::String&& value) { SetProvider(std::move(value)); return *this;}
-    inline AssumeRoleWithWebIdentityResult& WithProvider(const char* value) { SetProvider(value); return *this;}
+    inline const Aws::String& GetProvider() const { return m_provider; }
+    template<typename ProviderT = Aws::String>
+    void SetProvider(ProviderT&& value) { m_providerHasBeenSet = true; m_provider = std::forward<ProviderT>(value); }
+    template<typename ProviderT = Aws::String>
+    AssumeRoleWithWebIdentityResult& WithProvider(ProviderT&& value) { SetProvider(std::forward<ProviderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,13 +122,11 @@ namespace Model
      * This is traditionally the client identifier issued to the application that
      * requested the web identity token.</p>
      */
-    inline const Aws::String& GetAudience() const{ return m_audience; }
-    inline void SetAudience(const Aws::String& value) { m_audience = value; }
-    inline void SetAudience(Aws::String&& value) { m_audience = std::move(value); }
-    inline void SetAudience(const char* value) { m_audience.assign(value); }
-    inline AssumeRoleWithWebIdentityResult& WithAudience(const Aws::String& value) { SetAudience(value); return *this;}
-    inline AssumeRoleWithWebIdentityResult& WithAudience(Aws::String&& value) { SetAudience(std::move(value)); return *this;}
-    inline AssumeRoleWithWebIdentityResult& WithAudience(const char* value) { SetAudience(value); return *this;}
+    inline const Aws::String& GetAudience() const { return m_audience; }
+    template<typename AudienceT = Aws::String>
+    void SetAudience(AudienceT&& value) { m_audienceHasBeenSet = true; m_audience = std::forward<AudienceT>(value); }
+    template<typename AudienceT = Aws::String>
+    AssumeRoleWithWebIdentityResult& WithAudience(AudienceT&& value) { SetAudience(std::forward<AudienceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,40 +153,46 @@ namespace Model
      * spaces. You can also include underscores or any of the following characters:
      * =,.@-</p>
      */
-    inline const Aws::String& GetSourceIdentity() const{ return m_sourceIdentity; }
-    inline void SetSourceIdentity(const Aws::String& value) { m_sourceIdentity = value; }
-    inline void SetSourceIdentity(Aws::String&& value) { m_sourceIdentity = std::move(value); }
-    inline void SetSourceIdentity(const char* value) { m_sourceIdentity.assign(value); }
-    inline AssumeRoleWithWebIdentityResult& WithSourceIdentity(const Aws::String& value) { SetSourceIdentity(value); return *this;}
-    inline AssumeRoleWithWebIdentityResult& WithSourceIdentity(Aws::String&& value) { SetSourceIdentity(std::move(value)); return *this;}
-    inline AssumeRoleWithWebIdentityResult& WithSourceIdentity(const char* value) { SetSourceIdentity(value); return *this;}
+    inline const Aws::String& GetSourceIdentity() const { return m_sourceIdentity; }
+    template<typename SourceIdentityT = Aws::String>
+    void SetSourceIdentity(SourceIdentityT&& value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity = std::forward<SourceIdentityT>(value); }
+    template<typename SourceIdentityT = Aws::String>
+    AssumeRoleWithWebIdentityResult& WithSourceIdentity(SourceIdentityT&& value) { SetSourceIdentity(std::forward<SourceIdentityT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AssumeRoleWithWebIdentityResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AssumeRoleWithWebIdentityResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AssumeRoleWithWebIdentityResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Credentials m_credentials;
+    bool m_credentialsHasBeenSet = false;
 
     Aws::String m_subjectFromWebIdentityToken;
+    bool m_subjectFromWebIdentityTokenHasBeenSet = false;
 
     AssumedRoleUser m_assumedRoleUser;
+    bool m_assumedRoleUserHasBeenSet = false;
 
-    int m_packedPolicySize;
+    int m_packedPolicySize{0};
+    bool m_packedPolicySizeHasBeenSet = false;
 
     Aws::String m_provider;
+    bool m_providerHasBeenSet = false;
 
     Aws::String m_audience;
+    bool m_audienceHasBeenSet = false;
 
     Aws::String m_sourceIdentity;
+    bool m_sourceIdentityHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

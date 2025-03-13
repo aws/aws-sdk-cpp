@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpEnumPayloadResult::HttpEnumPayloadResult() : 
-    m_payload(StringEnum::NOT_SET)
-{
-}
-
 HttpEnumPayloadResult::HttpEnumPayloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : HttpEnumPayloadResult()
 {
   *this = result;
 }
@@ -32,13 +26,14 @@ HttpEnumPayloadResult& HttpEnumPayloadResult::operator =(const Aws::AmazonWebSer
 {
   JsonView jsonValue = result.GetPayload().View();
   m_payload = StringEnumMapper::GetStringEnumForName(jsonValue.GetString("payload"));
-
+  m_payloadHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

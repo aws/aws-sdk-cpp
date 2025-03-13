@@ -13,12 +13,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-HttpPayloadWithUnionRequest::HttpPayloadWithUnionRequest() : 
-    m_nestedHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String HttpPayloadWithUnionRequest::SerializePayload() const
 {
   JsonValue payload;

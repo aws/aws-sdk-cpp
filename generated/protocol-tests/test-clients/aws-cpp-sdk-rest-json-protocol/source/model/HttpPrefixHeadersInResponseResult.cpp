@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpPrefixHeadersInResponseResult::HttpPrefixHeadersInResponseResult()
-{
-}
-
 HttpPrefixHeadersInResponseResult::HttpPrefixHeadersInResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -39,6 +35,7 @@ HttpPrefixHeadersInResponseResult& HttpPrefixHeadersInResponseResult::operator =
     if(foundPrefix != std::string::npos)
     {
       m_prefixHeaders[item.first.substr(prefixSize)] = item.second;
+      m_prefixHeadersHasBeenSet = true;
     }
   }
 
@@ -46,6 +43,7 @@ HttpPrefixHeadersInResponseResult& HttpPrefixHeadersInResponseResult::operator =
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

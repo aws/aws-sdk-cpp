@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutItemResult::PutItemResult()
-{
-}
-
 PutItemResult::PutItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,25 @@ PutItemResult& PutItemResult::operator =(const Aws::AmazonWebServiceResult<JsonV
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsObject();
     }
+    m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedCapacity"))
   {
     m_consumedCapacity = jsonValue.GetObject("ConsumedCapacity");
-
+    m_consumedCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ItemCollectionMetrics"))
   {
     m_itemCollectionMetrics = jsonValue.GetObject("ItemCollectionMetrics");
-
+    m_itemCollectionMetricsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

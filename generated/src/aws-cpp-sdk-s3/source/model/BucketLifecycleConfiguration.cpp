@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-BucketLifecycleConfiguration::BucketLifecycleConfiguration() : 
-    m_rulesHasBeenSet(false)
-{
-}
-
 BucketLifecycleConfiguration::BucketLifecycleConfiguration(const XmlNode& xmlNode)
-  : BucketLifecycleConfiguration()
 {
   *this = xmlNode;
 }
@@ -41,13 +35,14 @@ BucketLifecycleConfiguration& BucketLifecycleConfiguration::operator =(const Xml
     if(!rulesNode.IsNull())
     {
       XmlNode ruleMember = rulesNode;
+      m_rulesHasBeenSet = !ruleMember.IsNull();
       while(!ruleMember.IsNull())
       {
         m_rules.push_back(ruleMember);
         ruleMember = ruleMember.NextNode("Rule");
       }
 
-      m_rulesHasBeenSet = true;
+       m_rulesHasBeenSet = true;
     }
   }
 

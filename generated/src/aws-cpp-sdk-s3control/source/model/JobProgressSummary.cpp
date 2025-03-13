@@ -20,19 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobProgressSummary::JobProgressSummary() : 
-    m_totalNumberOfTasks(0),
-    m_totalNumberOfTasksHasBeenSet(false),
-    m_numberOfTasksSucceeded(0),
-    m_numberOfTasksSucceededHasBeenSet(false),
-    m_numberOfTasksFailed(0),
-    m_numberOfTasksFailedHasBeenSet(false),
-    m_timersHasBeenSet(false)
-{
-}
-
 JobProgressSummary::JobProgressSummary(const XmlNode& xmlNode)
-  : JobProgressSummary()
 {
   *this = xmlNode;
 }
@@ -48,24 +36,28 @@ JobProgressSummary& JobProgressSummary::operator =(const XmlNode& xmlNode)
     {
       m_totalNumberOfTasks = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalNumberOfTasksNode.GetText()).c_str()).c_str());
       m_totalNumberOfTasksHasBeenSet = true;
+       m_totalNumberOfTasksHasBeenSet = true;
     }
     XmlNode numberOfTasksSucceededNode = resultNode.FirstChild("NumberOfTasksSucceeded");
     if(!numberOfTasksSucceededNode.IsNull())
     {
       m_numberOfTasksSucceeded = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfTasksSucceededNode.GetText()).c_str()).c_str());
       m_numberOfTasksSucceededHasBeenSet = true;
+       m_numberOfTasksSucceededHasBeenSet = true;
     }
     XmlNode numberOfTasksFailedNode = resultNode.FirstChild("NumberOfTasksFailed");
     if(!numberOfTasksFailedNode.IsNull())
     {
       m_numberOfTasksFailed = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfTasksFailedNode.GetText()).c_str()).c_str());
       m_numberOfTasksFailedHasBeenSet = true;
+       m_numberOfTasksFailedHasBeenSet = true;
     }
     XmlNode timersNode = resultNode.FirstChild("Timers");
     if(!timersNode.IsNull())
     {
       m_timers = timersNode;
       m_timersHasBeenSet = true;
+       m_timersHasBeenSet = true;
     }
   }
 

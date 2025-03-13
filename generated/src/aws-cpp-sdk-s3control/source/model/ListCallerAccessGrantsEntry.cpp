@@ -20,16 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ListCallerAccessGrantsEntry::ListCallerAccessGrantsEntry() : 
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_grantScopeHasBeenSet(false),
-    m_applicationArnHasBeenSet(false)
-{
-}
-
 ListCallerAccessGrantsEntry::ListCallerAccessGrantsEntry(const XmlNode& xmlNode)
-  : ListCallerAccessGrantsEntry()
 {
   *this = xmlNode;
 }
@@ -43,20 +34,23 @@ ListCallerAccessGrantsEntry& ListCallerAccessGrantsEntry::operator =(const XmlNo
     XmlNode permissionNode = resultNode.FirstChild("Permission");
     if(!permissionNode.IsNull())
     {
-      m_permission = PermissionMapper::GetPermissionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()).c_str());
+      m_permission = PermissionMapper::GetPermissionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()));
       m_permissionHasBeenSet = true;
+       m_permissionHasBeenSet = true;
     }
     XmlNode grantScopeNode = resultNode.FirstChild("GrantScope");
     if(!grantScopeNode.IsNull())
     {
       m_grantScope = Aws::Utils::Xml::DecodeEscapedXmlText(grantScopeNode.GetText());
       m_grantScopeHasBeenSet = true;
+       m_grantScopeHasBeenSet = true;
     }
     XmlNode applicationArnNode = resultNode.FirstChild("ApplicationArn");
     if(!applicationArnNode.IsNull())
     {
       m_applicationArn = Aws::Utils::Xml::DecodeEscapedXmlText(applicationArnNode.GetText());
       m_applicationArnHasBeenSet = true;
+       m_applicationArnHasBeenSet = true;
     }
   }
 

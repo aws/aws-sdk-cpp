@@ -13,12 +13,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestPostNoPayloadRequest::TestPostNoPayloadRequest() : 
-    m_testIdHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String TestPostNoPayloadRequest::SerializePayload() const
 {
   return {};

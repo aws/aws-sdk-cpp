@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-Initiator::Initiator() : 
-    m_iDHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 Initiator::Initiator(const XmlNode& xmlNode)
-  : Initiator()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Initiator& Initiator::operator =(const XmlNode& xmlNode)
     {
       m_iD = Aws::Utils::Xml::DecodeEscapedXmlText(iDNode.GetText());
       m_iDHasBeenSet = true;
+       m_iDHasBeenSet = true;
     }
     XmlNode displayNameNode = resultNode.FirstChild("DisplayName");
     if(!displayNameNode.IsNull())
     {
       m_displayName = Aws::Utils::Xml::DecodeEscapedXmlText(displayNameNode.GetText());
       m_displayNameHasBeenSet = true;
+       m_displayNameHasBeenSet = true;
     }
   }
 

@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobManifest::JobManifest() : 
-    m_specHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 JobManifest::JobManifest(const XmlNode& xmlNode)
-  : JobManifest()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ JobManifest& JobManifest::operator =(const XmlNode& xmlNode)
     {
       m_spec = specNode;
       m_specHasBeenSet = true;
+       m_specHasBeenSet = true;
     }
     XmlNode locationNode = resultNode.FirstChild("Location");
     if(!locationNode.IsNull())
     {
       m_location = locationNode;
       m_locationHasBeenSet = true;
+       m_locationHasBeenSet = true;
     }
   }
 

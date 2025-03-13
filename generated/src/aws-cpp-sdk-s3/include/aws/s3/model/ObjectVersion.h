@@ -37,7 +37,7 @@ namespace Model
   class ObjectVersion
   {
   public:
-    AWS_S3_API ObjectVersion();
+    AWS_S3_API ObjectVersion() = default;
     AWS_S3_API ObjectVersion(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API ObjectVersion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,28 +48,25 @@ namespace Model
     /**
      * <p>The entity tag is an MD5 hash of that version of the object.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline const Aws::String& GetETag() const { return m_eTag; }
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
-    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
-    inline ObjectVersion& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline ObjectVersion& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline ObjectVersion& WithETag(const char* value) { SetETag(value); return *this;}
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    ObjectVersion& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The algorithm that was used to create a checksum of the object.</p>
      */
-    inline const Aws::Vector<ChecksumAlgorithm>& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+    inline const Aws::Vector<ChecksumAlgorithm>& GetChecksumAlgorithm() const { return m_checksumAlgorithm; }
     inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
-    inline void SetChecksumAlgorithm(const Aws::Vector<ChecksumAlgorithm>& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
-    inline void SetChecksumAlgorithm(Aws::Vector<ChecksumAlgorithm>&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
-    inline ObjectVersion& WithChecksumAlgorithm(const Aws::Vector<ChecksumAlgorithm>& value) { SetChecksumAlgorithm(value); return *this;}
-    inline ObjectVersion& WithChecksumAlgorithm(Aws::Vector<ChecksumAlgorithm>&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
-    inline ObjectVersion& AddChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm.push_back(value); return *this; }
-    inline ObjectVersion& AddChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm.push_back(std::move(value)); return *this; }
+    template<typename ChecksumAlgorithmT = Aws::Vector<ChecksumAlgorithm>>
+    void SetChecksumAlgorithm(ChecksumAlgorithmT&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::forward<ChecksumAlgorithmT>(value); }
+    template<typename ChecksumAlgorithmT = Aws::Vector<ChecksumAlgorithm>>
+    ObjectVersion& WithChecksumAlgorithm(ChecksumAlgorithmT&& value) { SetChecksumAlgorithm(std::forward<ChecksumAlgorithmT>(value)); return *this;}
+    inline ObjectVersion& AddChecksumAlgorithm(ChecksumAlgorithm value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -79,19 +76,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const ChecksumType& GetChecksumType() const{ return m_checksumType; }
+    inline ChecksumType GetChecksumType() const { return m_checksumType; }
     inline bool ChecksumTypeHasBeenSet() const { return m_checksumTypeHasBeenSet; }
-    inline void SetChecksumType(const ChecksumType& value) { m_checksumTypeHasBeenSet = true; m_checksumType = value; }
-    inline void SetChecksumType(ChecksumType&& value) { m_checksumTypeHasBeenSet = true; m_checksumType = std::move(value); }
-    inline ObjectVersion& WithChecksumType(const ChecksumType& value) { SetChecksumType(value); return *this;}
-    inline ObjectVersion& WithChecksumType(ChecksumType&& value) { SetChecksumType(std::move(value)); return *this;}
+    inline void SetChecksumType(ChecksumType value) { m_checksumTypeHasBeenSet = true; m_checksumType = value; }
+    inline ObjectVersion& WithChecksumType(ChecksumType value) { SetChecksumType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Size in bytes of the object.</p>
      */
-    inline long long GetSize() const{ return m_size; }
+    inline long long GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
     inline ObjectVersion& WithSize(long long value) { SetSize(value); return *this;}
@@ -101,40 +96,34 @@ namespace Model
     /**
      * <p>The class of storage used to store the object.</p>
      */
-    inline const ObjectVersionStorageClass& GetStorageClass() const{ return m_storageClass; }
+    inline ObjectVersionStorageClass GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-    inline void SetStorageClass(const ObjectVersionStorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-    inline void SetStorageClass(ObjectVersionStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
-    inline ObjectVersion& WithStorageClass(const ObjectVersionStorageClass& value) { SetStorageClass(value); return *this;}
-    inline ObjectVersion& WithStorageClass(ObjectVersionStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+    inline void SetStorageClass(ObjectVersionStorageClass value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline ObjectVersion& WithStorageClass(ObjectVersionStorageClass value) { SetStorageClass(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The object key.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline ObjectVersion& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline ObjectVersion& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline ObjectVersion& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    ObjectVersion& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Version ID of an object.</p>
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-    inline ObjectVersion& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline ObjectVersion& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline ObjectVersion& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    ObjectVersion& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,7 +131,7 @@ namespace Model
      * <p>Specifies whether the object is (true) or is not (false) the latest version
      * of an object.</p>
      */
-    inline bool GetIsLatest() const{ return m_isLatest; }
+    inline bool GetIsLatest() const { return m_isLatest; }
     inline bool IsLatestHasBeenSet() const { return m_isLatestHasBeenSet; }
     inline void SetIsLatest(bool value) { m_isLatestHasBeenSet = true; m_isLatest = value; }
     inline ObjectVersion& WithIsLatest(bool value) { SetIsLatest(value); return *this;}
@@ -152,24 +141,24 @@ namespace Model
     /**
      * <p>Date and time when the object was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
+    inline const Aws::Utils::DateTime& GetLastModified() const { return m_lastModified; }
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
-    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
-    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
-    inline ObjectVersion& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
-    inline ObjectVersion& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    void SetLastModified(LastModifiedT&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::forward<LastModifiedT>(value); }
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    ObjectVersion& WithLastModified(LastModifiedT&& value) { SetLastModified(std::forward<LastModifiedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the owner of the object.</p>
      */
-    inline const Owner& GetOwner() const{ return m_owner; }
+    inline const Owner& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline ObjectVersion& WithOwner(const Owner& value) { SetOwner(value); return *this;}
-    inline ObjectVersion& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+    template<typename OwnerT = Owner>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Owner>
+    ObjectVersion& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -180,12 +169,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
      * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const RestoreStatus& GetRestoreStatus() const{ return m_restoreStatus; }
+    inline const RestoreStatus& GetRestoreStatus() const { return m_restoreStatus; }
     inline bool RestoreStatusHasBeenSet() const { return m_restoreStatusHasBeenSet; }
-    inline void SetRestoreStatus(const RestoreStatus& value) { m_restoreStatusHasBeenSet = true; m_restoreStatus = value; }
-    inline void SetRestoreStatus(RestoreStatus&& value) { m_restoreStatusHasBeenSet = true; m_restoreStatus = std::move(value); }
-    inline ObjectVersion& WithRestoreStatus(const RestoreStatus& value) { SetRestoreStatus(value); return *this;}
-    inline ObjectVersion& WithRestoreStatus(RestoreStatus&& value) { SetRestoreStatus(std::move(value)); return *this;}
+    template<typename RestoreStatusT = RestoreStatus>
+    void SetRestoreStatus(RestoreStatusT&& value) { m_restoreStatusHasBeenSet = true; m_restoreStatus = std::forward<RestoreStatusT>(value); }
+    template<typename RestoreStatusT = RestoreStatus>
+    ObjectVersion& WithRestoreStatus(RestoreStatusT&& value) { SetRestoreStatus(std::forward<RestoreStatusT>(value)); return *this;}
     ///@}
   private:
 
@@ -195,13 +184,13 @@ namespace Model
     Aws::Vector<ChecksumAlgorithm> m_checksumAlgorithm;
     bool m_checksumAlgorithmHasBeenSet = false;
 
-    ChecksumType m_checksumType;
+    ChecksumType m_checksumType{ChecksumType::NOT_SET};
     bool m_checksumTypeHasBeenSet = false;
 
-    long long m_size;
+    long long m_size{0};
     bool m_sizeHasBeenSet = false;
 
-    ObjectVersionStorageClass m_storageClass;
+    ObjectVersionStorageClass m_storageClass{ObjectVersionStorageClass::NOT_SET};
     bool m_storageClassHasBeenSet = false;
 
     Aws::String m_key;
@@ -210,10 +199,10 @@ namespace Model
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet = false;
 
-    bool m_isLatest;
+    bool m_isLatest{false};
     bool m_isLatestHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModified;
+    Aws::Utils::DateTime m_lastModified{};
     bool m_lastModifiedHasBeenSet = false;
 
     Owner m_owner;

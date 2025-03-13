@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-AwsLambdaTransformation::AwsLambdaTransformation() : 
-    m_functionArnHasBeenSet(false),
-    m_functionPayloadHasBeenSet(false)
-{
-}
-
 AwsLambdaTransformation::AwsLambdaTransformation(const XmlNode& xmlNode)
-  : AwsLambdaTransformation()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ AwsLambdaTransformation& AwsLambdaTransformation::operator =(const XmlNode& xmlN
     {
       m_functionArn = Aws::Utils::Xml::DecodeEscapedXmlText(functionArnNode.GetText());
       m_functionArnHasBeenSet = true;
+       m_functionArnHasBeenSet = true;
     }
     XmlNode functionPayloadNode = resultNode.FirstChild("FunctionPayload");
     if(!functionPayloadNode.IsNull())
     {
       m_functionPayload = Aws::Utils::Xml::DecodeEscapedXmlText(functionPayloadNode.GetText());
       m_functionPayloadHasBeenSet = true;
+       m_functionPayloadHasBeenSet = true;
     }
   }
 

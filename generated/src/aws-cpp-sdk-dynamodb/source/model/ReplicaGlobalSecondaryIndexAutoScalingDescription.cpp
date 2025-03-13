@@ -18,17 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ReplicaGlobalSecondaryIndexAutoScalingDescription::ReplicaGlobalSecondaryIndexAutoScalingDescription() : 
-    m_indexNameHasBeenSet(false),
-    m_indexStatus(IndexStatus::NOT_SET),
-    m_indexStatusHasBeenSet(false),
-    m_provisionedReadCapacityAutoScalingSettingsHasBeenSet(false),
-    m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet(false)
-{
-}
-
 ReplicaGlobalSecondaryIndexAutoScalingDescription::ReplicaGlobalSecondaryIndexAutoScalingDescription(JsonView jsonValue)
-  : ReplicaGlobalSecondaryIndexAutoScalingDescription()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ReplicaGlobalSecondaryIndexAutoScalingDescription& ReplicaGlobalSecondaryIndexAu
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexStatus"))
   {
     m_indexStatus = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("IndexStatus"));
-
     m_indexStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedReadCapacityAutoScalingSettings"))
   {
     m_provisionedReadCapacityAutoScalingSettings = jsonValue.GetObject("ProvisionedReadCapacityAutoScalingSettings");
-
     m_provisionedReadCapacityAutoScalingSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedWriteCapacityAutoScalingSettings"))
   {
     m_provisionedWriteCapacityAutoScalingSettings = jsonValue.GetObject("ProvisionedWriteCapacityAutoScalingSettings");
-
     m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

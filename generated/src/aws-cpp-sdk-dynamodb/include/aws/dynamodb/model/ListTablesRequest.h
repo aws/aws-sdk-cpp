@@ -25,7 +25,7 @@ namespace Model
   class ListTablesRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API ListTablesRequest();
+    AWS_DYNAMODB_API ListTablesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * was returned for <code>LastEvaluatedTableName</code> in a previous operation, so
      * that you can obtain the next page of results.</p>
      */
-    inline const Aws::String& GetExclusiveStartTableName() const{ return m_exclusiveStartTableName; }
+    inline const Aws::String& GetExclusiveStartTableName() const { return m_exclusiveStartTableName; }
     inline bool ExclusiveStartTableNameHasBeenSet() const { return m_exclusiveStartTableNameHasBeenSet; }
-    inline void SetExclusiveStartTableName(const Aws::String& value) { m_exclusiveStartTableNameHasBeenSet = true; m_exclusiveStartTableName = value; }
-    inline void SetExclusiveStartTableName(Aws::String&& value) { m_exclusiveStartTableNameHasBeenSet = true; m_exclusiveStartTableName = std::move(value); }
-    inline void SetExclusiveStartTableName(const char* value) { m_exclusiveStartTableNameHasBeenSet = true; m_exclusiveStartTableName.assign(value); }
-    inline ListTablesRequest& WithExclusiveStartTableName(const Aws::String& value) { SetExclusiveStartTableName(value); return *this;}
-    inline ListTablesRequest& WithExclusiveStartTableName(Aws::String&& value) { SetExclusiveStartTableName(std::move(value)); return *this;}
-    inline ListTablesRequest& WithExclusiveStartTableName(const char* value) { SetExclusiveStartTableName(value); return *this;}
+    template<typename ExclusiveStartTableNameT = Aws::String>
+    void SetExclusiveStartTableName(ExclusiveStartTableNameT&& value) { m_exclusiveStartTableNameHasBeenSet = true; m_exclusiveStartTableName = std::forward<ExclusiveStartTableNameT>(value); }
+    template<typename ExclusiveStartTableNameT = Aws::String>
+    ListTablesRequest& WithExclusiveStartTableName(ExclusiveStartTableNameT&& value) { SetExclusiveStartTableName(std::forward<ExclusiveStartTableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * <p>A maximum number of table names to return. If this parameter is not
      * specified, the limit is 100.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListTablesRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_exclusiveStartTableName;
     bool m_exclusiveStartTableNameHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

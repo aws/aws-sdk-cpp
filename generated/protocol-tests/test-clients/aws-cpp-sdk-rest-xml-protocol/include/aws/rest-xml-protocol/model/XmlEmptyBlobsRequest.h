@@ -21,7 +21,7 @@ namespace Model
   class XmlEmptyBlobsRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API XmlEmptyBlobsRequest();
+    AWS_RESTXMLPROTOCOL_API XmlEmptyBlobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,16 +34,16 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
+    inline const Aws::Utils::ByteBuffer& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline XmlEmptyBlobsRequest& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-    inline XmlEmptyBlobsRequest& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    XmlEmptyBlobsRequest& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_data;
+    Aws::Utils::ByteBuffer m_data{};
     bool m_dataHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace JsonProtocol
 namespace Model
 {
 
-StructWithJsonName::StructWithJsonName() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 StructWithJsonName::StructWithJsonName(JsonView jsonValue)
-  : StructWithJsonName()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StructWithJsonName& StructWithJsonName::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

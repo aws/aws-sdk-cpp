@@ -20,14 +20,7 @@ namespace RestXmlProtocol
 namespace Model
 {
 
-XmlAttributesPayloadRequest::XmlAttributesPayloadRequest() : 
-    m_fooHasBeenSet(false),
-    m_attrHasBeenSet(false)
-{
-}
-
 XmlAttributesPayloadRequest::XmlAttributesPayloadRequest(const XmlNode& xmlNode)
-  : XmlAttributesPayloadRequest()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ XmlAttributesPayloadRequest& XmlAttributesPayloadRequest::operator =(const XmlNo
     {
       m_foo = Aws::Utils::Xml::DecodeEscapedXmlText(fooNode.GetText());
       m_fooHasBeenSet = true;
+       m_fooHasBeenSet = true;
     }
     auto attr = resultNode.GetAttributeValue("test");
     if(!attr.empty())
     {
       m_attr = Aws::Utils::Xml::DecodeEscapedXmlText(attr);
       m_attrHasBeenSet = true;
+       m_attrHasBeenSet = true;
     }
   }
 

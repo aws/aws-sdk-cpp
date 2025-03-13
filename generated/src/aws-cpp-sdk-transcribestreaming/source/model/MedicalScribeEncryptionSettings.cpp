@@ -18,14 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-MedicalScribeEncryptionSettings::MedicalScribeEncryptionSettings() : 
-    m_kmsEncryptionContextHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 MedicalScribeEncryptionSettings::MedicalScribeEncryptionSettings(JsonView jsonValue)
-  : MedicalScribeEncryptionSettings()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ MedicalScribeEncryptionSettings& MedicalScribeEncryptionSettings::operator =(Jso
     }
     m_kmsEncryptionContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

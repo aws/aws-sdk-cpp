@@ -28,48 +28,47 @@ namespace Model
   class TestPayloadStructureResult
   {
   public:
-    AWS_RESTJSONPROTOCOL_API TestPayloadStructureResult();
+    AWS_RESTJSONPROTOCOL_API TestPayloadStructureResult() = default;
     AWS_RESTJSONPROTOCOL_API TestPayloadStructureResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESTJSONPROTOCOL_API TestPayloadStructureResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetTestId() const{ return m_testId; }
-    inline void SetTestId(const Aws::String& value) { m_testId = value; }
-    inline void SetTestId(Aws::String&& value) { m_testId = std::move(value); }
-    inline void SetTestId(const char* value) { m_testId.assign(value); }
-    inline TestPayloadStructureResult& WithTestId(const Aws::String& value) { SetTestId(value); return *this;}
-    inline TestPayloadStructureResult& WithTestId(Aws::String&& value) { SetTestId(std::move(value)); return *this;}
-    inline TestPayloadStructureResult& WithTestId(const char* value) { SetTestId(value); return *this;}
+    inline const Aws::String& GetTestId() const { return m_testId; }
+    template<typename TestIdT = Aws::String>
+    void SetTestId(TestIdT&& value) { m_testIdHasBeenSet = true; m_testId = std::forward<TestIdT>(value); }
+    template<typename TestIdT = Aws::String>
+    TestPayloadStructureResult& WithTestId(TestIdT&& value) { SetTestId(std::forward<TestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const PayloadConfig& GetPayloadConfig() const{ return m_payloadConfig; }
-    inline void SetPayloadConfig(const PayloadConfig& value) { m_payloadConfig = value; }
-    inline void SetPayloadConfig(PayloadConfig&& value) { m_payloadConfig = std::move(value); }
-    inline TestPayloadStructureResult& WithPayloadConfig(const PayloadConfig& value) { SetPayloadConfig(value); return *this;}
-    inline TestPayloadStructureResult& WithPayloadConfig(PayloadConfig&& value) { SetPayloadConfig(std::move(value)); return *this;}
+    inline const PayloadConfig& GetPayloadConfig() const { return m_payloadConfig; }
+    template<typename PayloadConfigT = PayloadConfig>
+    void SetPayloadConfig(PayloadConfigT&& value) { m_payloadConfigHasBeenSet = true; m_payloadConfig = std::forward<PayloadConfigT>(value); }
+    template<typename PayloadConfigT = PayloadConfig>
+    TestPayloadStructureResult& WithPayloadConfig(PayloadConfigT&& value) { SetPayloadConfig(std::forward<PayloadConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TestPayloadStructureResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TestPayloadStructureResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TestPayloadStructureResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TestPayloadStructureResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_testId;
+    bool m_testIdHasBeenSet = false;
 
     PayloadConfig m_payloadConfig;
+    bool m_payloadConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

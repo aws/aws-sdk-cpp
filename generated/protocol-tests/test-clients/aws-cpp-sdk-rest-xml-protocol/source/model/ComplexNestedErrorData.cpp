@@ -20,13 +20,7 @@ namespace RestXmlProtocol
 namespace Model
 {
 
-ComplexNestedErrorData::ComplexNestedErrorData() : 
-    m_fooHasBeenSet(false)
-{
-}
-
 ComplexNestedErrorData::ComplexNestedErrorData(const XmlNode& xmlNode)
-  : ComplexNestedErrorData()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ComplexNestedErrorData& ComplexNestedErrorData::operator =(const XmlNode& xmlNod
     {
       m_foo = Aws::Utils::Xml::DecodeEscapedXmlText(fooNode.GetText());
       m_fooHasBeenSet = true;
+       m_fooHasBeenSet = true;
     }
   }
 

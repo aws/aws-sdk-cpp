@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3AccessControlPolicy::S3AccessControlPolicy() : 
-    m_accessControlListHasBeenSet(false),
-    m_cannedAccessControlList(S3CannedAccessControlList::NOT_SET),
-    m_cannedAccessControlListHasBeenSet(false)
-{
-}
-
 S3AccessControlPolicy::S3AccessControlPolicy(const XmlNode& xmlNode)
-  : S3AccessControlPolicy()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ S3AccessControlPolicy& S3AccessControlPolicy::operator =(const XmlNode& xmlNode)
     {
       m_accessControlList = accessControlListNode;
       m_accessControlListHasBeenSet = true;
+       m_accessControlListHasBeenSet = true;
     }
     XmlNode cannedAccessControlListNode = resultNode.FirstChild("CannedAccessControlList");
     if(!cannedAccessControlListNode.IsNull())
     {
-      m_cannedAccessControlList = S3CannedAccessControlListMapper::GetS3CannedAccessControlListForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cannedAccessControlListNode.GetText()).c_str()).c_str());
+      m_cannedAccessControlList = S3CannedAccessControlListMapper::GetS3CannedAccessControlListForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cannedAccessControlListNode.GetText()).c_str()));
       m_cannedAccessControlListHasBeenSet = true;
+       m_cannedAccessControlListHasBeenSet = true;
     }
   }
 

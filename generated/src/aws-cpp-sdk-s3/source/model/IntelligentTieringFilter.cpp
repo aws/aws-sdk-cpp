@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-IntelligentTieringFilter::IntelligentTieringFilter() : 
-    m_prefixHasBeenSet(false),
-    m_tagHasBeenSet(false),
-    m_andHasBeenSet(false)
-{
-}
-
 IntelligentTieringFilter::IntelligentTieringFilter(const XmlNode& xmlNode)
-  : IntelligentTieringFilter()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ IntelligentTieringFilter& IntelligentTieringFilter::operator =(const XmlNode& xm
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
     XmlNode tagNode = resultNode.FirstChild("Tag");
     if(!tagNode.IsNull())
     {
       m_tag = tagNode;
       m_tagHasBeenSet = true;
+       m_tagHasBeenSet = true;
     }
     XmlNode andNode = resultNode.FirstChild("And");
     if(!andNode.IsNull())
     {
       m_and = andNode;
       m_andHasBeenSet = true;
+       m_andHasBeenSet = true;
     }
   }
 

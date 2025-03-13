@@ -20,17 +20,7 @@ namespace S3
 namespace Model
 {
 
-SelectParameters::SelectParameters() : 
-    m_inputSerializationHasBeenSet(false),
-    m_expressionType(ExpressionType::NOT_SET),
-    m_expressionTypeHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_outputSerializationHasBeenSet(false)
-{
-}
-
 SelectParameters::SelectParameters(const XmlNode& xmlNode)
-  : SelectParameters()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ SelectParameters& SelectParameters::operator =(const XmlNode& xmlNode)
     {
       m_inputSerialization = inputSerializationNode;
       m_inputSerializationHasBeenSet = true;
+       m_inputSerializationHasBeenSet = true;
     }
     XmlNode expressionTypeNode = resultNode.FirstChild("ExpressionType");
     if(!expressionTypeNode.IsNull())
     {
-      m_expressionType = ExpressionTypeMapper::GetExpressionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expressionTypeNode.GetText()).c_str()).c_str());
+      m_expressionType = ExpressionTypeMapper::GetExpressionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expressionTypeNode.GetText()).c_str()));
       m_expressionTypeHasBeenSet = true;
+       m_expressionTypeHasBeenSet = true;
     }
     XmlNode expressionNode = resultNode.FirstChild("Expression");
     if(!expressionNode.IsNull())
     {
       m_expression = Aws::Utils::Xml::DecodeEscapedXmlText(expressionNode.GetText());
       m_expressionHasBeenSet = true;
+       m_expressionHasBeenSet = true;
     }
     XmlNode outputSerializationNode = resultNode.FirstChild("OutputSerialization");
     if(!outputSerializationNode.IsNull())
     {
       m_outputSerialization = outputSerializationNode;
       m_outputSerializationHasBeenSet = true;
+       m_outputSerializationHasBeenSet = true;
     }
   }
 

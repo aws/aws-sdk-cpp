@@ -18,14 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ProvisionedThroughputOverride::ProvisionedThroughputOverride() : 
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false)
-{
-}
-
 ProvisionedThroughputOverride::ProvisionedThroughputOverride(JsonView jsonValue)
-  : ProvisionedThroughputOverride()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ProvisionedThroughputOverride& ProvisionedThroughputOverride::operator =(JsonVie
   if(jsonValue.ValueExists("ReadCapacityUnits"))
   {
     m_readCapacityUnits = jsonValue.GetInt64("ReadCapacityUnits");
-
     m_readCapacityUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

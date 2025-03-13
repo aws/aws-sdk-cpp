@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-PrefixLevelStorageMetrics::PrefixLevelStorageMetrics() : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false),
-    m_selectionCriteriaHasBeenSet(false)
-{
-}
-
 PrefixLevelStorageMetrics::PrefixLevelStorageMetrics(const XmlNode& xmlNode)
-  : PrefixLevelStorageMetrics()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ PrefixLevelStorageMetrics& PrefixLevelStorageMetrics::operator =(const XmlNode& 
     {
       m_isEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isEnabledNode.GetText()).c_str()).c_str());
       m_isEnabledHasBeenSet = true;
+       m_isEnabledHasBeenSet = true;
     }
     XmlNode selectionCriteriaNode = resultNode.FirstChild("SelectionCriteria");
     if(!selectionCriteriaNode.IsNull())
     {
       m_selectionCriteria = selectionCriteriaNode;
       m_selectionCriteriaHasBeenSet = true;
+       m_selectionCriteriaHasBeenSet = true;
     }
   }
 

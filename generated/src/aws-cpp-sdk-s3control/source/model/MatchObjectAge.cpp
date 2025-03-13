@@ -20,16 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-MatchObjectAge::MatchObjectAge() : 
-    m_daysGreaterThan(0),
-    m_daysGreaterThanHasBeenSet(false),
-    m_daysLessThan(0),
-    m_daysLessThanHasBeenSet(false)
-{
-}
-
 MatchObjectAge::MatchObjectAge(const XmlNode& xmlNode)
-  : MatchObjectAge()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ MatchObjectAge& MatchObjectAge::operator =(const XmlNode& xmlNode)
     {
       m_daysGreaterThan = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(daysGreaterThanNode.GetText()).c_str()).c_str());
       m_daysGreaterThanHasBeenSet = true;
+       m_daysGreaterThanHasBeenSet = true;
     }
     XmlNode daysLessThanNode = resultNode.FirstChild("DaysLessThan");
     if(!daysLessThanNode.IsNull())
     {
       m_daysLessThan = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(daysLessThanNode.GetText()).c_str()).c_str());
       m_daysLessThanHasBeenSet = true;
+       m_daysLessThanHasBeenSet = true;
     }
   }
 

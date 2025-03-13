@@ -28,7 +28,7 @@ namespace Model
   class CreateAccessPointForObjectLambdaResult
   {
   public:
-    AWS_S3CONTROL_API CreateAccessPointForObjectLambdaResult();
+    AWS_S3CONTROL_API CreateAccessPointForObjectLambdaResult() = default;
     AWS_S3CONTROL_API CreateAccessPointForObjectLambdaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CONTROL_API CreateAccessPointForObjectLambdaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,60 +37,58 @@ namespace Model
     /**
      * <p>Specifies the ARN for the Object Lambda Access Point.</p>
      */
-    inline const Aws::String& GetObjectLambdaAccessPointArn() const{ return m_objectLambdaAccessPointArn; }
-    inline void SetObjectLambdaAccessPointArn(const Aws::String& value) { m_objectLambdaAccessPointArn = value; }
-    inline void SetObjectLambdaAccessPointArn(Aws::String&& value) { m_objectLambdaAccessPointArn = std::move(value); }
-    inline void SetObjectLambdaAccessPointArn(const char* value) { m_objectLambdaAccessPointArn.assign(value); }
-    inline CreateAccessPointForObjectLambdaResult& WithObjectLambdaAccessPointArn(const Aws::String& value) { SetObjectLambdaAccessPointArn(value); return *this;}
-    inline CreateAccessPointForObjectLambdaResult& WithObjectLambdaAccessPointArn(Aws::String&& value) { SetObjectLambdaAccessPointArn(std::move(value)); return *this;}
-    inline CreateAccessPointForObjectLambdaResult& WithObjectLambdaAccessPointArn(const char* value) { SetObjectLambdaAccessPointArn(value); return *this;}
+    inline const Aws::String& GetObjectLambdaAccessPointArn() const { return m_objectLambdaAccessPointArn; }
+    template<typename ObjectLambdaAccessPointArnT = Aws::String>
+    void SetObjectLambdaAccessPointArn(ObjectLambdaAccessPointArnT&& value) { m_objectLambdaAccessPointArnHasBeenSet = true; m_objectLambdaAccessPointArn = std::forward<ObjectLambdaAccessPointArnT>(value); }
+    template<typename ObjectLambdaAccessPointArnT = Aws::String>
+    CreateAccessPointForObjectLambdaResult& WithObjectLambdaAccessPointArn(ObjectLambdaAccessPointArnT&& value) { SetObjectLambdaAccessPointArn(std::forward<ObjectLambdaAccessPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The alias of the Object Lambda Access Point.</p>
      */
-    inline const ObjectLambdaAccessPointAlias& GetAlias() const{ return m_alias; }
-    inline void SetAlias(const ObjectLambdaAccessPointAlias& value) { m_alias = value; }
-    inline void SetAlias(ObjectLambdaAccessPointAlias&& value) { m_alias = std::move(value); }
-    inline CreateAccessPointForObjectLambdaResult& WithAlias(const ObjectLambdaAccessPointAlias& value) { SetAlias(value); return *this;}
-    inline CreateAccessPointForObjectLambdaResult& WithAlias(ObjectLambdaAccessPointAlias&& value) { SetAlias(std::move(value)); return *this;}
+    inline const ObjectLambdaAccessPointAlias& GetAlias() const { return m_alias; }
+    template<typename AliasT = ObjectLambdaAccessPointAlias>
+    void SetAlias(AliasT&& value) { m_aliasHasBeenSet = true; m_alias = std::forward<AliasT>(value); }
+    template<typename AliasT = ObjectLambdaAccessPointAlias>
+    CreateAccessPointForObjectLambdaResult& WithAlias(AliasT&& value) { SetAlias(std::forward<AliasT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * AWS Request Id value
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAccessPointForObjectLambdaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAccessPointForObjectLambdaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAccessPointForObjectLambdaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAccessPointForObjectLambdaResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * x-amz-id-2 header value, also known as Host Id
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
-    inline void SetHostId(const Aws::String& value) { m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostId.assign(value); }
-    inline CreateAccessPointForObjectLambdaResult& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline CreateAccessPointForObjectLambdaResult& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline CreateAccessPointForObjectLambdaResult& WithHostId(const char* value) { SetHostId(value); return *this;}
+    inline const Aws::String& GetHostId() const { return m_hostId; }
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    CreateAccessPointForObjectLambdaResult& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_objectLambdaAccessPointArn;
+    bool m_objectLambdaAccessPointArnHasBeenSet = false;
 
     ObjectLambdaAccessPointAlias m_alias;
+    bool m_aliasHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_hostId;
+    bool m_hostIdHasBeenSet = false;
   };
 
 } // namespace Model

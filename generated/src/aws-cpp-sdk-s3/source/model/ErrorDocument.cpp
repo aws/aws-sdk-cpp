@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-ErrorDocument::ErrorDocument() : 
-    m_keyHasBeenSet(false)
-{
-}
-
 ErrorDocument::ErrorDocument(const XmlNode& xmlNode)
-  : ErrorDocument()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ErrorDocument& ErrorDocument::operator =(const XmlNode& xmlNode)
     {
       m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
       m_keyHasBeenSet = true;
+       m_keyHasBeenSet = true;
     }
   }
 

@@ -29,7 +29,7 @@ namespace Model
   class RequestProgress
   {
   public:
-    AWS_S3_API RequestProgress();
+    AWS_S3_API RequestProgress() = default;
     AWS_S3_API RequestProgress(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API RequestProgress& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,14 +41,14 @@ namespace Model
      * <p>Specifies whether periodic QueryProgress frames should be sent. Valid values:
      * TRUE, FALSE. Default value: FALSE.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline RequestProgress& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

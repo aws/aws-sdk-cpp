@@ -18,13 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-MedicalTranscriptEvent::MedicalTranscriptEvent() : 
-    m_transcriptHasBeenSet(false)
-{
-}
-
 MedicalTranscriptEvent::MedicalTranscriptEvent(JsonView jsonValue)
-  : MedicalTranscriptEvent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MedicalTranscriptEvent& MedicalTranscriptEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Transcript"))
   {
     m_transcript = jsonValue.GetObject("Transcript");
-
     m_transcriptHasBeenSet = true;
   }
-
   return *this;
 }
 

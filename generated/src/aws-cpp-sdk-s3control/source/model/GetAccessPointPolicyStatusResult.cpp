@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccessPointPolicyStatusResult::GetAccessPointPolicyStatusResult()
-{
-}
-
 GetAccessPointPolicyStatusResult::GetAccessPointPolicyStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ GetAccessPointPolicyStatusResult& GetAccessPointPolicyStatusResult::operator =(c
     if(!policyStatusNode.IsNull())
     {
       m_policyStatus = policyStatusNode;
+      m_policyStatusHasBeenSet = true;
     }
   }
 
@@ -44,12 +41,14 @@ GetAccessPointPolicyStatusResult& GetAccessPointPolicyStatusResult::operator =(c
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

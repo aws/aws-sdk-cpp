@@ -28,7 +28,7 @@ namespace Model
   class BatchGetItemRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API BatchGetItemRequest();
+    AWS_DYNAMODB_API BatchGetItemRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -96,35 +96,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, KeysAndAttributes>& GetRequestItems() const{ return m_requestItems; }
+    inline const Aws::Map<Aws::String, KeysAndAttributes>& GetRequestItems() const { return m_requestItems; }
     inline bool RequestItemsHasBeenSet() const { return m_requestItemsHasBeenSet; }
-    inline void SetRequestItems(const Aws::Map<Aws::String, KeysAndAttributes>& value) { m_requestItemsHasBeenSet = true; m_requestItems = value; }
-    inline void SetRequestItems(Aws::Map<Aws::String, KeysAndAttributes>&& value) { m_requestItemsHasBeenSet = true; m_requestItems = std::move(value); }
-    inline BatchGetItemRequest& WithRequestItems(const Aws::Map<Aws::String, KeysAndAttributes>& value) { SetRequestItems(value); return *this;}
-    inline BatchGetItemRequest& WithRequestItems(Aws::Map<Aws::String, KeysAndAttributes>&& value) { SetRequestItems(std::move(value)); return *this;}
-    inline BatchGetItemRequest& AddRequestItems(const Aws::String& key, const KeysAndAttributes& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, value); return *this; }
-    inline BatchGetItemRequest& AddRequestItems(Aws::String&& key, const KeysAndAttributes& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::move(key), value); return *this; }
-    inline BatchGetItemRequest& AddRequestItems(const Aws::String& key, KeysAndAttributes&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, std::move(value)); return *this; }
-    inline BatchGetItemRequest& AddRequestItems(Aws::String&& key, KeysAndAttributes&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchGetItemRequest& AddRequestItems(const char* key, KeysAndAttributes&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, std::move(value)); return *this; }
-    inline BatchGetItemRequest& AddRequestItems(const char* key, const KeysAndAttributes& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, value); return *this; }
+    template<typename RequestItemsT = Aws::Map<Aws::String, KeysAndAttributes>>
+    void SetRequestItems(RequestItemsT&& value) { m_requestItemsHasBeenSet = true; m_requestItems = std::forward<RequestItemsT>(value); }
+    template<typename RequestItemsT = Aws::Map<Aws::String, KeysAndAttributes>>
+    BatchGetItemRequest& WithRequestItems(RequestItemsT&& value) { SetRequestItems(std::forward<RequestItemsT>(value)); return *this;}
+    template<typename RequestItemsKeyT = Aws::String, typename RequestItemsValueT = KeysAndAttributes>
+    BatchGetItemRequest& AddRequestItems(RequestItemsKeyT&& key, RequestItemsValueT&& value) {
+      m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::forward<RequestItemsKeyT>(key), std::forward<RequestItemsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
+    inline ReturnConsumedCapacity GetReturnConsumedCapacity() const { return m_returnConsumedCapacity; }
     inline bool ReturnConsumedCapacityHasBeenSet() const { return m_returnConsumedCapacityHasBeenSet; }
-    inline void SetReturnConsumedCapacity(const ReturnConsumedCapacity& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
-    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity&& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = std::move(value); }
-    inline BatchGetItemRequest& WithReturnConsumedCapacity(const ReturnConsumedCapacity& value) { SetReturnConsumedCapacity(value); return *this;}
-    inline BatchGetItemRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
+    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
+    inline BatchGetItemRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity value) { SetReturnConsumedCapacity(value); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, KeysAndAttributes> m_requestItems;
     bool m_requestItemsHasBeenSet = false;
 
-    ReturnConsumedCapacity m_returnConsumedCapacity;
+    ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
     bool m_returnConsumedCapacityHasBeenSet = false;
   };
 

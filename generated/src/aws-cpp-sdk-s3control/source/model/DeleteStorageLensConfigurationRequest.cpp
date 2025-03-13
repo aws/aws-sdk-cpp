@@ -15,11 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-DeleteStorageLensConfigurationRequest::DeleteStorageLensConfigurationRequest() : 
-    m_configIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
 
 Aws::String DeleteStorageLensConfigurationRequest::SerializePayload() const
 {

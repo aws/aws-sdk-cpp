@@ -10,10 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-FlattenedXmlMapWithXmlNameRequest::FlattenedXmlMapWithXmlNameRequest()
-{
-}
-
 Aws::String FlattenedXmlMapWithXmlNameRequest::SerializePayload() const
 {
   Aws::StringStream ss;

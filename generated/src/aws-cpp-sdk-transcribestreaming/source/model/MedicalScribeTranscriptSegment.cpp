@@ -18,22 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-MedicalScribeTranscriptSegment::MedicalScribeTranscriptSegment() : 
-    m_segmentIdHasBeenSet(false),
-    m_beginAudioTime(0.0),
-    m_beginAudioTimeHasBeenSet(false),
-    m_endAudioTime(0.0),
-    m_endAudioTimeHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_isPartial(false),
-    m_isPartialHasBeenSet(false),
-    m_channelIdHasBeenSet(false)
-{
-}
-
 MedicalScribeTranscriptSegment::MedicalScribeTranscriptSegment(JsonView jsonValue)
-  : MedicalScribeTranscriptSegment()
 {
   *this = jsonValue;
 }
@@ -43,31 +28,23 @@ MedicalScribeTranscriptSegment& MedicalScribeTranscriptSegment::operator =(JsonV
   if(jsonValue.ValueExists("SegmentId"))
   {
     m_segmentId = jsonValue.GetString("SegmentId");
-
     m_segmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BeginAudioTime"))
   {
     m_beginAudioTime = jsonValue.GetDouble("BeginAudioTime");
-
     m_beginAudioTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndAudioTime"))
   {
     m_endAudioTime = jsonValue.GetDouble("EndAudioTime");
-
     m_endAudioTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
@@ -77,21 +54,16 @@ MedicalScribeTranscriptSegment& MedicalScribeTranscriptSegment::operator =(JsonV
     }
     m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsPartial"))
   {
     m_isPartial = jsonValue.GetBool("IsPartial");
-
     m_isPartialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelId"))
   {
     m_channelId = jsonValue.GetString("ChannelId");
-
     m_channelIdHasBeenSet = true;
   }
-
   return *this;
 }
 

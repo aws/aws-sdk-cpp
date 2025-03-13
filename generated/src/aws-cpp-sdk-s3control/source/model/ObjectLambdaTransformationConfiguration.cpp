@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ObjectLambdaTransformationConfiguration::ObjectLambdaTransformationConfiguration() : 
-    m_actionsHasBeenSet(false),
-    m_contentTransformationHasBeenSet(false)
-{
-}
-
 ObjectLambdaTransformationConfiguration::ObjectLambdaTransformationConfiguration(const XmlNode& xmlNode)
-  : ObjectLambdaTransformationConfiguration()
 {
   *this = xmlNode;
 }
@@ -42,19 +35,21 @@ ObjectLambdaTransformationConfiguration& ObjectLambdaTransformationConfiguration
     if(!actionsNode.IsNull())
     {
       XmlNode actionsMember = actionsNode.FirstChild("Action");
+      m_actionsHasBeenSet = !actionsMember.IsNull();
       while(!actionsMember.IsNull())
       {
         m_actions.push_back(ObjectLambdaTransformationConfigurationActionMapper::GetObjectLambdaTransformationConfigurationActionForName(StringUtils::Trim(actionsMember.GetText().c_str())));
         actionsMember = actionsMember.NextNode("Action");
       }
 
-      m_actionsHasBeenSet = true;
+       m_actionsHasBeenSet = true;
     }
     XmlNode contentTransformationNode = resultNode.FirstChild("ContentTransformation");
     if(!contentTransformationNode.IsNull())
     {
       m_contentTransformation = contentTransformationNode;
       m_contentTransformationHasBeenSet = true;
+       m_contentTransformationHasBeenSet = true;
     }
   }
 

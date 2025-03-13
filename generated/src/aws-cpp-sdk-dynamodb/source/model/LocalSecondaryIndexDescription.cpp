@@ -18,20 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-LocalSecondaryIndexDescription::LocalSecondaryIndexDescription() : 
-    m_indexNameHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_projectionHasBeenSet(false),
-    m_indexSizeBytes(0),
-    m_indexSizeBytesHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_indexArnHasBeenSet(false)
-{
-}
-
 LocalSecondaryIndexDescription::LocalSecondaryIndexDescription(JsonView jsonValue)
-  : LocalSecondaryIndexDescription()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ LocalSecondaryIndexDescription& LocalSecondaryIndexDescription::operator =(JsonV
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeySchema"))
   {
     Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
@@ -54,35 +39,26 @@ LocalSecondaryIndexDescription& LocalSecondaryIndexDescription::operator =(JsonV
     }
     m_keySchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Projection"))
   {
     m_projection = jsonValue.GetObject("Projection");
-
     m_projectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexSizeBytes"))
   {
     m_indexSizeBytes = jsonValue.GetInt64("IndexSizeBytes");
-
     m_indexSizeBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ItemCount"))
   {
     m_itemCount = jsonValue.GetInt64("ItemCount");
-
     m_itemCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexArn"))
   {
     m_indexArn = jsonValue.GetString("IndexArn");
-
     m_indexArnHasBeenSet = true;
   }
-
   return *this;
 }
 

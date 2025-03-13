@@ -28,33 +28,35 @@ namespace Model
   class DatetimeOffsetsResult
   {
   public:
-    AWS_QUERYPROTOCOL_API DatetimeOffsetsResult();
+    AWS_QUERYPROTOCOL_API DatetimeOffsetsResult() = default;
     AWS_QUERYPROTOCOL_API DatetimeOffsetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_QUERYPROTOCOL_API DatetimeOffsetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetDatetime() const{ return m_datetime; }
-    inline void SetDatetime(const Aws::Utils::DateTime& value) { m_datetime = value; }
-    inline void SetDatetime(Aws::Utils::DateTime&& value) { m_datetime = std::move(value); }
-    inline DatetimeOffsetsResult& WithDatetime(const Aws::Utils::DateTime& value) { SetDatetime(value); return *this;}
-    inline DatetimeOffsetsResult& WithDatetime(Aws::Utils::DateTime&& value) { SetDatetime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetDatetime() const { return m_datetime; }
+    template<typename DatetimeT = Aws::Utils::DateTime>
+    void SetDatetime(DatetimeT&& value) { m_datetimeHasBeenSet = true; m_datetime = std::forward<DatetimeT>(value); }
+    template<typename DatetimeT = Aws::Utils::DateTime>
+    DatetimeOffsetsResult& WithDatetime(DatetimeT&& value) { SetDatetime(std::forward<DatetimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DatetimeOffsetsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DatetimeOffsetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DatetimeOffsetsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_datetime;
+    Aws::Utils::DateTime m_datetime{};
+    bool m_datetimeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,14 +21,7 @@ namespace RestXmlProtocol
 namespace Model
 {
 
-RecursiveShapesInputOutputNested2::RecursiveShapesInputOutputNested2() : 
-    m_barHasBeenSet(false),
-    m_recursiveMemberHasBeenSet(false)
-{
-}
-
 RecursiveShapesInputOutputNested2::RecursiveShapesInputOutputNested2(const XmlNode& xmlNode)
-  : RecursiveShapesInputOutputNested2()
 {
   *this = xmlNode;
 }
@@ -44,12 +37,14 @@ RecursiveShapesInputOutputNested2& RecursiveShapesInputOutputNested2::operator =
     {
       m_bar = Aws::Utils::Xml::DecodeEscapedXmlText(barNode.GetText());
       m_barHasBeenSet = true;
+       m_barHasBeenSet = true;
     }
     XmlNode recursiveMemberNode = resultNode.FirstChild("recursiveMember");
     if(!recursiveMemberNode.IsNull())
     {
       m_recursiveMember = Aws::MakeShared<RecursiveShapesInputOutputNested1>("RecursiveShapesInputOutputNested2", recursiveMemberNode);
       m_recursiveMemberHasBeenSet = true;
+       m_recursiveMemberHasBeenSet = true;
     }
   }
 

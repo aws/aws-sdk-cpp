@@ -18,18 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-GlobalTableDescription::GlobalTableDescription() : 
-    m_replicationGroupHasBeenSet(false),
-    m_globalTableArnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_globalTableStatus(GlobalTableStatus::NOT_SET),
-    m_globalTableStatusHasBeenSet(false),
-    m_globalTableNameHasBeenSet(false)
-{
-}
-
 GlobalTableDescription::GlobalTableDescription(JsonView jsonValue)
-  : GlobalTableDescription()
 {
   *this = jsonValue;
 }
@@ -45,35 +34,26 @@ GlobalTableDescription& GlobalTableDescription::operator =(JsonView jsonValue)
     }
     m_replicationGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalTableArn"))
   {
     m_globalTableArn = jsonValue.GetString("GlobalTableArn");
-
     m_globalTableArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalTableStatus"))
   {
     m_globalTableStatus = GlobalTableStatusMapper::GetGlobalTableStatusForName(jsonValue.GetString("GlobalTableStatus"));
-
     m_globalTableStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalTableName"))
   {
     m_globalTableName = jsonValue.GetString("GlobalTableName");
-
     m_globalTableNameHasBeenSet = true;
   }
-
   return *this;
 }
 

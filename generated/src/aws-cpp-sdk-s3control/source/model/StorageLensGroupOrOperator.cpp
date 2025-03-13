@@ -20,17 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-StorageLensGroupOrOperator::StorageLensGroupOrOperator() : 
-    m_matchAnyPrefixHasBeenSet(false),
-    m_matchAnySuffixHasBeenSet(false),
-    m_matchAnyTagHasBeenSet(false),
-    m_matchObjectAgeHasBeenSet(false),
-    m_matchObjectSizeHasBeenSet(false)
-{
-}
-
 StorageLensGroupOrOperator::StorageLensGroupOrOperator(const XmlNode& xmlNode)
-  : StorageLensGroupOrOperator()
 {
   *this = xmlNode;
 }
@@ -45,49 +35,54 @@ StorageLensGroupOrOperator& StorageLensGroupOrOperator::operator =(const XmlNode
     if(!matchAnyPrefixNode.IsNull())
     {
       XmlNode matchAnyPrefixMember = matchAnyPrefixNode.FirstChild("Prefix");
+      m_matchAnyPrefixHasBeenSet = !matchAnyPrefixMember.IsNull();
       while(!matchAnyPrefixMember.IsNull())
       {
         m_matchAnyPrefix.push_back(matchAnyPrefixMember.GetText());
         matchAnyPrefixMember = matchAnyPrefixMember.NextNode("Prefix");
       }
 
-      m_matchAnyPrefixHasBeenSet = true;
+       m_matchAnyPrefixHasBeenSet = true;
     }
     XmlNode matchAnySuffixNode = resultNode.FirstChild("MatchAnySuffix");
     if(!matchAnySuffixNode.IsNull())
     {
       XmlNode matchAnySuffixMember = matchAnySuffixNode.FirstChild("Suffix");
+      m_matchAnySuffixHasBeenSet = !matchAnySuffixMember.IsNull();
       while(!matchAnySuffixMember.IsNull())
       {
         m_matchAnySuffix.push_back(matchAnySuffixMember.GetText());
         matchAnySuffixMember = matchAnySuffixMember.NextNode("Suffix");
       }
 
-      m_matchAnySuffixHasBeenSet = true;
+       m_matchAnySuffixHasBeenSet = true;
     }
     XmlNode matchAnyTagNode = resultNode.FirstChild("MatchAnyTag");
     if(!matchAnyTagNode.IsNull())
     {
       XmlNode matchAnyTagMember = matchAnyTagNode.FirstChild("Tag");
+      m_matchAnyTagHasBeenSet = !matchAnyTagMember.IsNull();
       while(!matchAnyTagMember.IsNull())
       {
         m_matchAnyTag.push_back(matchAnyTagMember);
         matchAnyTagMember = matchAnyTagMember.NextNode("Tag");
       }
 
-      m_matchAnyTagHasBeenSet = true;
+       m_matchAnyTagHasBeenSet = true;
     }
     XmlNode matchObjectAgeNode = resultNode.FirstChild("MatchObjectAge");
     if(!matchObjectAgeNode.IsNull())
     {
       m_matchObjectAge = matchObjectAgeNode;
       m_matchObjectAgeHasBeenSet = true;
+       m_matchObjectAgeHasBeenSet = true;
     }
     XmlNode matchObjectSizeNode = resultNode.FirstChild("MatchObjectSize");
     if(!matchObjectSizeNode.IsNull())
     {
       m_matchObjectSize = matchObjectSizeNode;
       m_matchObjectSizeHasBeenSet = true;
+       m_matchObjectSizeHasBeenSet = true;
     }
   }
 

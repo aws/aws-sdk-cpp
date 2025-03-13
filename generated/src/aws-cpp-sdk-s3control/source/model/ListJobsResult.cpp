@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListJobsResult::ListJobsResult()
-{
-}
-
 ListJobsResult::ListJobsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,11 +32,13 @@ ListJobsResult& ListJobsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode jobsNode = resultNode.FirstChild("Jobs");
     if(!jobsNode.IsNull())
     {
       XmlNode jobsMember = jobsNode.FirstChild("member");
+      m_jobsHasBeenSet = !jobsMember.IsNull();
       while(!jobsMember.IsNull())
       {
         m_jobs.push_back(jobsMember);
@@ -55,12 +53,14 @@ ListJobsResult& ListJobsResult::operator =(const Aws::AmazonWebServiceResult<Xml
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

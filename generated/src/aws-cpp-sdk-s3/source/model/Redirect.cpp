@@ -20,18 +20,7 @@ namespace S3
 namespace Model
 {
 
-Redirect::Redirect() : 
-    m_hostNameHasBeenSet(false),
-    m_httpRedirectCodeHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_replaceKeyPrefixWithHasBeenSet(false),
-    m_replaceKeyWithHasBeenSet(false)
-{
-}
-
 Redirect::Redirect(const XmlNode& xmlNode)
-  : Redirect()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ Redirect& Redirect::operator =(const XmlNode& xmlNode)
     {
       m_hostName = Aws::Utils::Xml::DecodeEscapedXmlText(hostNameNode.GetText());
       m_hostNameHasBeenSet = true;
+       m_hostNameHasBeenSet = true;
     }
     XmlNode httpRedirectCodeNode = resultNode.FirstChild("HttpRedirectCode");
     if(!httpRedirectCodeNode.IsNull())
     {
       m_httpRedirectCode = Aws::Utils::Xml::DecodeEscapedXmlText(httpRedirectCodeNode.GetText());
       m_httpRedirectCodeHasBeenSet = true;
+       m_httpRedirectCodeHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = ProtocolMapper::GetProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = ProtocolMapper::GetProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode replaceKeyPrefixWithNode = resultNode.FirstChild("ReplaceKeyPrefixWith");
     if(!replaceKeyPrefixWithNode.IsNull())
     {
       m_replaceKeyPrefixWith = Aws::Utils::Xml::DecodeEscapedXmlText(replaceKeyPrefixWithNode.GetText());
       m_replaceKeyPrefixWithHasBeenSet = true;
+       m_replaceKeyPrefixWithHasBeenSet = true;
     }
     XmlNode replaceKeyWithNode = resultNode.FirstChild("ReplaceKeyWith");
     if(!replaceKeyWithNode.IsNull())
     {
       m_replaceKeyWith = Aws::Utils::Xml::DecodeEscapedXmlText(replaceKeyWithNode.GetText());
       m_replaceKeyWithHasBeenSet = true;
+       m_replaceKeyWithHasBeenSet = true;
     }
   }
 

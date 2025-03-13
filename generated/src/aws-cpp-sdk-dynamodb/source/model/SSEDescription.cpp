@@ -18,18 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-SSEDescription::SSEDescription() : 
-    m_status(SSEStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sSEType(SSEType::NOT_SET),
-    m_sSETypeHasBeenSet(false),
-    m_kMSMasterKeyArnHasBeenSet(false),
-    m_inaccessibleEncryptionDateTimeHasBeenSet(false)
-{
-}
-
 SSEDescription::SSEDescription(JsonView jsonValue)
-  : SSEDescription()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ SSEDescription& SSEDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SSEStatusMapper::GetSSEStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SSEType"))
   {
     m_sSEType = SSETypeMapper::GetSSETypeForName(jsonValue.GetString("SSEType"));
-
     m_sSETypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KMSMasterKeyArn"))
   {
     m_kMSMasterKeyArn = jsonValue.GetString("KMSMasterKeyArn");
-
     m_kMSMasterKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InaccessibleEncryptionDateTime"))
   {
     m_inaccessibleEncryptionDateTime = jsonValue.GetDouble("InaccessibleEncryptionDateTime");
-
     m_inaccessibleEncryptionDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchWriteItemResult::BatchWriteItemResult()
-{
-}
-
 BatchWriteItemResult::BatchWriteItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -43,8 +39,8 @@ BatchWriteItemResult& BatchWriteItemResult::operator =(const Aws::AmazonWebServi
       }
       m_unprocessedItems[unprocessedItemsItem.first] = std::move(writeRequestsList);
     }
+    m_unprocessedItemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ItemCollectionMetrics"))
   {
     Aws::Map<Aws::String, JsonView> itemCollectionMetricsJsonMap = jsonValue.GetObject("ItemCollectionMetrics").GetAllObjects();
@@ -59,8 +55,8 @@ BatchWriteItemResult& BatchWriteItemResult::operator =(const Aws::AmazonWebServi
       }
       m_itemCollectionMetrics[itemCollectionMetricsItem.first] = std::move(itemCollectionMetricsMultipleList);
     }
+    m_itemCollectionMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedCapacity"))
   {
     Aws::Utils::Array<JsonView> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");
@@ -68,14 +64,15 @@ BatchWriteItemResult& BatchWriteItemResult::operator =(const Aws::AmazonWebServi
     {
       m_consumedCapacity.push_back(consumedCapacityJsonList[consumedCapacityIndex].AsObject());
     }
+    m_consumedCapacityHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

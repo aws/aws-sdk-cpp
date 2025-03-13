@@ -20,13 +20,7 @@ namespace EC2Protocol
 namespace Model
 {
 
-GreetingStruct::GreetingStruct() : 
-    m_hiHasBeenSet(false)
-{
-}
-
 GreetingStruct::GreetingStruct(const XmlNode& xmlNode)
-  : GreetingStruct()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ GreetingStruct& GreetingStruct::operator =(const XmlNode& xmlNode)
     {
       m_hi = Aws::Utils::Xml::DecodeEscapedXmlText(hiNode.GetText());
       m_hiHasBeenSet = true;
+       m_hiHasBeenSet = true;
     }
   }
 

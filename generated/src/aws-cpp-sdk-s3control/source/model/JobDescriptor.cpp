@@ -20,34 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobDescriptor::JobDescriptor() : 
-    m_jobIdHasBeenSet(false),
-    m_confirmationRequired(false),
-    m_confirmationRequiredHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_jobArnHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_manifestHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_progressSummaryHasBeenSet(false),
-    m_statusUpdateReasonHasBeenSet(false),
-    m_failureReasonsHasBeenSet(false),
-    m_reportHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_terminationDateHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_suspendedDateHasBeenSet(false),
-    m_suspendedCauseHasBeenSet(false),
-    m_manifestGeneratorHasBeenSet(false),
-    m_generatedManifestDescriptorHasBeenSet(false)
-{
-}
-
 JobDescriptor::JobDescriptor(const XmlNode& xmlNode)
-  : JobDescriptor()
 {
   *this = xmlNode;
 }
@@ -63,120 +36,139 @@ JobDescriptor& JobDescriptor::operator =(const XmlNode& xmlNode)
     {
       m_jobId = Aws::Utils::Xml::DecodeEscapedXmlText(jobIdNode.GetText());
       m_jobIdHasBeenSet = true;
+       m_jobIdHasBeenSet = true;
     }
     XmlNode confirmationRequiredNode = resultNode.FirstChild("ConfirmationRequired");
     if(!confirmationRequiredNode.IsNull())
     {
       m_confirmationRequired = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(confirmationRequiredNode.GetText()).c_str()).c_str());
       m_confirmationRequiredHasBeenSet = true;
+       m_confirmationRequiredHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode jobArnNode = resultNode.FirstChild("JobArn");
     if(!jobArnNode.IsNull())
     {
       m_jobArn = Aws::Utils::Xml::DecodeEscapedXmlText(jobArnNode.GetText());
       m_jobArnHasBeenSet = true;
+       m_jobArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = JobStatusMapper::GetJobStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = JobStatusMapper::GetJobStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode manifestNode = resultNode.FirstChild("Manifest");
     if(!manifestNode.IsNull())
     {
       m_manifest = manifestNode;
       m_manifestHasBeenSet = true;
+       m_manifestHasBeenSet = true;
     }
     XmlNode operationNode = resultNode.FirstChild("Operation");
     if(!operationNode.IsNull())
     {
       m_operation = operationNode;
       m_operationHasBeenSet = true;
+       m_operationHasBeenSet = true;
     }
     XmlNode priorityNode = resultNode.FirstChild("Priority");
     if(!priorityNode.IsNull())
     {
       m_priority = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priorityNode.GetText()).c_str()).c_str());
       m_priorityHasBeenSet = true;
+       m_priorityHasBeenSet = true;
     }
     XmlNode progressSummaryNode = resultNode.FirstChild("ProgressSummary");
     if(!progressSummaryNode.IsNull())
     {
       m_progressSummary = progressSummaryNode;
       m_progressSummaryHasBeenSet = true;
+       m_progressSummaryHasBeenSet = true;
     }
     XmlNode statusUpdateReasonNode = resultNode.FirstChild("StatusUpdateReason");
     if(!statusUpdateReasonNode.IsNull())
     {
       m_statusUpdateReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusUpdateReasonNode.GetText());
       m_statusUpdateReasonHasBeenSet = true;
+       m_statusUpdateReasonHasBeenSet = true;
     }
     XmlNode failureReasonsNode = resultNode.FirstChild("FailureReasons");
     if(!failureReasonsNode.IsNull())
     {
       XmlNode failureReasonsMember = failureReasonsNode.FirstChild("member");
+      m_failureReasonsHasBeenSet = !failureReasonsMember.IsNull();
       while(!failureReasonsMember.IsNull())
       {
         m_failureReasons.push_back(failureReasonsMember);
         failureReasonsMember = failureReasonsMember.NextNode("member");
       }
 
-      m_failureReasonsHasBeenSet = true;
+       m_failureReasonsHasBeenSet = true;
     }
     XmlNode reportNode = resultNode.FirstChild("Report");
     if(!reportNode.IsNull())
     {
       m_report = reportNode;
       m_reportHasBeenSet = true;
+       m_reportHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode terminationDateNode = resultNode.FirstChild("TerminationDate");
     if(!terminationDateNode.IsNull())
     {
       m_terminationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(terminationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_terminationDateHasBeenSet = true;
+       m_terminationDateHasBeenSet = true;
     }
     XmlNode roleArnNode = resultNode.FirstChild("RoleArn");
     if(!roleArnNode.IsNull())
     {
       m_roleArn = Aws::Utils::Xml::DecodeEscapedXmlText(roleArnNode.GetText());
       m_roleArnHasBeenSet = true;
+       m_roleArnHasBeenSet = true;
     }
     XmlNode suspendedDateNode = resultNode.FirstChild("SuspendedDate");
     if(!suspendedDateNode.IsNull())
     {
       m_suspendedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(suspendedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_suspendedDateHasBeenSet = true;
+       m_suspendedDateHasBeenSet = true;
     }
     XmlNode suspendedCauseNode = resultNode.FirstChild("SuspendedCause");
     if(!suspendedCauseNode.IsNull())
     {
       m_suspendedCause = Aws::Utils::Xml::DecodeEscapedXmlText(suspendedCauseNode.GetText());
       m_suspendedCauseHasBeenSet = true;
+       m_suspendedCauseHasBeenSet = true;
     }
     XmlNode manifestGeneratorNode = resultNode.FirstChild("ManifestGenerator");
     if(!manifestGeneratorNode.IsNull())
     {
       m_manifestGenerator = manifestGeneratorNode;
       m_manifestGeneratorHasBeenSet = true;
+       m_manifestGeneratorHasBeenSet = true;
     }
     XmlNode generatedManifestDescriptorNode = resultNode.FirstChild("GeneratedManifestDescriptor");
     if(!generatedManifestDescriptorNode.IsNull())
     {
       m_generatedManifestDescriptor = generatedManifestDescriptorNode;
       m_generatedManifestDescriptorHasBeenSet = true;
+       m_generatedManifestDescriptorHasBeenSet = true;
     }
   }
 

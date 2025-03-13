@@ -34,7 +34,7 @@ namespace Model
   class CallAnalyticsEntity
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsEntity();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsEntity() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsEntity(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>The time, in milliseconds, from the beginning of the audio stream to the
      * start of the identified entity.</p>
      */
-    inline long long GetBeginOffsetMillis() const{ return m_beginOffsetMillis; }
+    inline long long GetBeginOffsetMillis() const { return m_beginOffsetMillis; }
     inline bool BeginOffsetMillisHasBeenSet() const { return m_beginOffsetMillisHasBeenSet; }
     inline void SetBeginOffsetMillis(long long value) { m_beginOffsetMillisHasBeenSet = true; m_beginOffsetMillis = value; }
     inline CallAnalyticsEntity& WithBeginOffsetMillis(long long value) { SetBeginOffsetMillis(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * <p>The time, in milliseconds, from the beginning of the audio stream to the end
      * of the identified entity.</p>
      */
-    inline long long GetEndOffsetMillis() const{ return m_endOffsetMillis; }
+    inline long long GetEndOffsetMillis() const { return m_endOffsetMillis; }
     inline bool EndOffsetMillisHasBeenSet() const { return m_endOffsetMillisHasBeenSet; }
     inline void SetEndOffsetMillis(long long value) { m_endOffsetMillisHasBeenSet = true; m_endOffsetMillis = value; }
     inline CallAnalyticsEntity& WithEndOffsetMillis(long long value) { SetEndOffsetMillis(value); return *this;}
@@ -66,14 +66,12 @@ namespace Model
     /**
      * <p>The category of information identified. For example, <code>PII</code>.</p>
      */
-    inline const Aws::String& GetCategory() const{ return m_category; }
+    inline const Aws::String& GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
-    inline CallAnalyticsEntity& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
-    inline CallAnalyticsEntity& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
-    inline CallAnalyticsEntity& WithCategory(const char* value) { SetCategory(value); return *this;}
+    template<typename CategoryT = Aws::String>
+    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
+    template<typename CategoryT = Aws::String>
+    CallAnalyticsEntity& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,28 +79,24 @@ namespace Model
      * <p>The type of PII identified. For example, <code>NAME</code> or
      * <code>CREDIT_DEBIT_NUMBER</code>.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline CallAnalyticsEntity& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline CallAnalyticsEntity& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline CallAnalyticsEntity& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    CallAnalyticsEntity& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The word or words that represent the identified entity.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline CallAnalyticsEntity& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline CallAnalyticsEntity& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline CallAnalyticsEntity& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    CallAnalyticsEntity& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,17 +106,17 @@ namespace Model
      * indicates a higher probability that the identified entity correctly matches the
      * entity spoken in your media.</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline CallAnalyticsEntity& WithConfidence(double value) { SetConfidence(value); return *this;}
     ///@}
   private:
 
-    long long m_beginOffsetMillis;
+    long long m_beginOffsetMillis{0};
     bool m_beginOffsetMillisHasBeenSet = false;
 
-    long long m_endOffsetMillis;
+    long long m_endOffsetMillis{0};
     bool m_endOffsetMillisHasBeenSet = false;
 
     Aws::String m_category;
@@ -134,7 +128,7 @@ namespace Model
     Aws::String m_content;
     bool m_contentHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class StartCallAnalyticsStreamTranscriptionInitialResponse
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API StartCallAnalyticsStreamTranscriptionInitialResponse();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API StartCallAnalyticsStreamTranscriptionInitialResponse() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API StartCallAnalyticsStreamTranscriptionInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API StartCallAnalyticsStreamTranscriptionInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API StartCallAnalyticsStreamTranscriptionInitialResponse(const Http::HeaderValueCollection& responseHeaders);
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>Provides the identifier for your real-time Call Analytics request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartCallAnalyticsStreamTranscriptionInitialResponse& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <p>Provides the language code that you specified in your Call Analytics
      * request.</p>
      */
-    inline const CallAnalyticsLanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline CallAnalyticsLanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const CallAnalyticsLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(CallAnalyticsLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithLanguageCode(const CallAnalyticsLanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithLanguageCode(CallAnalyticsLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(CallAnalyticsLanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithLanguageCode(CallAnalyticsLanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * <p>Provides the sample rate that you specified in your Call Analytics
      * request.</p>
      */
-    inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
+    inline int GetMediaSampleRateHertz() const { return m_mediaSampleRateHertz; }
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
     inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
@@ -82,12 +78,10 @@ namespace Model
     /**
      * <p>Provides the media encoding you specified in your Call Analytics request.</p>
      */
-    inline const MediaEncoding& GetMediaEncoding() const{ return m_mediaEncoding; }
+    inline MediaEncoding GetMediaEncoding() const { return m_mediaEncoding; }
     inline bool MediaEncodingHasBeenSet() const { return m_mediaEncodingHasBeenSet; }
-    inline void SetMediaEncoding(const MediaEncoding& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
-    inline void SetMediaEncoding(MediaEncoding&& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = std::move(value); }
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithMediaEncoding(const MediaEncoding& value) { SetMediaEncoding(value); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithMediaEncoding(MediaEncoding&& value) { SetMediaEncoding(std::move(value)); return *this;}
+    inline void SetMediaEncoding(MediaEncoding value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
+    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithMediaEncoding(MediaEncoding value) { SetMediaEncoding(value); return *this;}
     ///@}
 
     ///@{
@@ -95,28 +89,24 @@ namespace Model
      * <p>Provides the name of the custom vocabulary that you specified in your Call
      * Analytics request.</p>
      */
-    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
+    inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
-    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
-    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
-    inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+    template<typename VocabularyNameT = Aws::String>
+    void SetVocabularyName(VocabularyNameT&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::forward<VocabularyNameT>(value); }
+    template<typename VocabularyNameT = Aws::String>
+    StartCallAnalyticsStreamTranscriptionInitialResponse& WithVocabularyName(VocabularyNameT&& value) { SetVocabularyName(std::forward<VocabularyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides the identifier for your Call Analytics transcription session.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    StartCallAnalyticsStreamTranscriptionInitialResponse& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,14 +114,12 @@ namespace Model
      * <p>Provides the name of the custom vocabulary filter that you specified in your
      * Call Analytics request.</p>
      */
-    inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
+    inline const Aws::String& GetVocabularyFilterName() const { return m_vocabularyFilterName; }
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
-    inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
-    inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
-    inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
+    template<typename VocabularyFilterNameT = Aws::String>
+    void SetVocabularyFilterName(VocabularyFilterNameT&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::forward<VocabularyFilterNameT>(value); }
+    template<typename VocabularyFilterNameT = Aws::String>
+    StartCallAnalyticsStreamTranscriptionInitialResponse& WithVocabularyFilterName(VocabularyFilterNameT&& value) { SetVocabularyFilterName(std::forward<VocabularyFilterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,12 +127,10 @@ namespace Model
      * <p>Provides the vocabulary filtering method used in your Call Analytics
      * transcription.</p>
      */
-    inline const VocabularyFilterMethod& GetVocabularyFilterMethod() const{ return m_vocabularyFilterMethod; }
+    inline VocabularyFilterMethod GetVocabularyFilterMethod() const { return m_vocabularyFilterMethod; }
     inline bool VocabularyFilterMethodHasBeenSet() const { return m_vocabularyFilterMethodHasBeenSet; }
-    inline void SetVocabularyFilterMethod(const VocabularyFilterMethod& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
-    inline void SetVocabularyFilterMethod(VocabularyFilterMethod&& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = std::move(value); }
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithVocabularyFilterMethod(const VocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithVocabularyFilterMethod(VocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
+    inline void SetVocabularyFilterMethod(VocabularyFilterMethod value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
+    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithVocabularyFilterMethod(VocabularyFilterMethod value) { SetVocabularyFilterMethod(value); return *this;}
     ///@}
 
     ///@{
@@ -152,14 +138,12 @@ namespace Model
      * <p>Provides the name of the custom language model that you specified in your
      * Call Analytics request.</p>
      */
-    inline const Aws::String& GetLanguageModelName() const{ return m_languageModelName; }
+    inline const Aws::String& GetLanguageModelName() const { return m_languageModelName; }
     inline bool LanguageModelNameHasBeenSet() const { return m_languageModelNameHasBeenSet; }
-    inline void SetLanguageModelName(const Aws::String& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = value; }
-    inline void SetLanguageModelName(Aws::String&& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = std::move(value); }
-    inline void SetLanguageModelName(const char* value) { m_languageModelNameHasBeenSet = true; m_languageModelName.assign(value); }
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithLanguageModelName(const Aws::String& value) { SetLanguageModelName(value); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithLanguageModelName(Aws::String&& value) { SetLanguageModelName(std::move(value)); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithLanguageModelName(const char* value) { SetLanguageModelName(value); return *this;}
+    template<typename LanguageModelNameT = Aws::String>
+    void SetLanguageModelName(LanguageModelNameT&& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = std::forward<LanguageModelNameT>(value); }
+    template<typename LanguageModelNameT = Aws::String>
+    StartCallAnalyticsStreamTranscriptionInitialResponse& WithLanguageModelName(LanguageModelNameT&& value) { SetLanguageModelName(std::forward<LanguageModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,7 +151,7 @@ namespace Model
      * <p>Shows whether partial results stabilization was enabled for your Call
      * Analytics transcription.</p>
      */
-    inline bool GetEnablePartialResultsStabilization() const{ return m_enablePartialResultsStabilization; }
+    inline bool GetEnablePartialResultsStabilization() const { return m_enablePartialResultsStabilization; }
     inline bool EnablePartialResultsStabilizationHasBeenSet() const { return m_enablePartialResultsStabilizationHasBeenSet; }
     inline void SetEnablePartialResultsStabilization(bool value) { m_enablePartialResultsStabilizationHasBeenSet = true; m_enablePartialResultsStabilization = value; }
     inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithEnablePartialResultsStabilization(bool value) { SetEnablePartialResultsStabilization(value); return *this;}
@@ -177,12 +161,10 @@ namespace Model
     /**
      * <p>Provides the stabilization level used for your transcription.</p>
      */
-    inline const PartialResultsStability& GetPartialResultsStability() const{ return m_partialResultsStability; }
+    inline PartialResultsStability GetPartialResultsStability() const { return m_partialResultsStability; }
     inline bool PartialResultsStabilityHasBeenSet() const { return m_partialResultsStabilityHasBeenSet; }
-    inline void SetPartialResultsStability(const PartialResultsStability& value) { m_partialResultsStabilityHasBeenSet = true; m_partialResultsStability = value; }
-    inline void SetPartialResultsStability(PartialResultsStability&& value) { m_partialResultsStabilityHasBeenSet = true; m_partialResultsStability = std::move(value); }
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithPartialResultsStability(const PartialResultsStability& value) { SetPartialResultsStability(value); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithPartialResultsStability(PartialResultsStability&& value) { SetPartialResultsStability(std::move(value)); return *this;}
+    inline void SetPartialResultsStability(PartialResultsStability value) { m_partialResultsStabilityHasBeenSet = true; m_partialResultsStability = value; }
+    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithPartialResultsStability(PartialResultsStability value) { SetPartialResultsStability(value); return *this;}
     ///@}
 
     ///@{
@@ -190,12 +172,10 @@ namespace Model
      * <p>Shows whether content identification was enabled for your Call Analytics
      * transcription.</p>
      */
-    inline const ContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
+    inline ContentIdentificationType GetContentIdentificationType() const { return m_contentIdentificationType; }
     inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
-    inline void SetContentIdentificationType(const ContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
-    inline void SetContentIdentificationType(ContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithContentIdentificationType(const ContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithContentIdentificationType(ContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
+    inline void SetContentIdentificationType(ContentIdentificationType value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
+    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithContentIdentificationType(ContentIdentificationType value) { SetContentIdentificationType(value); return *this;}
     ///@}
 
     ///@{
@@ -203,39 +183,35 @@ namespace Model
      * <p>Shows whether content redaction was enabled for your Call Analytics
      * transcription.</p>
      */
-    inline const ContentRedactionType& GetContentRedactionType() const{ return m_contentRedactionType; }
+    inline ContentRedactionType GetContentRedactionType() const { return m_contentRedactionType; }
     inline bool ContentRedactionTypeHasBeenSet() const { return m_contentRedactionTypeHasBeenSet; }
-    inline void SetContentRedactionType(const ContentRedactionType& value) { m_contentRedactionTypeHasBeenSet = true; m_contentRedactionType = value; }
-    inline void SetContentRedactionType(ContentRedactionType&& value) { m_contentRedactionTypeHasBeenSet = true; m_contentRedactionType = std::move(value); }
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithContentRedactionType(const ContentRedactionType& value) { SetContentRedactionType(value); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithContentRedactionType(ContentRedactionType&& value) { SetContentRedactionType(std::move(value)); return *this;}
+    inline void SetContentRedactionType(ContentRedactionType value) { m_contentRedactionTypeHasBeenSet = true; m_contentRedactionType = value; }
+    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithContentRedactionType(ContentRedactionType value) { SetContentRedactionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Lists the PII entity types you specified in your Call Analytics request.</p>
      */
-    inline const Aws::String& GetPiiEntityTypes() const{ return m_piiEntityTypes; }
+    inline const Aws::String& GetPiiEntityTypes() const { return m_piiEntityTypes; }
     inline bool PiiEntityTypesHasBeenSet() const { return m_piiEntityTypesHasBeenSet; }
-    inline void SetPiiEntityTypes(const Aws::String& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = value; }
-    inline void SetPiiEntityTypes(Aws::String&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = std::move(value); }
-    inline void SetPiiEntityTypes(const char* value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes.assign(value); }
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithPiiEntityTypes(const Aws::String& value) { SetPiiEntityTypes(value); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithPiiEntityTypes(Aws::String&& value) { SetPiiEntityTypes(std::move(value)); return *this;}
-    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithPiiEntityTypes(const char* value) { SetPiiEntityTypes(value); return *this;}
+    template<typename PiiEntityTypesT = Aws::String>
+    void SetPiiEntityTypes(PiiEntityTypesT&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = std::forward<PiiEntityTypesT>(value); }
+    template<typename PiiEntityTypesT = Aws::String>
+    StartCallAnalyticsStreamTranscriptionInitialResponse& WithPiiEntityTypes(PiiEntityTypesT&& value) { SetPiiEntityTypes(std::forward<PiiEntityTypesT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
 
-    CallAnalyticsLanguageCode m_languageCode;
+    CallAnalyticsLanguageCode m_languageCode{CallAnalyticsLanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    int m_mediaSampleRateHertz;
+    int m_mediaSampleRateHertz{0};
     bool m_mediaSampleRateHertzHasBeenSet = false;
 
-    MediaEncoding m_mediaEncoding;
+    MediaEncoding m_mediaEncoding{MediaEncoding::NOT_SET};
     bool m_mediaEncodingHasBeenSet = false;
 
     Aws::String m_vocabularyName;
@@ -247,22 +223,22 @@ namespace Model
     Aws::String m_vocabularyFilterName;
     bool m_vocabularyFilterNameHasBeenSet = false;
 
-    VocabularyFilterMethod m_vocabularyFilterMethod;
+    VocabularyFilterMethod m_vocabularyFilterMethod{VocabularyFilterMethod::NOT_SET};
     bool m_vocabularyFilterMethodHasBeenSet = false;
 
     Aws::String m_languageModelName;
     bool m_languageModelNameHasBeenSet = false;
 
-    bool m_enablePartialResultsStabilization;
+    bool m_enablePartialResultsStabilization{false};
     bool m_enablePartialResultsStabilizationHasBeenSet = false;
 
-    PartialResultsStability m_partialResultsStability;
+    PartialResultsStability m_partialResultsStability{PartialResultsStability::NOT_SET};
     bool m_partialResultsStabilityHasBeenSet = false;
 
-    ContentIdentificationType m_contentIdentificationType;
+    ContentIdentificationType m_contentIdentificationType{ContentIdentificationType::NOT_SET};
     bool m_contentIdentificationTypeHasBeenSet = false;
 
-    ContentRedactionType m_contentRedactionType;
+    ContentRedactionType m_contentRedactionType{ContentRedactionType::NOT_SET};
     bool m_contentRedactionTypeHasBeenSet = false;
 
     Aws::String m_piiEntityTypes;

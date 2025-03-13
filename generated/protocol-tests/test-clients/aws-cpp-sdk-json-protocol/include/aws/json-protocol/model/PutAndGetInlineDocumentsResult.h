@@ -28,35 +28,35 @@ namespace Model
   class PutAndGetInlineDocumentsResult
   {
   public:
-    AWS_JSONPROTOCOL_API PutAndGetInlineDocumentsResult();
+    AWS_JSONPROTOCOL_API PutAndGetInlineDocumentsResult() = default;
     AWS_JSONPROTOCOL_API PutAndGetInlineDocumentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_JSONPROTOCOL_API PutAndGetInlineDocumentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline Aws::Utils::DocumentView GetInlineDocument() const{ return m_inlineDocument; }
-    inline void SetInlineDocument(const Aws::Utils::Document& value) { m_inlineDocument = value; }
-    inline void SetInlineDocument(Aws::Utils::Document&& value) { m_inlineDocument = std::move(value); }
-    inline PutAndGetInlineDocumentsResult& WithInlineDocument(const Aws::Utils::Document& value) { SetInlineDocument(value); return *this;}
-    inline PutAndGetInlineDocumentsResult& WithInlineDocument(Aws::Utils::Document&& value) { SetInlineDocument(std::move(value)); return *this;}
+    inline Aws::Utils::DocumentView GetInlineDocument() const { return m_inlineDocument; }
+    template<typename InlineDocumentT = Aws::Utils::Document>
+    void SetInlineDocument(InlineDocumentT&& value) { m_inlineDocumentHasBeenSet = true; m_inlineDocument = std::forward<InlineDocumentT>(value); }
+    template<typename InlineDocumentT = Aws::Utils::Document>
+    PutAndGetInlineDocumentsResult& WithInlineDocument(InlineDocumentT&& value) { SetInlineDocument(std::forward<InlineDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutAndGetInlineDocumentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutAndGetInlineDocumentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutAndGetInlineDocumentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutAndGetInlineDocumentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Utils::Document m_inlineDocument;
+    bool m_inlineDocumentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

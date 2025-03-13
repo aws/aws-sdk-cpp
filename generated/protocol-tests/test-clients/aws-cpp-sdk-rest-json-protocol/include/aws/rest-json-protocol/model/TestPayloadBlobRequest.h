@@ -22,7 +22,7 @@ namespace Model
   class TestPayloadBlobRequest : public StreamingRestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API TestPayloadBlobRequest();
+    AWS_RESTJSONPROTOCOL_API TestPayloadBlobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,14 +35,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline TestPayloadBlobRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TestPayloadBlobRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TestPayloadBlobRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TestPayloadBlobRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 

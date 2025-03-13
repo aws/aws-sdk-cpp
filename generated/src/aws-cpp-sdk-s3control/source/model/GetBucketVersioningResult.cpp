@@ -16,14 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketVersioningResult::GetBucketVersioningResult() : 
-    m_status(BucketVersioningStatus::NOT_SET),
-    m_mFADelete(MFADeleteStatus::NOT_SET)
-{
-}
-
 GetBucketVersioningResult::GetBucketVersioningResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetBucketVersioningResult()
 {
   *this = result;
 }
@@ -38,12 +31,14 @@ GetBucketVersioningResult& GetBucketVersioningResult::operator =(const Aws::Amaz
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = BucketVersioningStatusMapper::GetBucketVersioningStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = BucketVersioningStatusMapper::GetBucketVersioningStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+      m_statusHasBeenSet = true;
     }
     XmlNode mFADeleteNode = resultNode.FirstChild("MfaDelete");
     if(!mFADeleteNode.IsNull())
     {
-      m_mFADelete = MFADeleteStatusMapper::GetMFADeleteStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mFADeleteNode.GetText()).c_str()).c_str());
+      m_mFADelete = MFADeleteStatusMapper::GetMFADeleteStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mFADeleteNode.GetText()).c_str()));
+      m_mFADeleteHasBeenSet = true;
     }
   }
 
@@ -52,12 +47,14 @@ GetBucketVersioningResult& GetBucketVersioningResult::operator =(const Aws::Amaz
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

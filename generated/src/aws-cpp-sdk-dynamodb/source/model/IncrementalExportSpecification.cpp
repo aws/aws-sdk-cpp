@@ -18,16 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-IncrementalExportSpecification::IncrementalExportSpecification() : 
-    m_exportFromTimeHasBeenSet(false),
-    m_exportToTimeHasBeenSet(false),
-    m_exportViewType(ExportViewType::NOT_SET),
-    m_exportViewTypeHasBeenSet(false)
-{
-}
-
 IncrementalExportSpecification::IncrementalExportSpecification(JsonView jsonValue)
-  : IncrementalExportSpecification()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ IncrementalExportSpecification& IncrementalExportSpecification::operator =(JsonV
   if(jsonValue.ValueExists("ExportFromTime"))
   {
     m_exportFromTime = jsonValue.GetDouble("ExportFromTime");
-
     m_exportFromTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportToTime"))
   {
     m_exportToTime = jsonValue.GetDouble("ExportToTime");
-
     m_exportToTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportViewType"))
   {
     m_exportViewType = ExportViewTypeMapper::GetExportViewTypeForName(jsonValue.GetString("ExportViewType"));
-
     m_exportViewTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

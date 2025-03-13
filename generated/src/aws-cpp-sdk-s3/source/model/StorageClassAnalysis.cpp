@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-StorageClassAnalysis::StorageClassAnalysis() : 
-    m_dataExportHasBeenSet(false)
-{
-}
-
 StorageClassAnalysis::StorageClassAnalysis(const XmlNode& xmlNode)
-  : StorageClassAnalysis()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ StorageClassAnalysis& StorageClassAnalysis::operator =(const XmlNode& xmlNode)
     {
       m_dataExport = dataExportNode;
       m_dataExportHasBeenSet = true;
+       m_dataExportHasBeenSet = true;
     }
   }
 

@@ -18,16 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-WarmThroughput::WarmThroughput() : 
-    m_readUnitsPerSecond(0),
-    m_readUnitsPerSecondHasBeenSet(false),
-    m_writeUnitsPerSecond(0),
-    m_writeUnitsPerSecondHasBeenSet(false)
-{
-}
-
 WarmThroughput::WarmThroughput(JsonView jsonValue)
-  : WarmThroughput()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ WarmThroughput& WarmThroughput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReadUnitsPerSecond"))
   {
     m_readUnitsPerSecond = jsonValue.GetInt64("ReadUnitsPerSecond");
-
     m_readUnitsPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WriteUnitsPerSecond"))
   {
     m_writeUnitsPerSecond = jsonValue.GetInt64("WriteUnitsPerSecond");
-
     m_writeUnitsPerSecondHasBeenSet = true;
   }
-
   return *this;
 }
 

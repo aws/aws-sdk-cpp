@@ -28,7 +28,7 @@ namespace Model
   class PutBucketLifecycleConfigurationResult
   {
   public:
-    AWS_S3_API PutBucketLifecycleConfigurationResult();
+    AWS_S3_API PutBucketLifecycleConfigurationResult() = default;
     AWS_S3_API PutBucketLifecycleConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3_API PutBucketLifecycleConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -49,28 +49,26 @@ namespace Model
      * body of your transition rule. Custom filters always take precedence over the
      * default transition behavior.</p>
      */
-    inline const TransitionDefaultMinimumObjectSize& GetTransitionDefaultMinimumObjectSize() const{ return m_transitionDefaultMinimumObjectSize; }
-    inline void SetTransitionDefaultMinimumObjectSize(const TransitionDefaultMinimumObjectSize& value) { m_transitionDefaultMinimumObjectSize = value; }
-    inline void SetTransitionDefaultMinimumObjectSize(TransitionDefaultMinimumObjectSize&& value) { m_transitionDefaultMinimumObjectSize = std::move(value); }
-    inline PutBucketLifecycleConfigurationResult& WithTransitionDefaultMinimumObjectSize(const TransitionDefaultMinimumObjectSize& value) { SetTransitionDefaultMinimumObjectSize(value); return *this;}
-    inline PutBucketLifecycleConfigurationResult& WithTransitionDefaultMinimumObjectSize(TransitionDefaultMinimumObjectSize&& value) { SetTransitionDefaultMinimumObjectSize(std::move(value)); return *this;}
+    inline TransitionDefaultMinimumObjectSize GetTransitionDefaultMinimumObjectSize() const { return m_transitionDefaultMinimumObjectSize; }
+    inline void SetTransitionDefaultMinimumObjectSize(TransitionDefaultMinimumObjectSize value) { m_transitionDefaultMinimumObjectSizeHasBeenSet = true; m_transitionDefaultMinimumObjectSize = value; }
+    inline PutBucketLifecycleConfigurationResult& WithTransitionDefaultMinimumObjectSize(TransitionDefaultMinimumObjectSize value) { SetTransitionDefaultMinimumObjectSize(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutBucketLifecycleConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutBucketLifecycleConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutBucketLifecycleConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutBucketLifecycleConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    TransitionDefaultMinimumObjectSize m_transitionDefaultMinimumObjectSize;
+    TransitionDefaultMinimumObjectSize m_transitionDefaultMinimumObjectSize{TransitionDefaultMinimumObjectSize::NOT_SET};
+    bool m_transitionDefaultMinimumObjectSizeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,17 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-SelectionCriteria::SelectionCriteria() : 
-    m_delimiterHasBeenSet(false),
-    m_maxDepth(0),
-    m_maxDepthHasBeenSet(false),
-    m_minStorageBytesPercentage(0.0),
-    m_minStorageBytesPercentageHasBeenSet(false)
-{
-}
-
 SelectionCriteria::SelectionCriteria(const XmlNode& xmlNode)
-  : SelectionCriteria()
 {
   *this = xmlNode;
 }
@@ -46,18 +36,21 @@ SelectionCriteria& SelectionCriteria::operator =(const XmlNode& xmlNode)
     {
       m_delimiter = Aws::Utils::Xml::DecodeEscapedXmlText(delimiterNode.GetText());
       m_delimiterHasBeenSet = true;
+       m_delimiterHasBeenSet = true;
     }
     XmlNode maxDepthNode = resultNode.FirstChild("MaxDepth");
     if(!maxDepthNode.IsNull())
     {
       m_maxDepth = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxDepthNode.GetText()).c_str()).c_str());
       m_maxDepthHasBeenSet = true;
+       m_maxDepthHasBeenSet = true;
     }
     XmlNode minStorageBytesPercentageNode = resultNode.FirstChild("MinStorageBytesPercentage");
     if(!minStorageBytesPercentageNode.IsNull())
     {
       m_minStorageBytesPercentage = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minStorageBytesPercentageNode.GetText()).c_str()).c_str());
       m_minStorageBytesPercentageHasBeenSet = true;
+       m_minStorageBytesPercentageHasBeenSet = true;
     }
   }
 

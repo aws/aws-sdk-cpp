@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-ObjectLockRule::ObjectLockRule() : 
-    m_defaultRetentionHasBeenSet(false)
-{
-}
-
 ObjectLockRule::ObjectLockRule(const XmlNode& xmlNode)
-  : ObjectLockRule()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ObjectLockRule& ObjectLockRule::operator =(const XmlNode& xmlNode)
     {
       m_defaultRetention = defaultRetentionNode;
       m_defaultRetentionHasBeenSet = true;
+       m_defaultRetentionHasBeenSet = true;
     }
   }
 

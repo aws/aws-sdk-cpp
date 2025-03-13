@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ActivityMetrics::ActivityMetrics() : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false)
-{
-}
-
 ActivityMetrics::ActivityMetrics(const XmlNode& xmlNode)
-  : ActivityMetrics()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ ActivityMetrics& ActivityMetrics::operator =(const XmlNode& xmlNode)
     {
       m_isEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isEnabledNode.GetText()).c_str()).c_str());
       m_isEnabledHasBeenSet = true;
+       m_isEnabledHasBeenSet = true;
     }
   }
 

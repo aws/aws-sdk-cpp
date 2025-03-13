@@ -20,19 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-MultiRegionAccessPointReport::MultiRegionAccessPointReport() : 
-    m_nameHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_publicAccessBlockHasBeenSet(false),
-    m_status(MultiRegionAccessPointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_regionsHasBeenSet(false)
-{
-}
-
 MultiRegionAccessPointReport::MultiRegionAccessPointReport(const XmlNode& xmlNode)
-  : MultiRegionAccessPointReport()
 {
   *this = xmlNode;
 }
@@ -48,42 +36,48 @@ MultiRegionAccessPointReport& MultiRegionAccessPointReport::operator =(const Xml
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode aliasNode = resultNode.FirstChild("Alias");
     if(!aliasNode.IsNull())
     {
       m_alias = Aws::Utils::Xml::DecodeEscapedXmlText(aliasNode.GetText());
       m_aliasHasBeenSet = true;
+       m_aliasHasBeenSet = true;
     }
     XmlNode createdAtNode = resultNode.FirstChild("CreatedAt");
     if(!createdAtNode.IsNull())
     {
       m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdAtHasBeenSet = true;
+       m_createdAtHasBeenSet = true;
     }
     XmlNode publicAccessBlockNode = resultNode.FirstChild("PublicAccessBlock");
     if(!publicAccessBlockNode.IsNull())
     {
       m_publicAccessBlock = publicAccessBlockNode;
       m_publicAccessBlockHasBeenSet = true;
+       m_publicAccessBlockHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = MultiRegionAccessPointStatusMapper::GetMultiRegionAccessPointStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = MultiRegionAccessPointStatusMapper::GetMultiRegionAccessPointStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode regionsNode = resultNode.FirstChild("Regions");
     if(!regionsNode.IsNull())
     {
       XmlNode regionsMember = regionsNode.FirstChild("Region");
+      m_regionsHasBeenSet = !regionsMember.IsNull();
       while(!regionsMember.IsNull())
       {
         m_regions.push_back(regionsMember);
         regionsMember = regionsMember.NextNode("Region");
       }
 
-      m_regionsHasBeenSet = true;
+       m_regionsHasBeenSet = true;
     }
   }
 

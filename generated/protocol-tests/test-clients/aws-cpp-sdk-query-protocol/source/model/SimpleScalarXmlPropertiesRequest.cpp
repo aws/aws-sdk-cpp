@@ -10,10 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-SimpleScalarXmlPropertiesRequest::SimpleScalarXmlPropertiesRequest()
-{
-}
-
 Aws::String SimpleScalarXmlPropertiesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

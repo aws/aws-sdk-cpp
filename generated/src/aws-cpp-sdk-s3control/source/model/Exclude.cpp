@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-Exclude::Exclude() : 
-    m_bucketsHasBeenSet(false),
-    m_regionsHasBeenSet(false)
-{
-}
-
 Exclude::Exclude(const XmlNode& xmlNode)
-  : Exclude()
 {
   *this = xmlNode;
 }
@@ -42,25 +35,27 @@ Exclude& Exclude::operator =(const XmlNode& xmlNode)
     if(!bucketsNode.IsNull())
     {
       XmlNode bucketsMember = bucketsNode.FirstChild("Arn");
+      m_bucketsHasBeenSet = !bucketsMember.IsNull();
       while(!bucketsMember.IsNull())
       {
         m_buckets.push_back(bucketsMember.GetText());
         bucketsMember = bucketsMember.NextNode("Arn");
       }
 
-      m_bucketsHasBeenSet = true;
+       m_bucketsHasBeenSet = true;
     }
     XmlNode regionsNode = resultNode.FirstChild("Regions");
     if(!regionsNode.IsNull())
     {
       XmlNode regionsMember = regionsNode.FirstChild("Region");
+      m_regionsHasBeenSet = !regionsMember.IsNull();
       while(!regionsMember.IsNull())
       {
         m_regions.push_back(regionsMember.GetText());
         regionsMember = regionsMember.NextNode("Region");
       }
 
-      m_regionsHasBeenSet = true;
+       m_regionsHasBeenSet = true;
     }
   }
 

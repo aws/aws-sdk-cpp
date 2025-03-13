@@ -12,12 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTimeToLiveRequest::UpdateTimeToLiveRequest() : 
-    m_tableNameHasBeenSet(false),
-    m_timeToLiveSpecificationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTimeToLiveRequest::SerializePayload() const
 {
   JsonValue payload;

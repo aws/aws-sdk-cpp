@@ -20,21 +20,7 @@ namespace S3
 namespace Model
 {
 
-CopyObjectResultDetails::CopyObjectResultDetails() : 
-    m_eTagHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_checksumType(ChecksumType::NOT_SET),
-    m_checksumTypeHasBeenSet(false),
-    m_checksumCRC32HasBeenSet(false),
-    m_checksumCRC32CHasBeenSet(false),
-    m_checksumCRC64NVMEHasBeenSet(false),
-    m_checksumSHA1HasBeenSet(false),
-    m_checksumSHA256HasBeenSet(false)
-{
-}
-
 CopyObjectResultDetails::CopyObjectResultDetails(const XmlNode& xmlNode)
-  : CopyObjectResultDetails()
 {
   *this = xmlNode;
 }
@@ -50,48 +36,56 @@ CopyObjectResultDetails& CopyObjectResultDetails::operator =(const XmlNode& xmlN
     {
       m_eTag = Aws::Utils::Xml::DecodeEscapedXmlText(eTagNode.GetText());
       m_eTagHasBeenSet = true;
+       m_eTagHasBeenSet = true;
     }
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
       m_lastModified = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedHasBeenSet = true;
+       m_lastModifiedHasBeenSet = true;
     }
     XmlNode checksumTypeNode = resultNode.FirstChild("ChecksumType");
     if(!checksumTypeNode.IsNull())
     {
-      m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()).c_str());
+      m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()));
       m_checksumTypeHasBeenSet = true;
+       m_checksumTypeHasBeenSet = true;
     }
     XmlNode checksumCRC32Node = resultNode.FirstChild("ChecksumCRC32");
     if(!checksumCRC32Node.IsNull())
     {
       m_checksumCRC32 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC32Node.GetText());
       m_checksumCRC32HasBeenSet = true;
+       m_checksumCRC32HasBeenSet = true;
     }
     XmlNode checksumCRC32CNode = resultNode.FirstChild("ChecksumCRC32C");
     if(!checksumCRC32CNode.IsNull())
     {
       m_checksumCRC32C = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC32CNode.GetText());
       m_checksumCRC32CHasBeenSet = true;
+       m_checksumCRC32CHasBeenSet = true;
     }
     XmlNode checksumCRC64NVMENode = resultNode.FirstChild("ChecksumCRC64NVME");
     if(!checksumCRC64NVMENode.IsNull())
     {
       m_checksumCRC64NVME = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC64NVMENode.GetText());
       m_checksumCRC64NVMEHasBeenSet = true;
+       m_checksumCRC64NVMEHasBeenSet = true;
     }
     XmlNode checksumSHA1Node = resultNode.FirstChild("ChecksumSHA1");
     if(!checksumSHA1Node.IsNull())
     {
       m_checksumSHA1 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumSHA1Node.GetText());
       m_checksumSHA1HasBeenSet = true;
+       m_checksumSHA1HasBeenSet = true;
     }
     XmlNode checksumSHA256Node = resultNode.FirstChild("ChecksumSHA256");
     if(!checksumSHA256Node.IsNull())
     {
       m_checksumSHA256 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumSHA256Node.GetText());
       m_checksumSHA256HasBeenSet = true;
+       m_checksumSHA256HasBeenSet = true;
     }
   }
 

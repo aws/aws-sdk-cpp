@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeKinesisStreamingDestinationResult::DescribeKinesisStreamingDestinationResult()
-{
-}
-
 DescribeKinesisStreamingDestinationResult::DescribeKinesisStreamingDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeKinesisStreamingDestinationResult& DescribeKinesisStreamingDestinationRe
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
+    m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisDataStreamDestinations"))
   {
     Aws::Utils::Array<JsonView> kinesisDataStreamDestinationsJsonList = jsonValue.GetArray("KinesisDataStreamDestinations");
@@ -42,14 +37,15 @@ DescribeKinesisStreamingDestinationResult& DescribeKinesisStreamingDestinationRe
     {
       m_kinesisDataStreamDestinations.push_back(kinesisDataStreamDestinationsJsonList[kinesisDataStreamDestinationsIndex].AsObject());
     }
+    m_kinesisDataStreamDestinationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

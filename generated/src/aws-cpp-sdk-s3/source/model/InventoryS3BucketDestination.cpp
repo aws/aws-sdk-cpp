@@ -20,18 +20,7 @@ namespace S3
 namespace Model
 {
 
-InventoryS3BucketDestination::InventoryS3BucketDestination() : 
-    m_accountIdHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_format(InventoryFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
-{
-}
-
 InventoryS3BucketDestination::InventoryS3BucketDestination(const XmlNode& xmlNode)
-  : InventoryS3BucketDestination()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ InventoryS3BucketDestination& InventoryS3BucketDestination::operator =(const Xml
     {
       m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
       m_accountIdHasBeenSet = true;
+       m_accountIdHasBeenSet = true;
     }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
     if(!bucketNode.IsNull())
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
     XmlNode formatNode = resultNode.FirstChild("Format");
     if(!formatNode.IsNull())
     {
-      m_format = InventoryFormatMapper::GetInventoryFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
+      m_format = InventoryFormatMapper::GetInventoryFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
       m_formatHasBeenSet = true;
+       m_formatHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
     XmlNode encryptionNode = resultNode.FirstChild("Encryption");
     if(!encryptionNode.IsNull())
     {
       m_encryption = encryptionNode;
       m_encryptionHasBeenSet = true;
+       m_encryptionHasBeenSet = true;
     }
   }
 

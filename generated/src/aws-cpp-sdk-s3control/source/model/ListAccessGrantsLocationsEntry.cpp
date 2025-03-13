@@ -20,17 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ListAccessGrantsLocationsEntry::ListAccessGrantsLocationsEntry() : 
-    m_createdAtHasBeenSet(false),
-    m_accessGrantsLocationIdHasBeenSet(false),
-    m_accessGrantsLocationArnHasBeenSet(false),
-    m_locationScopeHasBeenSet(false),
-    m_iAMRoleArnHasBeenSet(false)
-{
-}
-
 ListAccessGrantsLocationsEntry::ListAccessGrantsLocationsEntry(const XmlNode& xmlNode)
-  : ListAccessGrantsLocationsEntry()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ ListAccessGrantsLocationsEntry& ListAccessGrantsLocationsEntry::operator =(const
     {
       m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdAtHasBeenSet = true;
+       m_createdAtHasBeenSet = true;
     }
     XmlNode accessGrantsLocationIdNode = resultNode.FirstChild("AccessGrantsLocationId");
     if(!accessGrantsLocationIdNode.IsNull())
     {
       m_accessGrantsLocationId = Aws::Utils::Xml::DecodeEscapedXmlText(accessGrantsLocationIdNode.GetText());
       m_accessGrantsLocationIdHasBeenSet = true;
+       m_accessGrantsLocationIdHasBeenSet = true;
     }
     XmlNode accessGrantsLocationArnNode = resultNode.FirstChild("AccessGrantsLocationArn");
     if(!accessGrantsLocationArnNode.IsNull())
     {
       m_accessGrantsLocationArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessGrantsLocationArnNode.GetText());
       m_accessGrantsLocationArnHasBeenSet = true;
+       m_accessGrantsLocationArnHasBeenSet = true;
     }
     XmlNode locationScopeNode = resultNode.FirstChild("LocationScope");
     if(!locationScopeNode.IsNull())
     {
       m_locationScope = Aws::Utils::Xml::DecodeEscapedXmlText(locationScopeNode.GetText());
       m_locationScopeHasBeenSet = true;
+       m_locationScopeHasBeenSet = true;
     }
     XmlNode iAMRoleArnNode = resultNode.FirstChild("IAMRoleArn");
     if(!iAMRoleArnNode.IsNull())
     {
       m_iAMRoleArn = Aws::Utils::Xml::DecodeEscapedXmlText(iAMRoleArnNode.GetText());
       m_iAMRoleArnHasBeenSet = true;
+       m_iAMRoleArnHasBeenSet = true;
     }
   }
 

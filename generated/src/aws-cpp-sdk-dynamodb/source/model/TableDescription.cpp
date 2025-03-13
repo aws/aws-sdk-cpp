@@ -18,43 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-TableDescription::TableDescription() : 
-    m_attributeDefinitionsHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_tableStatus(TableStatus::NOT_SET),
-    m_tableStatusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_tableSizeBytes(0),
-    m_tableSizeBytesHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_tableArnHasBeenSet(false),
-    m_tableIdHasBeenSet(false),
-    m_billingModeSummaryHasBeenSet(false),
-    m_localSecondaryIndexesHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false),
-    m_streamSpecificationHasBeenSet(false),
-    m_latestStreamLabelHasBeenSet(false),
-    m_latestStreamArnHasBeenSet(false),
-    m_globalTableVersionHasBeenSet(false),
-    m_replicasHasBeenSet(false),
-    m_restoreSummaryHasBeenSet(false),
-    m_sSEDescriptionHasBeenSet(false),
-    m_archivalSummaryHasBeenSet(false),
-    m_tableClassSummaryHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false),
-    m_onDemandThroughputHasBeenSet(false),
-    m_warmThroughputHasBeenSet(false),
-    m_multiRegionConsistency(MultiRegionConsistency::NOT_SET),
-    m_multiRegionConsistencyHasBeenSet(false)
-{
-}
-
 TableDescription::TableDescription(JsonView jsonValue)
-  : TableDescription()
 {
   *this = jsonValue;
 }
@@ -70,14 +34,11 @@ TableDescription& TableDescription::operator =(JsonView jsonValue)
     }
     m_attributeDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeySchema"))
   {
     Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
@@ -87,63 +48,46 @@ TableDescription& TableDescription::operator =(JsonView jsonValue)
     }
     m_keySchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableStatus"))
   {
     m_tableStatus = TableStatusMapper::GetTableStatusForName(jsonValue.GetString("TableStatus"));
-
     m_tableStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedThroughput"))
   {
     m_provisionedThroughput = jsonValue.GetObject("ProvisionedThroughput");
-
     m_provisionedThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableSizeBytes"))
   {
     m_tableSizeBytes = jsonValue.GetInt64("TableSizeBytes");
-
     m_tableSizeBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ItemCount"))
   {
     m_itemCount = jsonValue.GetInt64("ItemCount");
-
     m_itemCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableArn"))
   {
     m_tableArn = jsonValue.GetString("TableArn");
-
     m_tableArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableId"))
   {
     m_tableId = jsonValue.GetString("TableId");
-
     m_tableIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingModeSummary"))
   {
     m_billingModeSummary = jsonValue.GetObject("BillingModeSummary");
-
     m_billingModeSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalSecondaryIndexes"))
   {
     Aws::Utils::Array<JsonView> localSecondaryIndexesJsonList = jsonValue.GetArray("LocalSecondaryIndexes");
@@ -153,7 +97,6 @@ TableDescription& TableDescription::operator =(JsonView jsonValue)
     }
     m_localSecondaryIndexesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
   {
     Aws::Utils::Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
@@ -163,35 +106,26 @@ TableDescription& TableDescription::operator =(JsonView jsonValue)
     }
     m_globalSecondaryIndexesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamSpecification"))
   {
     m_streamSpecification = jsonValue.GetObject("StreamSpecification");
-
     m_streamSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestStreamLabel"))
   {
     m_latestStreamLabel = jsonValue.GetString("LatestStreamLabel");
-
     m_latestStreamLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestStreamArn"))
   {
     m_latestStreamArn = jsonValue.GetString("LatestStreamArn");
-
     m_latestStreamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalTableVersion"))
   {
     m_globalTableVersion = jsonValue.GetString("GlobalTableVersion");
-
     m_globalTableVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Replicas"))
   {
     Aws::Utils::Array<JsonView> replicasJsonList = jsonValue.GetArray("Replicas");
@@ -201,63 +135,46 @@ TableDescription& TableDescription::operator =(JsonView jsonValue)
     }
     m_replicasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreSummary"))
   {
     m_restoreSummary = jsonValue.GetObject("RestoreSummary");
-
     m_restoreSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SSEDescription"))
   {
     m_sSEDescription = jsonValue.GetObject("SSEDescription");
-
     m_sSEDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArchivalSummary"))
   {
     m_archivalSummary = jsonValue.GetObject("ArchivalSummary");
-
     m_archivalSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableClassSummary"))
   {
     m_tableClassSummary = jsonValue.GetObject("TableClassSummary");
-
     m_tableClassSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionProtectionEnabled"))
   {
     m_deletionProtectionEnabled = jsonValue.GetBool("DeletionProtectionEnabled");
-
     m_deletionProtectionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandThroughput"))
   {
     m_onDemandThroughput = jsonValue.GetObject("OnDemandThroughput");
-
     m_onDemandThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WarmThroughput"))
   {
     m_warmThroughput = jsonValue.GetObject("WarmThroughput");
-
     m_warmThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiRegionConsistency"))
   {
     m_multiRegionConsistency = MultiRegionConsistencyMapper::GetMultiRegionConsistencyForName(jsonValue.GetString("MultiRegionConsistency"));
-
     m_multiRegionConsistencyHasBeenSet = true;
   }
-
   return *this;
 }
 

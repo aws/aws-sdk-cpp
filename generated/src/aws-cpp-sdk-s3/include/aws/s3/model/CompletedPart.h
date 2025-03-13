@@ -30,7 +30,7 @@ namespace Model
   class CompletedPart
   {
   public:
-    AWS_S3_API CompletedPart();
+    AWS_S3_API CompletedPart() = default;
     AWS_S3_API CompletedPart(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API CompletedPart& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Entity tag returned when the part was uploaded.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline const Aws::String& GetETag() const { return m_eTag; }
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
-    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
-    inline CompletedPart& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline CompletedPart& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline CompletedPart& WithETag(const char* value) { SetETag(value); return *this;}
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    CompletedPart& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumCRC32() const{ return m_checksumCRC32; }
+    inline const Aws::String& GetChecksumCRC32() const { return m_checksumCRC32; }
     inline bool ChecksumCRC32HasBeenSet() const { return m_checksumCRC32HasBeenSet; }
-    inline void SetChecksumCRC32(const Aws::String& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = value; }
-    inline void SetChecksumCRC32(Aws::String&& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = std::move(value); }
-    inline void SetChecksumCRC32(const char* value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32.assign(value); }
-    inline CompletedPart& WithChecksumCRC32(const Aws::String& value) { SetChecksumCRC32(value); return *this;}
-    inline CompletedPart& WithChecksumCRC32(Aws::String&& value) { SetChecksumCRC32(std::move(value)); return *this;}
-    inline CompletedPart& WithChecksumCRC32(const char* value) { SetChecksumCRC32(value); return *this;}
+    template<typename ChecksumCRC32T = Aws::String>
+    void SetChecksumCRC32(ChecksumCRC32T&& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = std::forward<ChecksumCRC32T>(value); }
+    template<typename ChecksumCRC32T = Aws::String>
+    CompletedPart& WithChecksumCRC32(ChecksumCRC32T&& value) { SetChecksumCRC32(std::forward<ChecksumCRC32T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumCRC32C() const{ return m_checksumCRC32C; }
+    inline const Aws::String& GetChecksumCRC32C() const { return m_checksumCRC32C; }
     inline bool ChecksumCRC32CHasBeenSet() const { return m_checksumCRC32CHasBeenSet; }
-    inline void SetChecksumCRC32C(const Aws::String& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = value; }
-    inline void SetChecksumCRC32C(Aws::String&& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = std::move(value); }
-    inline void SetChecksumCRC32C(const char* value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C.assign(value); }
-    inline CompletedPart& WithChecksumCRC32C(const Aws::String& value) { SetChecksumCRC32C(value); return *this;}
-    inline CompletedPart& WithChecksumCRC32C(Aws::String&& value) { SetChecksumCRC32C(std::move(value)); return *this;}
-    inline CompletedPart& WithChecksumCRC32C(const char* value) { SetChecksumCRC32C(value); return *this;}
+    template<typename ChecksumCRC32CT = Aws::String>
+    void SetChecksumCRC32C(ChecksumCRC32CT&& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = std::forward<ChecksumCRC32CT>(value); }
+    template<typename ChecksumCRC32CT = Aws::String>
+    CompletedPart& WithChecksumCRC32C(ChecksumCRC32CT&& value) { SetChecksumCRC32C(std::forward<ChecksumCRC32CT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumCRC64NVME() const{ return m_checksumCRC64NVME; }
+    inline const Aws::String& GetChecksumCRC64NVME() const { return m_checksumCRC64NVME; }
     inline bool ChecksumCRC64NVMEHasBeenSet() const { return m_checksumCRC64NVMEHasBeenSet; }
-    inline void SetChecksumCRC64NVME(const Aws::String& value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME = value; }
-    inline void SetChecksumCRC64NVME(Aws::String&& value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME = std::move(value); }
-    inline void SetChecksumCRC64NVME(const char* value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME.assign(value); }
-    inline CompletedPart& WithChecksumCRC64NVME(const Aws::String& value) { SetChecksumCRC64NVME(value); return *this;}
-    inline CompletedPart& WithChecksumCRC64NVME(Aws::String&& value) { SetChecksumCRC64NVME(std::move(value)); return *this;}
-    inline CompletedPart& WithChecksumCRC64NVME(const char* value) { SetChecksumCRC64NVME(value); return *this;}
+    template<typename ChecksumCRC64NVMET = Aws::String>
+    void SetChecksumCRC64NVME(ChecksumCRC64NVMET&& value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME = std::forward<ChecksumCRC64NVMET>(value); }
+    template<typename ChecksumCRC64NVMET = Aws::String>
+    CompletedPart& WithChecksumCRC64NVME(ChecksumCRC64NVMET&& value) { SetChecksumCRC64NVME(std::forward<ChecksumCRC64NVMET>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +106,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumSHA1() const{ return m_checksumSHA1; }
+    inline const Aws::String& GetChecksumSHA1() const { return m_checksumSHA1; }
     inline bool ChecksumSHA1HasBeenSet() const { return m_checksumSHA1HasBeenSet; }
-    inline void SetChecksumSHA1(const Aws::String& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = value; }
-    inline void SetChecksumSHA1(Aws::String&& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = std::move(value); }
-    inline void SetChecksumSHA1(const char* value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1.assign(value); }
-    inline CompletedPart& WithChecksumSHA1(const Aws::String& value) { SetChecksumSHA1(value); return *this;}
-    inline CompletedPart& WithChecksumSHA1(Aws::String&& value) { SetChecksumSHA1(std::move(value)); return *this;}
-    inline CompletedPart& WithChecksumSHA1(const char* value) { SetChecksumSHA1(value); return *this;}
+    template<typename ChecksumSHA1T = Aws::String>
+    void SetChecksumSHA1(ChecksumSHA1T&& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = std::forward<ChecksumSHA1T>(value); }
+    template<typename ChecksumSHA1T = Aws::String>
+    CompletedPart& WithChecksumSHA1(ChecksumSHA1T&& value) { SetChecksumSHA1(std::forward<ChecksumSHA1T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,14 +122,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumSHA256() const{ return m_checksumSHA256; }
+    inline const Aws::String& GetChecksumSHA256() const { return m_checksumSHA256; }
     inline bool ChecksumSHA256HasBeenSet() const { return m_checksumSHA256HasBeenSet; }
-    inline void SetChecksumSHA256(const Aws::String& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = value; }
-    inline void SetChecksumSHA256(Aws::String&& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = std::move(value); }
-    inline void SetChecksumSHA256(const char* value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256.assign(value); }
-    inline CompletedPart& WithChecksumSHA256(const Aws::String& value) { SetChecksumSHA256(value); return *this;}
-    inline CompletedPart& WithChecksumSHA256(Aws::String&& value) { SetChecksumSHA256(std::move(value)); return *this;}
-    inline CompletedPart& WithChecksumSHA256(const char* value) { SetChecksumSHA256(value); return *this;}
+    template<typename ChecksumSHA256T = Aws::String>
+    void SetChecksumSHA256(ChecksumSHA256T&& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = std::forward<ChecksumSHA256T>(value); }
+    template<typename ChecksumSHA256T = Aws::String>
+    CompletedPart& WithChecksumSHA256(ChecksumSHA256T&& value) { SetChecksumSHA256(std::forward<ChecksumSHA256T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,7 +144,7 @@ namespace Model
      * <code>CompleteMultipartUpload</code>, the <code>PartNumber</code> must start at
      * 1 and the part numbers must be consecutive.</p> </li> </ul> 
      */
-    inline int GetPartNumber() const{ return m_partNumber; }
+    inline int GetPartNumber() const { return m_partNumber; }
     inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
     inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
     inline CompletedPart& WithPartNumber(int value) { SetPartNumber(value); return *this;}
@@ -181,7 +169,7 @@ namespace Model
     Aws::String m_checksumSHA256;
     bool m_checksumSHA256HasBeenSet = false;
 
-    int m_partNumber;
+    int m_partNumber{0};
     bool m_partNumberHasBeenSet = false;
   };
 

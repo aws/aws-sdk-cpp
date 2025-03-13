@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-EncryptionConfiguration::EncryptionConfiguration() : 
-    m_replicaKmsKeyIDHasBeenSet(false)
-{
-}
-
 EncryptionConfiguration::EncryptionConfiguration(const XmlNode& xmlNode)
-  : EncryptionConfiguration()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(const XmlNode& xmlN
     {
       m_replicaKmsKeyID = Aws::Utils::Xml::DecodeEscapedXmlText(replicaKmsKeyIDNode.GetText());
       m_replicaKmsKeyIDHasBeenSet = true;
+       m_replicaKmsKeyIDHasBeenSet = true;
     }
   }
 

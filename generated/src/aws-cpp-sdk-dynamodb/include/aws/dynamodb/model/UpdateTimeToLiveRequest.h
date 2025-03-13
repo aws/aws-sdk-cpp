@@ -26,7 +26,7 @@ namespace Model
   class UpdateTimeToLiveRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API UpdateTimeToLiveRequest();
+    AWS_DYNAMODB_API UpdateTimeToLiveRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * <p>The name of the table to be configured. You can also provide the Amazon
      * Resource Name (ARN) of the table in this parameter.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline UpdateTimeToLiveRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline UpdateTimeToLiveRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline UpdateTimeToLiveRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    UpdateTimeToLiveRequest& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,12 @@ namespace Model
      * <p>Represents the settings used to enable or disable Time to Live for the
      * specified table.</p>
      */
-    inline const TimeToLiveSpecification& GetTimeToLiveSpecification() const{ return m_timeToLiveSpecification; }
+    inline const TimeToLiveSpecification& GetTimeToLiveSpecification() const { return m_timeToLiveSpecification; }
     inline bool TimeToLiveSpecificationHasBeenSet() const { return m_timeToLiveSpecificationHasBeenSet; }
-    inline void SetTimeToLiveSpecification(const TimeToLiveSpecification& value) { m_timeToLiveSpecificationHasBeenSet = true; m_timeToLiveSpecification = value; }
-    inline void SetTimeToLiveSpecification(TimeToLiveSpecification&& value) { m_timeToLiveSpecificationHasBeenSet = true; m_timeToLiveSpecification = std::move(value); }
-    inline UpdateTimeToLiveRequest& WithTimeToLiveSpecification(const TimeToLiveSpecification& value) { SetTimeToLiveSpecification(value); return *this;}
-    inline UpdateTimeToLiveRequest& WithTimeToLiveSpecification(TimeToLiveSpecification&& value) { SetTimeToLiveSpecification(std::move(value)); return *this;}
+    template<typename TimeToLiveSpecificationT = TimeToLiveSpecification>
+    void SetTimeToLiveSpecification(TimeToLiveSpecificationT&& value) { m_timeToLiveSpecificationHasBeenSet = true; m_timeToLiveSpecification = std::forward<TimeToLiveSpecificationT>(value); }
+    template<typename TimeToLiveSpecificationT = TimeToLiveSpecification>
+    UpdateTimeToLiveRequest& WithTimeToLiveSpecification(TimeToLiveSpecificationT&& value) { SetTimeToLiveSpecification(std::forward<TimeToLiveSpecificationT>(value)); return *this;}
     ///@}
   private:
 

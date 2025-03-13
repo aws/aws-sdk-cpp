@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-Region::Region() : 
-    m_bucketHasBeenSet(false),
-    m_bucketAccountIdHasBeenSet(false)
-{
-}
-
 Region::Region(const XmlNode& xmlNode)
-  : Region()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Region& Region::operator =(const XmlNode& xmlNode)
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
     XmlNode bucketAccountIdNode = resultNode.FirstChild("BucketAccountId");
     if(!bucketAccountIdNode.IsNull())
     {
       m_bucketAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(bucketAccountIdNode.GetText());
       m_bucketAccountIdHasBeenSet = true;
+       m_bucketAccountIdHasBeenSet = true;
     }
   }
 

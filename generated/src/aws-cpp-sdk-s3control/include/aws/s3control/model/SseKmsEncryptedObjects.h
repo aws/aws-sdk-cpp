@@ -33,7 +33,7 @@ namespace Model
   class SseKmsEncryptedObjects
   {
   public:
-    AWS_S3CONTROL_API SseKmsEncryptedObjects();
+    AWS_S3CONTROL_API SseKmsEncryptedObjects() = default;
     AWS_S3CONTROL_API SseKmsEncryptedObjects(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API SseKmsEncryptedObjects& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,16 +45,14 @@ namespace Model
      * <p>Specifies whether Amazon S3 replicates objects that are created with
      * server-side encryption by using an KMS key stored in Key Management Service.</p>
      */
-    inline const SseKmsEncryptedObjectsStatus& GetStatus() const{ return m_status; }
+    inline SseKmsEncryptedObjectsStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SseKmsEncryptedObjectsStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SseKmsEncryptedObjectsStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SseKmsEncryptedObjects& WithStatus(const SseKmsEncryptedObjectsStatus& value) { SetStatus(value); return *this;}
-    inline SseKmsEncryptedObjects& WithStatus(SseKmsEncryptedObjectsStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SseKmsEncryptedObjectsStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SseKmsEncryptedObjects& WithStatus(SseKmsEncryptedObjectsStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    SseKmsEncryptedObjectsStatus m_status;
+    SseKmsEncryptedObjectsStatus m_status{SseKmsEncryptedObjectsStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

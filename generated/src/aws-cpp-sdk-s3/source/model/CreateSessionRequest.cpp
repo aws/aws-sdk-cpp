@@ -17,19 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CreateSessionRequest::CreateSessionRequest() : 
-    m_sessionMode(SessionMode::NOT_SET),
-    m_sessionModeHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
-    m_serverSideEncryptionHasBeenSet(false),
-    m_sSEKMSKeyIdHasBeenSet(false),
-    m_sSEKMSEncryptionContextHasBeenSet(false),
-    m_bucketKeyEnabled(false),
-    m_bucketKeyEnabledHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 bool CreateSessionRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const

@@ -35,7 +35,7 @@ namespace Model
   class Grantee
   {
   public:
-    AWS_S3CONTROL_API Grantee();
+    AWS_S3CONTROL_API Grantee() = default;
     AWS_S3CONTROL_API Grantee(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API Grantee& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -55,12 +55,10 @@ namespace Model
      * Center and associated the IAM Identity Center instance with your S3 Access
      * Grants instance.</p> </li> </ul>
      */
-    inline const GranteeType& GetGranteeType() const{ return m_granteeType; }
+    inline GranteeType GetGranteeType() const { return m_granteeType; }
     inline bool GranteeTypeHasBeenSet() const { return m_granteeTypeHasBeenSet; }
-    inline void SetGranteeType(const GranteeType& value) { m_granteeTypeHasBeenSet = true; m_granteeType = value; }
-    inline void SetGranteeType(GranteeType&& value) { m_granteeTypeHasBeenSet = true; m_granteeType = std::move(value); }
-    inline Grantee& WithGranteeType(const GranteeType& value) { SetGranteeType(value); return *this;}
-    inline Grantee& WithGranteeType(GranteeType&& value) { SetGranteeType(std::move(value)); return *this;}
+    inline void SetGranteeType(GranteeType value) { m_granteeTypeHasBeenSet = true; m_granteeType = value; }
+    inline Grantee& WithGranteeType(GranteeType value) { SetGranteeType(value); return *this;}
     ///@}
 
     ///@{
@@ -72,18 +70,16 @@ namespace Model
      * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from
      * your Amazon Web Services IAM Identity Center instance.</p>
      */
-    inline const Aws::String& GetGranteeIdentifier() const{ return m_granteeIdentifier; }
+    inline const Aws::String& GetGranteeIdentifier() const { return m_granteeIdentifier; }
     inline bool GranteeIdentifierHasBeenSet() const { return m_granteeIdentifierHasBeenSet; }
-    inline void SetGranteeIdentifier(const Aws::String& value) { m_granteeIdentifierHasBeenSet = true; m_granteeIdentifier = value; }
-    inline void SetGranteeIdentifier(Aws::String&& value) { m_granteeIdentifierHasBeenSet = true; m_granteeIdentifier = std::move(value); }
-    inline void SetGranteeIdentifier(const char* value) { m_granteeIdentifierHasBeenSet = true; m_granteeIdentifier.assign(value); }
-    inline Grantee& WithGranteeIdentifier(const Aws::String& value) { SetGranteeIdentifier(value); return *this;}
-    inline Grantee& WithGranteeIdentifier(Aws::String&& value) { SetGranteeIdentifier(std::move(value)); return *this;}
-    inline Grantee& WithGranteeIdentifier(const char* value) { SetGranteeIdentifier(value); return *this;}
+    template<typename GranteeIdentifierT = Aws::String>
+    void SetGranteeIdentifier(GranteeIdentifierT&& value) { m_granteeIdentifierHasBeenSet = true; m_granteeIdentifier = std::forward<GranteeIdentifierT>(value); }
+    template<typename GranteeIdentifierT = Aws::String>
+    Grantee& WithGranteeIdentifier(GranteeIdentifierT&& value) { SetGranteeIdentifier(std::forward<GranteeIdentifierT>(value)); return *this;}
     ///@}
   private:
 
-    GranteeType m_granteeType;
+    GranteeType m_granteeType{GranteeType::NOT_SET};
     bool m_granteeTypeHasBeenSet = false;
 
     Aws::String m_granteeIdentifier;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DocumentTypeAsMapValueResult::DocumentTypeAsMapValueResult()
-{
-}
-
 DocumentTypeAsMapValueResult::DocumentTypeAsMapValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DocumentTypeAsMapValueResult& DocumentTypeAsMapValueResult::operator =(const Aws
     {
       m_docValuedMap[docValuedMapItem.first] = docValuedMapItem.second.AsObject();
     }
+    m_docValuedMapHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

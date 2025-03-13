@@ -38,7 +38,7 @@ namespace Model
   class BatchWriteItemResult
   {
   public:
-    AWS_DYNAMODB_API BatchWriteItemResult();
+    AWS_DYNAMODB_API BatchWriteItemResult() = default;
     AWS_DYNAMODB_API BatchWriteItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API BatchWriteItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -70,17 +70,15 @@ namespace Model
      * definition.</p> </li> </ul> </li> </ul> <p>If there are no unprocessed items
      * remaining, the response contains an empty <code>UnprocessedItems</code> map.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& GetUnprocessedItems() const{ return m_unprocessedItems; }
-    inline void SetUnprocessedItems(const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& value) { m_unprocessedItems = value; }
-    inline void SetUnprocessedItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { m_unprocessedItems = std::move(value); }
-    inline BatchWriteItemResult& WithUnprocessedItems(const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& value) { SetUnprocessedItems(value); return *this;}
-    inline BatchWriteItemResult& WithUnprocessedItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { SetUnprocessedItems(std::move(value)); return *this;}
-    inline BatchWriteItemResult& AddUnprocessedItems(const Aws::String& key, const Aws::Vector<WriteRequest>& value) { m_unprocessedItems.emplace(key, value); return *this; }
-    inline BatchWriteItemResult& AddUnprocessedItems(Aws::String&& key, const Aws::Vector<WriteRequest>& value) { m_unprocessedItems.emplace(std::move(key), value); return *this; }
-    inline BatchWriteItemResult& AddUnprocessedItems(const Aws::String& key, Aws::Vector<WriteRequest>&& value) { m_unprocessedItems.emplace(key, std::move(value)); return *this; }
-    inline BatchWriteItemResult& AddUnprocessedItems(Aws::String&& key, Aws::Vector<WriteRequest>&& value) { m_unprocessedItems.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchWriteItemResult& AddUnprocessedItems(const char* key, Aws::Vector<WriteRequest>&& value) { m_unprocessedItems.emplace(key, std::move(value)); return *this; }
-    inline BatchWriteItemResult& AddUnprocessedItems(const char* key, const Aws::Vector<WriteRequest>& value) { m_unprocessedItems.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& GetUnprocessedItems() const { return m_unprocessedItems; }
+    template<typename UnprocessedItemsT = Aws::Map<Aws::String, Aws::Vector<WriteRequest>>>
+    void SetUnprocessedItems(UnprocessedItemsT&& value) { m_unprocessedItemsHasBeenSet = true; m_unprocessedItems = std::forward<UnprocessedItemsT>(value); }
+    template<typename UnprocessedItemsT = Aws::Map<Aws::String, Aws::Vector<WriteRequest>>>
+    BatchWriteItemResult& WithUnprocessedItems(UnprocessedItemsT&& value) { SetUnprocessedItems(std::forward<UnprocessedItemsT>(value)); return *this;}
+    template<typename UnprocessedItemsKeyT = Aws::String, typename UnprocessedItemsValueT = Aws::Vector<WriteRequest>>
+    BatchWriteItemResult& AddUnprocessedItems(UnprocessedItemsKeyT&& key, UnprocessedItemsValueT&& value) {
+      m_unprocessedItemsHasBeenSet = true; m_unprocessedItems.emplace(std::forward<UnprocessedItemsKeyT>(key), std::forward<UnprocessedItemsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -100,17 +98,15 @@ namespace Model
      * change over time; therefore, do not rely on the precision or accuracy of the
      * estimate.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>& GetItemCollectionMetrics() const{ return m_itemCollectionMetrics; }
-    inline void SetItemCollectionMetrics(const Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>& value) { m_itemCollectionMetrics = value; }
-    inline void SetItemCollectionMetrics(Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>&& value) { m_itemCollectionMetrics = std::move(value); }
-    inline BatchWriteItemResult& WithItemCollectionMetrics(const Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>& value) { SetItemCollectionMetrics(value); return *this;}
-    inline BatchWriteItemResult& WithItemCollectionMetrics(Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>&& value) { SetItemCollectionMetrics(std::move(value)); return *this;}
-    inline BatchWriteItemResult& AddItemCollectionMetrics(const Aws::String& key, const Aws::Vector<ItemCollectionMetrics>& value) { m_itemCollectionMetrics.emplace(key, value); return *this; }
-    inline BatchWriteItemResult& AddItemCollectionMetrics(Aws::String&& key, const Aws::Vector<ItemCollectionMetrics>& value) { m_itemCollectionMetrics.emplace(std::move(key), value); return *this; }
-    inline BatchWriteItemResult& AddItemCollectionMetrics(const Aws::String& key, Aws::Vector<ItemCollectionMetrics>&& value) { m_itemCollectionMetrics.emplace(key, std::move(value)); return *this; }
-    inline BatchWriteItemResult& AddItemCollectionMetrics(Aws::String&& key, Aws::Vector<ItemCollectionMetrics>&& value) { m_itemCollectionMetrics.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchWriteItemResult& AddItemCollectionMetrics(const char* key, Aws::Vector<ItemCollectionMetrics>&& value) { m_itemCollectionMetrics.emplace(key, std::move(value)); return *this; }
-    inline BatchWriteItemResult& AddItemCollectionMetrics(const char* key, const Aws::Vector<ItemCollectionMetrics>& value) { m_itemCollectionMetrics.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>& GetItemCollectionMetrics() const { return m_itemCollectionMetrics; }
+    template<typename ItemCollectionMetricsT = Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>>
+    void SetItemCollectionMetrics(ItemCollectionMetricsT&& value) { m_itemCollectionMetricsHasBeenSet = true; m_itemCollectionMetrics = std::forward<ItemCollectionMetricsT>(value); }
+    template<typename ItemCollectionMetricsT = Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>>
+    BatchWriteItemResult& WithItemCollectionMetrics(ItemCollectionMetricsT&& value) { SetItemCollectionMetrics(std::forward<ItemCollectionMetricsT>(value)); return *this;}
+    template<typename ItemCollectionMetricsKeyT = Aws::String, typename ItemCollectionMetricsValueT = Aws::Vector<ItemCollectionMetrics>>
+    BatchWriteItemResult& AddItemCollectionMetrics(ItemCollectionMetricsKeyT&& key, ItemCollectionMetricsValueT&& value) {
+      m_itemCollectionMetricsHasBeenSet = true; m_itemCollectionMetrics.emplace(std::forward<ItemCollectionMetricsKeyT>(key), std::forward<ItemCollectionMetricsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -121,34 +117,36 @@ namespace Model
      * </li> <li> <p> <code>CapacityUnits</code> - The total number of capacity units
      * consumed.</p> </li> </ul>
      */
-    inline const Aws::Vector<ConsumedCapacity>& GetConsumedCapacity() const{ return m_consumedCapacity; }
-    inline void SetConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { m_consumedCapacity = value; }
-    inline void SetConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { m_consumedCapacity = std::move(value); }
-    inline BatchWriteItemResult& WithConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { SetConsumedCapacity(value); return *this;}
-    inline BatchWriteItemResult& WithConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { SetConsumedCapacity(std::move(value)); return *this;}
-    inline BatchWriteItemResult& AddConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity.push_back(value); return *this; }
-    inline BatchWriteItemResult& AddConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConsumedCapacity>& GetConsumedCapacity() const { return m_consumedCapacity; }
+    template<typename ConsumedCapacityT = Aws::Vector<ConsumedCapacity>>
+    void SetConsumedCapacity(ConsumedCapacityT&& value) { m_consumedCapacityHasBeenSet = true; m_consumedCapacity = std::forward<ConsumedCapacityT>(value); }
+    template<typename ConsumedCapacityT = Aws::Vector<ConsumedCapacity>>
+    BatchWriteItemResult& WithConsumedCapacity(ConsumedCapacityT&& value) { SetConsumedCapacity(std::forward<ConsumedCapacityT>(value)); return *this;}
+    template<typename ConsumedCapacityT = ConsumedCapacity>
+    BatchWriteItemResult& AddConsumedCapacity(ConsumedCapacityT&& value) { m_consumedCapacityHasBeenSet = true; m_consumedCapacity.emplace_back(std::forward<ConsumedCapacityT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchWriteItemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchWriteItemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchWriteItemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchWriteItemResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::Vector<WriteRequest>> m_unprocessedItems;
+    bool m_unprocessedItemsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>> m_itemCollectionMetrics;
+    bool m_itemCollectionMetricsHasBeenSet = false;
 
     Aws::Vector<ConsumedCapacity> m_consumedCapacity;
+    bool m_consumedCapacityHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

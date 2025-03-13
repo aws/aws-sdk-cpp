@@ -20,23 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobListDescriptor::JobListDescriptor() : 
-    m_jobIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_operation(OperationName::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_terminationDateHasBeenSet(false),
-    m_progressSummaryHasBeenSet(false)
-{
-}
-
 JobListDescriptor::JobListDescriptor(const XmlNode& xmlNode)
-  : JobListDescriptor()
 {
   *this = xmlNode;
 }
@@ -52,48 +36,56 @@ JobListDescriptor& JobListDescriptor::operator =(const XmlNode& xmlNode)
     {
       m_jobId = Aws::Utils::Xml::DecodeEscapedXmlText(jobIdNode.GetText());
       m_jobIdHasBeenSet = true;
+       m_jobIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode operationNode = resultNode.FirstChild("Operation");
     if(!operationNode.IsNull())
     {
-      m_operation = OperationNameMapper::GetOperationNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(operationNode.GetText()).c_str()).c_str());
+      m_operation = OperationNameMapper::GetOperationNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(operationNode.GetText()).c_str()));
       m_operationHasBeenSet = true;
+       m_operationHasBeenSet = true;
     }
     XmlNode priorityNode = resultNode.FirstChild("Priority");
     if(!priorityNode.IsNull())
     {
       m_priority = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priorityNode.GetText()).c_str()).c_str());
       m_priorityHasBeenSet = true;
+       m_priorityHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = JobStatusMapper::GetJobStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = JobStatusMapper::GetJobStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode terminationDateNode = resultNode.FirstChild("TerminationDate");
     if(!terminationDateNode.IsNull())
     {
       m_terminationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(terminationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_terminationDateHasBeenSet = true;
+       m_terminationDateHasBeenSet = true;
     }
     XmlNode progressSummaryNode = resultNode.FirstChild("ProgressSummary");
     if(!progressSummaryNode.IsNull())
     {
       m_progressSummary = progressSummaryNode;
       m_progressSummaryHasBeenSet = true;
+       m_progressSummaryHasBeenSet = true;
     }
   }
 

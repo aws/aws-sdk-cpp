@@ -20,16 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3Grantee::S3Grantee() : 
-    m_typeIdentifier(S3GranteeTypeIdentifier::NOT_SET),
-    m_typeIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 S3Grantee::S3Grantee(const XmlNode& xmlNode)
-  : S3Grantee()
 {
   *this = xmlNode;
 }
@@ -43,20 +34,23 @@ S3Grantee& S3Grantee::operator =(const XmlNode& xmlNode)
     XmlNode typeIdentifierNode = resultNode.FirstChild("TypeIdentifier");
     if(!typeIdentifierNode.IsNull())
     {
-      m_typeIdentifier = S3GranteeTypeIdentifierMapper::GetS3GranteeTypeIdentifierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeIdentifierNode.GetText()).c_str()).c_str());
+      m_typeIdentifier = S3GranteeTypeIdentifierMapper::GetS3GranteeTypeIdentifierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeIdentifierNode.GetText()).c_str()));
       m_typeIdentifierHasBeenSet = true;
+       m_typeIdentifierHasBeenSet = true;
     }
     XmlNode identifierNode = resultNode.FirstChild("Identifier");
     if(!identifierNode.IsNull())
     {
       m_identifier = Aws::Utils::Xml::DecodeEscapedXmlText(identifierNode.GetText());
       m_identifierHasBeenSet = true;
+       m_identifierHasBeenSet = true;
     }
     XmlNode displayNameNode = resultNode.FirstChild("DisplayName");
     if(!displayNameNode.IsNull())
     {
       m_displayName = Aws::Utils::Xml::DecodeEscapedXmlText(displayNameNode.GetText());
       m_displayNameHasBeenSet = true;
+       m_displayNameHasBeenSet = true;
     }
   }
 

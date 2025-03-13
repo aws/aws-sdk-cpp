@@ -20,20 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobReport::JobReport() : 
-    m_bucketHasBeenSet(false),
-    m_format(JobReportFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_reportScope(JobReportScope::NOT_SET),
-    m_reportScopeHasBeenSet(false)
-{
-}
-
 JobReport::JobReport(const XmlNode& xmlNode)
-  : JobReport()
 {
   *this = xmlNode;
 }
@@ -49,30 +36,35 @@ JobReport& JobReport::operator =(const XmlNode& xmlNode)
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
     XmlNode formatNode = resultNode.FirstChild("Format");
     if(!formatNode.IsNull())
     {
-      m_format = JobReportFormatMapper::GetJobReportFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
+      m_format = JobReportFormatMapper::GetJobReportFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
       m_formatHasBeenSet = true;
+       m_formatHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
     XmlNode reportScopeNode = resultNode.FirstChild("ReportScope");
     if(!reportScopeNode.IsNull())
     {
-      m_reportScope = JobReportScopeMapper::GetJobReportScopeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reportScopeNode.GetText()).c_str()).c_str());
+      m_reportScope = JobReportScopeMapper::GetJobReportScopeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reportScopeNode.GetText()).c_str()));
       m_reportScopeHasBeenSet = true;
+       m_reportScopeHasBeenSet = true;
     }
   }
 

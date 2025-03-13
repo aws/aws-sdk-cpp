@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3SetObjectRetentionOperation::S3SetObjectRetentionOperation() : 
-    m_bypassGovernanceRetention(false),
-    m_bypassGovernanceRetentionHasBeenSet(false),
-    m_retentionHasBeenSet(false)
-{
-}
-
 S3SetObjectRetentionOperation::S3SetObjectRetentionOperation(const XmlNode& xmlNode)
-  : S3SetObjectRetentionOperation()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ S3SetObjectRetentionOperation& S3SetObjectRetentionOperation::operator =(const X
     {
       m_bypassGovernanceRetention = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bypassGovernanceRetentionNode.GetText()).c_str()).c_str());
       m_bypassGovernanceRetentionHasBeenSet = true;
+       m_bypassGovernanceRetentionHasBeenSet = true;
     }
     XmlNode retentionNode = resultNode.FirstChild("Retention");
     if(!retentionNode.IsNull())
     {
       m_retention = retentionNode;
       m_retentionHasBeenSet = true;
+       m_retentionHasBeenSet = true;
     }
   }
 

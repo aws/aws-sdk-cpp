@@ -21,7 +21,7 @@ namespace Model
   class QueryTimestampsRequest : public EC2ProtocolRequest
   {
   public:
-    AWS_EC2PROTOCOL_API QueryTimestampsRequest();
+    AWS_EC2PROTOCOL_API QueryTimestampsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,42 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetNormalFormat() const{ return m_normalFormat; }
+    inline const Aws::Utils::DateTime& GetNormalFormat() const { return m_normalFormat; }
     inline bool NormalFormatHasBeenSet() const { return m_normalFormatHasBeenSet; }
-    inline void SetNormalFormat(const Aws::Utils::DateTime& value) { m_normalFormatHasBeenSet = true; m_normalFormat = value; }
-    inline void SetNormalFormat(Aws::Utils::DateTime&& value) { m_normalFormatHasBeenSet = true; m_normalFormat = std::move(value); }
-    inline QueryTimestampsRequest& WithNormalFormat(const Aws::Utils::DateTime& value) { SetNormalFormat(value); return *this;}
-    inline QueryTimestampsRequest& WithNormalFormat(Aws::Utils::DateTime&& value) { SetNormalFormat(std::move(value)); return *this;}
+    template<typename NormalFormatT = Aws::Utils::DateTime>
+    void SetNormalFormat(NormalFormatT&& value) { m_normalFormatHasBeenSet = true; m_normalFormat = std::forward<NormalFormatT>(value); }
+    template<typename NormalFormatT = Aws::Utils::DateTime>
+    QueryTimestampsRequest& WithNormalFormat(NormalFormatT&& value) { SetNormalFormat(std::forward<NormalFormatT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetEpochMember() const{ return m_epochMember; }
+    inline const Aws::Utils::DateTime& GetEpochMember() const { return m_epochMember; }
     inline bool EpochMemberHasBeenSet() const { return m_epochMemberHasBeenSet; }
-    inline void SetEpochMember(const Aws::Utils::DateTime& value) { m_epochMemberHasBeenSet = true; m_epochMember = value; }
-    inline void SetEpochMember(Aws::Utils::DateTime&& value) { m_epochMemberHasBeenSet = true; m_epochMember = std::move(value); }
-    inline QueryTimestampsRequest& WithEpochMember(const Aws::Utils::DateTime& value) { SetEpochMember(value); return *this;}
-    inline QueryTimestampsRequest& WithEpochMember(Aws::Utils::DateTime&& value) { SetEpochMember(std::move(value)); return *this;}
+    template<typename EpochMemberT = Aws::Utils::DateTime>
+    void SetEpochMember(EpochMemberT&& value) { m_epochMemberHasBeenSet = true; m_epochMember = std::forward<EpochMemberT>(value); }
+    template<typename EpochMemberT = Aws::Utils::DateTime>
+    QueryTimestampsRequest& WithEpochMember(EpochMemberT&& value) { SetEpochMember(std::forward<EpochMemberT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetEpochTarget() const{ return m_epochTarget; }
+    inline const Aws::Utils::DateTime& GetEpochTarget() const { return m_epochTarget; }
     inline bool EpochTargetHasBeenSet() const { return m_epochTargetHasBeenSet; }
-    inline void SetEpochTarget(const Aws::Utils::DateTime& value) { m_epochTargetHasBeenSet = true; m_epochTarget = value; }
-    inline void SetEpochTarget(Aws::Utils::DateTime&& value) { m_epochTargetHasBeenSet = true; m_epochTarget = std::move(value); }
-    inline QueryTimestampsRequest& WithEpochTarget(const Aws::Utils::DateTime& value) { SetEpochTarget(value); return *this;}
-    inline QueryTimestampsRequest& WithEpochTarget(Aws::Utils::DateTime&& value) { SetEpochTarget(std::move(value)); return *this;}
+    template<typename EpochTargetT = Aws::Utils::DateTime>
+    void SetEpochTarget(EpochTargetT&& value) { m_epochTargetHasBeenSet = true; m_epochTarget = std::forward<EpochTargetT>(value); }
+    template<typename EpochTargetT = Aws::Utils::DateTime>
+    QueryTimestampsRequest& WithEpochTarget(EpochTargetT&& value) { SetEpochTarget(std::forward<EpochTargetT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_normalFormat;
+    Aws::Utils::DateTime m_normalFormat{};
     bool m_normalFormatHasBeenSet = false;
 
-    Aws::Utils::DateTime m_epochMember;
+    Aws::Utils::DateTime m_epochMember{};
     bool m_epochMemberHasBeenSet = false;
 
-    Aws::Utils::DateTime m_epochTarget;
+    Aws::Utils::DateTime m_epochTarget{};
     bool m_epochTargetHasBeenSet = false;
   };
 

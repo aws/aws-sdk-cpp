@@ -28,7 +28,7 @@ namespace Model
   class GetBucketReplicationResult
   {
   public:
-    AWS_S3CONTROL_API GetBucketReplicationResult();
+    AWS_S3CONTROL_API GetBucketReplicationResult() = default;
     AWS_S3CONTROL_API GetBucketReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CONTROL_API GetBucketReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * must have at least one rule and you can add up to 100 rules. The maximum size of
      * a replication configuration is 128 KB.</p>
      */
-    inline const ReplicationConfiguration& GetReplicationConfiguration() const{ return m_replicationConfiguration; }
-    inline void SetReplicationConfiguration(const ReplicationConfiguration& value) { m_replicationConfiguration = value; }
-    inline void SetReplicationConfiguration(ReplicationConfiguration&& value) { m_replicationConfiguration = std::move(value); }
-    inline GetBucketReplicationResult& WithReplicationConfiguration(const ReplicationConfiguration& value) { SetReplicationConfiguration(value); return *this;}
-    inline GetBucketReplicationResult& WithReplicationConfiguration(ReplicationConfiguration&& value) { SetReplicationConfiguration(std::move(value)); return *this;}
+    inline const ReplicationConfiguration& GetReplicationConfiguration() const { return m_replicationConfiguration; }
+    template<typename ReplicationConfigurationT = ReplicationConfiguration>
+    void SetReplicationConfiguration(ReplicationConfigurationT&& value) { m_replicationConfigurationHasBeenSet = true; m_replicationConfiguration = std::forward<ReplicationConfigurationT>(value); }
+    template<typename ReplicationConfigurationT = ReplicationConfiguration>
+    GetBucketReplicationResult& WithReplicationConfiguration(ReplicationConfigurationT&& value) { SetReplicationConfiguration(std::forward<ReplicationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * AWS Request Id value
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBucketReplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBucketReplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBucketReplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBucketReplicationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * x-amz-id-2 header value, also known as Host Id
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
-    inline void SetHostId(const Aws::String& value) { m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostId.assign(value); }
-    inline GetBucketReplicationResult& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline GetBucketReplicationResult& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline GetBucketReplicationResult& WithHostId(const char* value) { SetHostId(value); return *this;}
+    inline const Aws::String& GetHostId() const { return m_hostId; }
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    GetBucketReplicationResult& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
   private:
 
     ReplicationConfiguration m_replicationConfiguration;
+    bool m_replicationConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_hostId;
+    bool m_hostIdHasBeenSet = false;
   };
 
 } // namespace Model

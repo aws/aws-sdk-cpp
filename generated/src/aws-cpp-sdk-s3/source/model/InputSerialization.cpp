@@ -20,17 +20,7 @@ namespace S3
 namespace Model
 {
 
-InputSerialization::InputSerialization() : 
-    m_cSVHasBeenSet(false),
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_jSONHasBeenSet(false),
-    m_parquetHasBeenSet(false)
-{
-}
-
 InputSerialization::InputSerialization(const XmlNode& xmlNode)
-  : InputSerialization()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ InputSerialization& InputSerialization::operator =(const XmlNode& xmlNode)
     {
       m_cSV = cSVNode;
       m_cSVHasBeenSet = true;
+       m_cSVHasBeenSet = true;
     }
     XmlNode compressionTypeNode = resultNode.FirstChild("CompressionType");
     if(!compressionTypeNode.IsNull())
     {
-      m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(compressionTypeNode.GetText()).c_str()).c_str());
+      m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(compressionTypeNode.GetText()).c_str()));
       m_compressionTypeHasBeenSet = true;
+       m_compressionTypeHasBeenSet = true;
     }
     XmlNode jSONNode = resultNode.FirstChild("JSON");
     if(!jSONNode.IsNull())
     {
       m_jSON = jSONNode;
       m_jSONHasBeenSet = true;
+       m_jSONHasBeenSet = true;
     }
     XmlNode parquetNode = resultNode.FirstChild("Parquet");
     if(!parquetNode.IsNull())
     {
       m_parquet = parquetNode;
       m_parquetHasBeenSet = true;
+       m_parquetHasBeenSet = true;
     }
   }
 

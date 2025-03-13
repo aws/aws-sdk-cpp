@@ -12,10 +12,6 @@ using namespace Aws::JSONRPC10::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EmptyInputAndEmptyOutputRequest::EmptyInputAndEmptyOutputRequest()
-{
-}
-
 Aws::String EmptyInputAndEmptyOutputRequest::SerializePayload() const
 {
   return "{}";

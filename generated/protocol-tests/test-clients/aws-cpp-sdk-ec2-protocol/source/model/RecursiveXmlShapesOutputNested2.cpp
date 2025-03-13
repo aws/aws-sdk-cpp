@@ -21,14 +21,7 @@ namespace EC2Protocol
 namespace Model
 {
 
-RecursiveXmlShapesOutputNested2::RecursiveXmlShapesOutputNested2() : 
-    m_barHasBeenSet(false),
-    m_recursiveMemberHasBeenSet(false)
-{
-}
-
 RecursiveXmlShapesOutputNested2::RecursiveXmlShapesOutputNested2(const XmlNode& xmlNode)
-  : RecursiveXmlShapesOutputNested2()
 {
   *this = xmlNode;
 }
@@ -44,12 +37,14 @@ RecursiveXmlShapesOutputNested2& RecursiveXmlShapesOutputNested2::operator =(con
     {
       m_bar = Aws::Utils::Xml::DecodeEscapedXmlText(barNode.GetText());
       m_barHasBeenSet = true;
+       m_barHasBeenSet = true;
     }
     XmlNode recursiveMemberNode = resultNode.FirstChild("recursiveMember");
     if(!recursiveMemberNode.IsNull())
     {
       m_recursiveMember = Aws::MakeShared<RecursiveXmlShapesOutputNested1>("RecursiveXmlShapesOutputNested2", recursiveMemberNode);
       m_recursiveMemberHasBeenSet = true;
+       m_recursiveMemberHasBeenSet = true;
     }
   }
 

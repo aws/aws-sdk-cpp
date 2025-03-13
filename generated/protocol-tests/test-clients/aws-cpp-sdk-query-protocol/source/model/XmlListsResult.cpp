@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlListsResult::XmlListsResult()
-{
-}
-
 XmlListsResult::XmlListsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!stringListNode.IsNull())
     {
       XmlNode stringListMember = stringListNode.FirstChild("member");
+      m_stringListHasBeenSet = !stringListMember.IsNull();
       while(!stringListMember.IsNull())
       {
         m_stringList.push_back(stringListMember.GetText());
@@ -53,6 +50,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!stringSetNode.IsNull())
     {
       XmlNode stringSetMember = stringSetNode.FirstChild("member");
+      m_stringSetHasBeenSet = !stringSetMember.IsNull();
       while(!stringSetMember.IsNull())
       {
         m_stringSet.push_back(stringSetMember.GetText());
@@ -64,6 +62,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!integerListNode.IsNull())
     {
       XmlNode integerListMember = integerListNode.FirstChild("member");
+      m_integerListHasBeenSet = !integerListMember.IsNull();
       while(!integerListMember.IsNull())
       {
         m_integerList.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(integerListMember.GetText().c_str()).c_str()));
@@ -75,6 +74,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!booleanListNode.IsNull())
     {
       XmlNode booleanListMember = booleanListNode.FirstChild("member");
+      m_booleanListHasBeenSet = !booleanListMember.IsNull();
       while(!booleanListMember.IsNull())
       {
         m_booleanList.push_back(StringUtils::ConvertToBool(StringUtils::Trim(booleanListMember.GetText().c_str()).c_str()));
@@ -86,6 +86,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!timestampListNode.IsNull())
     {
       XmlNode timestampListMember = timestampListNode.FirstChild("member");
+      m_timestampListHasBeenSet = !timestampListMember.IsNull();
       while(!timestampListMember.IsNull())
       {
         m_timestampList.push_back(DateTime(StringUtils::Trim(timestampListMember.GetText().c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601));
@@ -97,6 +98,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!enumListNode.IsNull())
     {
       XmlNode enumListMember = enumListNode.FirstChild("member");
+      m_enumListHasBeenSet = !enumListMember.IsNull();
       while(!enumListMember.IsNull())
       {
         m_enumList.push_back(FooEnumMapper::GetFooEnumForName(StringUtils::Trim(enumListMember.GetText().c_str())));
@@ -108,6 +110,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!intEnumListNode.IsNull())
     {
       XmlNode intEnumListMember = intEnumListNode.FirstChild("member");
+      m_intEnumListHasBeenSet = !intEnumListMember.IsNull();
       while(!intEnumListMember.IsNull())
       {
         m_intEnumList.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(intEnumListMember.GetText().c_str()).c_str()));
@@ -119,6 +122,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!nestedStringListNode.IsNull())
     {
       XmlNode nestedStringListMember = nestedStringListNode.FirstChild("member");
+      m_nestedStringListHasBeenSet = !nestedStringListMember.IsNull();
       while(!nestedStringListMember.IsNull())
       {
         m_nestedStringList.push_back([&nestedStringListMember]() -> Aws::Vector<Aws::String> {
@@ -139,6 +143,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!renamedListMembersNode.IsNull())
     {
       XmlNode renamedListMembersMember = renamedListMembersNode.FirstChild("item");
+      m_renamedListMembersHasBeenSet = !renamedListMembersMember.IsNull();
       while(!renamedListMembersMember.IsNull())
       {
         m_renamedListMembers.push_back(renamedListMembersMember.GetText());
@@ -150,6 +155,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!flattenedListNode.IsNull())
     {
       XmlNode itemMember = flattenedListNode;
+      m_flattenedListHasBeenSet = !itemMember.IsNull();
       while(!itemMember.IsNull())
       {
         m_flattenedList.push_back(itemMember.GetText());
@@ -161,6 +167,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!flattenedList2Node.IsNull())
     {
       XmlNode customNameMember = flattenedList2Node;
+      m_flattenedList2HasBeenSet = !customNameMember.IsNull();
       while(!customNameMember.IsNull())
       {
         m_flattenedList2.push_back(customNameMember.GetText());
@@ -172,6 +179,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!flattenedListWithMemberNamespaceNode.IsNull())
     {
       XmlNode flattenedListWithMemberNamespaceMember = flattenedListWithMemberNamespaceNode;
+      m_flattenedListWithMemberNamespaceHasBeenSet = !flattenedListWithMemberNamespaceMember.IsNull();
       while(!flattenedListWithMemberNamespaceMember.IsNull())
       {
         m_flattenedListWithMemberNamespace.push_back(flattenedListWithMemberNamespaceMember.GetText());
@@ -183,6 +191,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!flattenedListWithNamespaceNode.IsNull())
     {
       XmlNode flattenedListWithNamespaceMember = flattenedListWithNamespaceNode;
+      m_flattenedListWithNamespaceHasBeenSet = !flattenedListWithNamespaceMember.IsNull();
       while(!flattenedListWithNamespaceMember.IsNull())
       {
         m_flattenedListWithNamespace.push_back(flattenedListWithNamespaceMember.GetText());
@@ -194,6 +203,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!structureListNode.IsNull())
     {
       XmlNode structureListMember = structureListNode.FirstChild("item");
+      m_structureListHasBeenSet = !structureListMember.IsNull();
       while(!structureListMember.IsNull())
       {
         m_structureList.push_back(structureListMember);
@@ -206,6 +216,7 @@ XmlListsResult& XmlListsResult::operator =(const Aws::AmazonWebServiceResult<Xml
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::QueryProtocol::Model::XmlListsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

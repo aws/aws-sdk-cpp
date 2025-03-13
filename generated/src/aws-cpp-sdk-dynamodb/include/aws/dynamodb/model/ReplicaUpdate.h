@@ -35,7 +35,7 @@ namespace Model
   class ReplicaUpdate
   {
   public:
-    AWS_DYNAMODB_API ReplicaUpdate();
+    AWS_DYNAMODB_API ReplicaUpdate() = default;
     AWS_DYNAMODB_API ReplicaUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API ReplicaUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,24 +46,24 @@ namespace Model
      * <p>The parameters required for creating a replica on an existing global
      * table.</p>
      */
-    inline const CreateReplicaAction& GetCreate() const{ return m_create; }
+    inline const CreateReplicaAction& GetCreate() const { return m_create; }
     inline bool CreateHasBeenSet() const { return m_createHasBeenSet; }
-    inline void SetCreate(const CreateReplicaAction& value) { m_createHasBeenSet = true; m_create = value; }
-    inline void SetCreate(CreateReplicaAction&& value) { m_createHasBeenSet = true; m_create = std::move(value); }
-    inline ReplicaUpdate& WithCreate(const CreateReplicaAction& value) { SetCreate(value); return *this;}
-    inline ReplicaUpdate& WithCreate(CreateReplicaAction&& value) { SetCreate(std::move(value)); return *this;}
+    template<typename CreateT = CreateReplicaAction>
+    void SetCreate(CreateT&& value) { m_createHasBeenSet = true; m_create = std::forward<CreateT>(value); }
+    template<typename CreateT = CreateReplicaAction>
+    ReplicaUpdate& WithCreate(CreateT&& value) { SetCreate(std::forward<CreateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the existing replica to be removed.</p>
      */
-    inline const DeleteReplicaAction& GetDelete() const{ return m_delete; }
+    inline const DeleteReplicaAction& GetDelete() const { return m_delete; }
     inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
-    inline void SetDelete(const DeleteReplicaAction& value) { m_deleteHasBeenSet = true; m_delete = value; }
-    inline void SetDelete(DeleteReplicaAction&& value) { m_deleteHasBeenSet = true; m_delete = std::move(value); }
-    inline ReplicaUpdate& WithDelete(const DeleteReplicaAction& value) { SetDelete(value); return *this;}
-    inline ReplicaUpdate& WithDelete(DeleteReplicaAction&& value) { SetDelete(std::move(value)); return *this;}
+    template<typename DeleteT = DeleteReplicaAction>
+    void SetDelete(DeleteT&& value) { m_deleteHasBeenSet = true; m_delete = std::forward<DeleteT>(value); }
+    template<typename DeleteT = DeleteReplicaAction>
+    ReplicaUpdate& WithDelete(DeleteT&& value) { SetDelete(std::forward<DeleteT>(value)); return *this;}
     ///@}
   private:
 

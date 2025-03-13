@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3SetObjectLegalHoldOperation::S3SetObjectLegalHoldOperation() : 
-    m_legalHoldHasBeenSet(false)
-{
-}
-
 S3SetObjectLegalHoldOperation::S3SetObjectLegalHoldOperation(const XmlNode& xmlNode)
-  : S3SetObjectLegalHoldOperation()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ S3SetObjectLegalHoldOperation& S3SetObjectLegalHoldOperation::operator =(const X
     {
       m_legalHold = legalHoldNode;
       m_legalHoldHasBeenSet = true;
+       m_legalHoldHasBeenSet = true;
     }
   }
 

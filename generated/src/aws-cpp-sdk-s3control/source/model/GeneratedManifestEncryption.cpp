@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-GeneratedManifestEncryption::GeneratedManifestEncryption() : 
-    m_sSES3HasBeenSet(false),
-    m_sSEKMSHasBeenSet(false)
-{
-}
-
 GeneratedManifestEncryption::GeneratedManifestEncryption(const XmlNode& xmlNode)
-  : GeneratedManifestEncryption()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ GeneratedManifestEncryption& GeneratedManifestEncryption::operator =(const XmlNo
     {
       m_sSES3 = sSES3Node;
       m_sSES3HasBeenSet = true;
+       m_sSES3HasBeenSet = true;
     }
     XmlNode sSEKMSNode = resultNode.FirstChild("SSE-KMS");
     if(!sSEKMSNode.IsNull())
     {
       m_sSEKMS = sSEKMSNode;
       m_sSEKMSHasBeenSet = true;
+       m_sSEKMSHasBeenSet = true;
     }
   }
 

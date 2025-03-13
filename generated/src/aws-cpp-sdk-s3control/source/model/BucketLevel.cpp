@@ -20,17 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-BucketLevel::BucketLevel() : 
-    m_activityMetricsHasBeenSet(false),
-    m_prefixLevelHasBeenSet(false),
-    m_advancedCostOptimizationMetricsHasBeenSet(false),
-    m_advancedDataProtectionMetricsHasBeenSet(false),
-    m_detailedStatusCodesMetricsHasBeenSet(false)
-{
-}
-
 BucketLevel::BucketLevel(const XmlNode& xmlNode)
-  : BucketLevel()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ BucketLevel& BucketLevel::operator =(const XmlNode& xmlNode)
     {
       m_activityMetrics = activityMetricsNode;
       m_activityMetricsHasBeenSet = true;
+       m_activityMetricsHasBeenSet = true;
     }
     XmlNode prefixLevelNode = resultNode.FirstChild("PrefixLevel");
     if(!prefixLevelNode.IsNull())
     {
       m_prefixLevel = prefixLevelNode;
       m_prefixLevelHasBeenSet = true;
+       m_prefixLevelHasBeenSet = true;
     }
     XmlNode advancedCostOptimizationMetricsNode = resultNode.FirstChild("AdvancedCostOptimizationMetrics");
     if(!advancedCostOptimizationMetricsNode.IsNull())
     {
       m_advancedCostOptimizationMetrics = advancedCostOptimizationMetricsNode;
       m_advancedCostOptimizationMetricsHasBeenSet = true;
+       m_advancedCostOptimizationMetricsHasBeenSet = true;
     }
     XmlNode advancedDataProtectionMetricsNode = resultNode.FirstChild("AdvancedDataProtectionMetrics");
     if(!advancedDataProtectionMetricsNode.IsNull())
     {
       m_advancedDataProtectionMetrics = advancedDataProtectionMetricsNode;
       m_advancedDataProtectionMetricsHasBeenSet = true;
+       m_advancedDataProtectionMetricsHasBeenSet = true;
     }
     XmlNode detailedStatusCodesMetricsNode = resultNode.FirstChild("DetailedStatusCodesMetrics");
     if(!detailedStatusCodesMetricsNode.IsNull())
     {
       m_detailedStatusCodesMetrics = detailedStatusCodesMetricsNode;
       m_detailedStatusCodesMetricsHasBeenSet = true;
+       m_detailedStatusCodesMetricsHasBeenSet = true;
     }
   }
 
